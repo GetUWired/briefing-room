@@ -1,3 +1,4 @@
 public/wp-config.php
 .vscode/sftp.json
 .DS_Store
+public/wp-content/plugins/memberium2/
