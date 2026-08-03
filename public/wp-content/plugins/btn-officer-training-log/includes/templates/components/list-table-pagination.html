@@ -1,0 +1,96 @@
+<script>
+    class ListTablePagination extends HTMLElement {
+
+        constructor() {
+            super()
+
+            this.template = document.getElementById('list-table-pagination')
+
+            this.label = this.getAttribute('data-label')
+            this.page = parseInt(this.getAttribute('data-page'))
+            this.pageCount = this.getAttribute('data-page-count')
+            this.rowCount = this.getAttribute('data-row-count')
+            this.totalCount = this.getAttribute('data-total-count')
+            this.previousPageUrl = this.getAttribute('data-previous-page-url')
+            this.nextPageUrl = this.getAttribute('data-next-page-url')
+            this.formToSubmit = this.getAttribute('data-form')
+        }
+
+        connectedCallback() {
+            const node = document.importNode(this.template.content, true);
+            this.appendChild(node);
+
+            // Set text content
+            this.querySelector('.js-label').textContent = this.label;
+            this.querySelector('.js-page').textContent = this.page;
+            this.querySelector('.js-pageCount').textContent = this.pageCount;
+            this.querySelector('.js-rowCount').textContent = this.rowCount;
+            this.querySelector('.js-totalCount').textContent = this.totalCount;
+
+            const form = document.forms[this.formToSubmit];
+
+            const changePage = (newPage) => {
+                if (!form) return;
+                // Find input by class inside the form
+                const pageInput = form.querySelector('.report_page');
+                if (pageInput) {
+                    pageInput.value = newPage;
+                    form.submit();
+                }
+            };
+
+            // Previous Page Button
+            const previousPageButton = this.querySelector('.prev-page');
+            if (this.page > 1) {
+                if (this.previousPageUrl) {
+                    previousPageButton.href = this.previousPageUrl;
+                } else if (form) {
+                    previousPageButton.href = "javascript:;";
+                    previousPageButton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        changePage(this.page - 1);
+                    });
+                }
+            } else {
+                previousPageButton.remove();
+            }
+
+            // Next Page Button
+            const nextPageButton = this.querySelector('.next-page');
+            if (this.page < this.pageCount) {
+                if (this.nextPageUrl) {
+                    nextPageButton.href = this.nextPageUrl;
+                } else if (form) {
+                    nextPageButton.href = "javascript:;";
+                    nextPageButton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        changePage(this.page + 1);
+                    });
+                }
+            } else {
+                nextPageButton.remove();
+            }
+        }
+
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        customElements.define('list-table-pagination', ListTablePagination)
+    });
+</script>
+
+<template id="list-table-pagination">
+    Showing <span class="js-rowCount"></span> of <span class="js-totalCount"></span> <span class="js-label"></span>
+    <div class="tablenav-pages">
+
+        <a class="prev-page button" href="#">
+            <span class="screen-reader-text">Previous page</span><span aria-hidden="true">‹</span>
+        </a>
+
+        Page <span class="js-page"></span> of <span class="js-pageCount"></span>
+
+        <a class="next-page button" href="#">
+            <span class="screen-reader-text">Next page</span><span aria-hidden="true">›</span>
+        </a>
+    </div>
+</template>
