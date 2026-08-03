@@ -1,0 +1,1878 @@
+{
+  "version": "1.0.0",
+  "category": "accessibility",
+  "patterns": [
+    {
+      "id": "bc4fba0d161e0efb",
+      "subcategory": "semantic-html",
+      "name": "Semantic HTML Detector",
+      "description": "Learns semantic HTML patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/semantic-html",
+          "patternId": "accessibility/semantic-html/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.11,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 4,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 4,
+          "column": 52
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 15,
+          "column": 67
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 96,
+          "column": 16
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 133,
+          "column": 20
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 135,
+          "column": 3
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 163,
+          "column": 24
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 180,
+          "column": 24
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 90,
+          "column": 26
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 107,
+          "column": 50
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 146,
+          "column": 26
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 150,
+          "column": 26
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "semantic-html"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "5df41165ac6bbfc6",
+      "subcategory": "keyboard-nav",
+      "name": "Keyboard Navigation Detector",
+      "description": "Learns keyboard navigation patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/keyboard-nav",
+          "patternId": "accessibility/keyboard-nav/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.08,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 5,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 18,
+          "column": 60
+        },
+        {
+          "file": "css/admin.css",
+          "line": 335,
+          "column": 25
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 139,
+          "column": 32
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 27,
+          "column": 58
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 57,
+          "column": 58
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 360,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 498,
+          "column": 64
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 621,
+          "column": 66
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "keyboard-nav"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "cf3dd6654f745b2b",
+      "subcategory": "focus-management",
+      "name": "Focus Management Detector",
+      "description": "Learns focus management patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/focus-management",
+          "patternId": "accessibility/focus-management/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.08,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 5,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 18,
+          "column": 60
+        },
+        {
+          "file": "css/admin.css",
+          "line": 335,
+          "column": 25
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 139,
+          "column": 32
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 27,
+          "column": 58
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 57,
+          "column": 58
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 360,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 498,
+          "column": 64
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 621,
+          "column": 66
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "focus-management"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "566bdc10ffbd1d1d",
+      "subcategory": "semantic-html",
+      "name": "Semantic HTML Detector",
+      "description": "Learns semantic HTML patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/semantic-html",
+          "patternId": "accessibility/semantic-html/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.8825,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 19,
+          "column": 14
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "semantic-html"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "7c27790b9551cbb4",
+      "subcategory": "aria-roles",
+      "name": "ARIA Roles Detector",
+      "description": "Learns ARIA roles patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/aria-roles",
+          "patternId": "accessibility/aria-roles/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.11,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 107,
+          "column": 28
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9193
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 11895
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 62,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 81,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 82,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 93,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 100,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 122,
+          "column": 37
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 128,
+          "column": 37
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 131,
+          "column": 37
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "aria-roles"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "4dadc791f957fad1",
+      "subcategory": "aria-roles",
+      "name": "ARIA Roles Detector",
+      "description": "Learns ARIA roles patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/aria-roles",
+          "patternId": "accessibility/aria-roles/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.14,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 5,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "css/admin.css",
+          "line": 75,
+          "column": 12
+        },
+        {
+          "file": "css/admin.css",
+          "line": 81,
+          "column": 23
+        },
+        {
+          "file": "css/admin.css",
+          "line": 214,
+          "column": 26
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 116,
+          "column": 93
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 34,
+          "column": 89
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 143,
+          "column": 52
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 114,
+          "column": 30
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 422,
+          "column": 62
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 427,
+          "column": 62
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 472,
+          "column": 75
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 739,
+          "column": 62
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 744,
+          "column": 75
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 185,
+          "column": 21
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 98,
+          "column": 6
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "aria-roles"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "17aac8bf92ec64cb",
+      "subcategory": "keyboard-nav",
+      "name": "Keyboard Navigation Detector",
+      "description": "Learns keyboard navigation patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/keyboard-nav",
+          "patternId": "accessibility/keyboard-nav/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.94375,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "css/admin.css",
+          "line": 54,
+          "column": 41
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9374
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9511
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9538
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "keyboard-nav"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "cd7a7587c01d945b",
+      "subcategory": "focus-management",
+      "name": "Focus Management Detector",
+      "description": "Learns focus management patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/focus-management",
+          "patternId": "accessibility/focus-management/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "css/admin.css",
+          "line": 54,
+          "column": 41
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "focus-management"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "7e70569da2696088",
+      "subcategory": "heading-hierarchy",
+      "name": "Heading Hierarchy Detector",
+      "description": "Learns heading hierarchy patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/heading-hierarchy",
+          "patternId": "accessibility/heading-hierarchy/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.07,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "css/admin.css",
+          "line": 128,
+          "column": 1
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 174,
+          "column": 32
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 35,
+          "column": 29
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 125,
+          "column": 26
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 146,
+          "column": 33
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 229,
+          "column": 30
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 256,
+          "column": 30
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "heading-hierarchy"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "ed26d081f432f3bf",
+      "subcategory": "alt-text",
+      "name": "Alt Text Detector",
+      "description": "Learns alt text patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/alt-text",
+          "patternId": "accessibility/alt-text/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.3,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "css/admin.css",
+          "line": 174,
+          "column": 26
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 151,
+          "column": 31
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 144,
+          "column": 24
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 151,
+          "column": 24
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 8,
+          "column": 29
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 16,
+          "column": 39
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 21,
+          "column": 45
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 173,
+          "column": 41
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 180,
+          "column": 49
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 184,
+          "column": 52
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 188,
+          "column": 52
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 192,
+          "column": 43
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 197,
+          "column": 42
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 21,
+          "column": 38
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 25,
+          "column": 29
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 173,
+          "column": 34
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 180,
+          "column": 42
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 184,
+          "column": 45
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 188,
+          "column": 45
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 192,
+          "column": 36
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 197,
+          "column": 35
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 202,
+          "column": 33
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 208,
+          "column": 33
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 218,
+          "column": 33
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 235,
+          "column": 33
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 241,
+          "column": 33
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 253,
+          "column": 33
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 275,
+          "column": 33
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 281,
+          "column": 33
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 287,
+          "column": 33
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "alt-text"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "53f2a64427c1bd51",
+      "subcategory": "alt-text",
+      "name": "Alt Text Detector",
+      "description": "Learns alt text patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/alt-text",
+          "patternId": "accessibility/alt-text/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.27,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 4,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "css/admin.css",
+          "line": 15,
+          "column": 16
+        },
+        {
+          "file": "css/admin.css",
+          "line": 43,
+          "column": 16
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 9779
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 9846
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 9908
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 10873
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 10940
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 11002
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 12507
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 12572
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 12632
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 13036
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 13103
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 13165
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 58,
+          "column": 86
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 490,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 491,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 492,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 533,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 534,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 535,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 592,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 593,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 594,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 604,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 605,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 606,
+          "column": 14
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "alt-text"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "cd263b0d29052659",
+      "subcategory": "aria-roles",
+      "name": "ARIA Roles Detector",
+      "description": "Learns ARIA roles patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/aria-roles",
+          "patternId": "accessibility/aria-roles/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.11,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 5,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 7891
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 15981
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 114,
+          "column": 17
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 114,
+          "column": 33
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 152
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 416,
+          "column": 70
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 417,
+          "column": 62
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 733,
+          "column": 70
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 734,
+          "column": 62
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 88,
+          "column": 9
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 88,
+          "column": 41
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "aria-roles"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "5bff10d56c86276e",
+      "subcategory": "alt-text",
+      "name": "Alt Text Detector",
+      "description": "Learns alt text patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/alt-text",
+          "patternId": "accessibility/alt-text/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.09,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/postmetabox.js",
+          "line": 190,
+          "column": 4
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 190,
+          "column": 29
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1457
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1467
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1475
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1741
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1755
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1826
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1840
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "alt-text"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "a7c95146b418e31d",
+      "subcategory": "aria-roles",
+      "name": "ARIA Roles Detector",
+      "description": "Learns ARIA roles patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/aria-roles",
+          "patternId": "accessibility/aria-roles/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.07,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.8241666666666667,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 11911
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24974
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 32121
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24974
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 32121
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24953
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 32088
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "aria-roles"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "f5a5fadb468eeced",
+      "subcategory": "aria-roles",
+      "name": "ARIA Roles Detector",
+      "description": "Learns ARIA roles patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/aria-roles",
+          "patternId": "accessibility/aria-roles/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1264
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1806
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 49,
+          "column": 9
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 49,
+          "column": 21
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "aria-roles"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "84096ea03be43ee1",
+      "subcategory": "keyboard-nav",
+      "name": "Keyboard Navigation Detector",
+      "description": "Learns keyboard navigation patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/keyboard-nav",
+          "patternId": "accessibility/keyboard-nav/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.37,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.94375,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9102
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9622
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9746
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23958
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23984
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24005
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 31996
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 32030
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6683
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9645
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9692
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9786
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9826
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 26358
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 26400
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 27259
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 27345
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 27366
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28141
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30226
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30247
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30332
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30354
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5565
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5573
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5583
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5982
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5990
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6000
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5602
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6019
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5612
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6029
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9406
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28425
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5620
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6037
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "keyboard-nav"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "31e8d2df21802fd9",
+      "subcategory": "focus-management",
+      "name": "Focus Management Detector",
+      "description": "Learns focus management patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/focus-management",
+          "patternId": "accessibility/focus-management/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.24,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6683
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9645
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9692
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9786
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9826
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 26358
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 26400
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 27259
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 27345
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 27366
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28141
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30226
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30247
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30332
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30354
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5565
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5573
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5583
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5982
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5990
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6000
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28075
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5530
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5947
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "focus-management"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "3ee143a7615abe09",
+      "subcategory": "alt-text",
+      "name": "Alt Text Detector",
+      "description": "Learns alt text patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/alt-text",
+          "patternId": "accessibility/alt-text/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.8922222222222222,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28506
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28849
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "alt-text"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "d7954a7e9fa5b474",
+      "subcategory": "keyboard-nav",
+      "name": "Keyboard Navigation Detector",
+      "description": "Learns keyboard navigation patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/keyboard-nav",
+          "patternId": "accessibility/keyboard-nav/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 26,
+          "column": 7
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "keyboard-nav"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "ad489e908a0793e3",
+      "subcategory": "keyboard-nav",
+      "name": "Keyboard Navigation Detector",
+      "description": "Learns keyboard navigation patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/keyboard-nav",
+          "patternId": "accessibility/keyboard-nav/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 56,
+          "column": 25
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "keyboard-nav"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "ce3590d680f630b2",
+      "subcategory": "focus-management",
+      "name": "Focus Management Detector",
+      "description": "Learns focus management patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/focus-management",
+          "patternId": "accessibility/focus-management/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 26,
+          "column": 7
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "focus-management"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "a8141f277b64a08f",
+      "subcategory": "focus-management",
+      "name": "Focus Management Detector",
+      "description": "Learns focus management patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "accessibility/focus-management",
+          "patternId": "accessibility/focus-management/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 56,
+          "column": 25
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "accessibility",
+          "focus-management"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    }
+  ],
+  "lastUpdated": "2026-01-21T02:38:25.944Z",
+  "checksum": "5d65a0f15628159f"
+}

@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace BTN\BriefingRoom\Reports;
 use BTN\BriefingRoom\Helpers\Memberium;
@@ -27,22 +27,15 @@ class SessionReport
 
     public function getFileName(): string
     {
-        return 'session-report' . ($this->hasDateRange() ? '-' . str_replace(' ', '_', $this->getStartDateFormatted()) : '') ;
+        $agencyId = Memberium::getContactField('_AgencyID');
+        $agency = Agency::find($agencyId);
+        $agency_name = ( isset($agency->name) ? $agency->name . '-' : '');
+        return sanitize_file_name($agency_name . 'session-report' . ($this->hasDateRange() ? '-' . str_replace(' ', '_', $this->getStartDateFormatted()) : '') ). '.csv';
     }
-
-    // public function getFileName(): string
-    // {
-    //     $agencyId = Memberium::getContactField('_AgencyID');
-    //     $agency = Agency::find($agencyId);
-    //     $agency_name = ( isset($agency->name) ? $agency->name . '-' : '');
-    //     return sanitize_file_name($agency_name . 'session-report' . ($this->hasDateRange() ? '-' . str_replace(' ', '_', $this->getStartDateFormatted()) : '') ). '.csv';
-    // }
 
 
     public function getTrainingRecords( $session )
     {
-        $agencyId = Memberium::getContactField('_AgencyID');
-
         $query = TrainingRecord::query()
             ->select(
 				['trainingrecord.userId', 'userId']
@@ -50,30 +43,12 @@ class SessionReport
             ->where('trainingsession.id', $session->id, '=')
             ->where('trainingrecord.userId', 0, '>');
 
-        // Only include attendees who belong to the requesting manager's agency,
-        // so training records from other agencies' officers/sergeants who attended
-        // a shared/joint session aren't exposed in this agency's report.
-        $query->joinRaw(
-            "INNER JOIN (SELECT userId FROM wp_btn_managers WHERE organizationId = %d
-                UNION
-                SELECT facilitator.userId
-                FROM wp_btn_sergeants facilitator
-                JOIN wp_btn_stations station ON facilitator.stationId = station.id
-                WHERE station.agencyId = %d
-                UNION
-                SELECT student.userId
-                FROM wp_btn_officers student
-                JOIN wp_btn_stations station ON student.stationId = station.id
-                WHERE station.agencyId = %d) as agency_user_ids ON agency_user_ids.userId = trainingrecord.userId",
-            $agencyId, $agencyId, $agencyId
-        );
-
         if ($this->hasDateRange()) {
             $this->filterQueryByDateRange($query, 'trainingsession.completedAt');
         }
 
-
-
+   
+ 
         return $query->getAll();
     }
 
@@ -83,6 +58,7 @@ class SessionReport
     {
         $agencyId = Memberium::getContactField('_AgencyID');
         $agency = Agency::find($agencyId);
+
 
         $data = [
             ["Report Title: " . ( isset($agency->name) ? $agency->name : '') . ' ' . ($this->sessionIds() == 'week' ? 'Weekly ' : '') . "Training Report", '', '', '', '', '', '', '', '', '', ''],
@@ -323,52 +299,46 @@ class SessionReport
         $session_ids = $this->sessionIds();
 		$data = [];
 
-        $agency_id = Memberium::getContactField('_AgencyID');
 
-        if( ! $agency_id ) return $data;
+        if( $session_ids == 'all' ) {
 
-        // Resolve the requested session_id(s) against sessions this agency is actually
-        // allowed to see. This applies whether session_id=all or an explicit comma-separated
-        // list was requested, so a manager can't view another agency's session by editing
-        // the session_id query param directly.
-        $requestedSessionIds = $session_ids;
+            $agency_id = Memberium::getContactField('_AgencyID');
 
-        $query = TrainingSession::query();
 
-        $query->selectRaw( 'SELECT trainingsession.id' );
+            $query = TrainingSession::query();
 
-       $query->joinRaw( "INNER JOIN (SELECT userId FROM wp_btn_managers WHERE organizationId = %d
-                        UNION
-                        SELECT facilitator.userId
-                        FROM wp_btn_sergeants facilitator
-                        JOIN wp_btn_stations station ON facilitator.stationId = station.id
-                        WHERE station.agencyId = %d
-                        UNION
-                        SELECT student.userId
-                        FROM wp_btn_officers student
-                        JOIN wp_btn_stations station ON student.stationId = station.id
-                        WHERE station.agencyId = %d) as user_ids ON user_ids.userId=trainingsession.userId",
-                        $agency_id, $agency_id, $agency_id );
+            $query->selectRaw( 'SELECT trainingsession.id' );
 
-        if ($requestedSessionIds !== 'all') {
-            $query->whereIn('trainingsession.id', $requestedSessionIds);
-        }
+           $query->joinRaw( "INNER JOIN (SELECT userId FROM wp_btn_managers WHERE organizationId = {$agency_id}
+                            UNION
+                            SELECT facilitator.userId 
+                            FROM wp_btn_sergeants facilitator
+                            JOIN wp_btn_stations station ON facilitator.stationId = station.id
+                            WHERE station.agencyId =  {$agency_id}
+                            UNION
+                            SELECT student.userId 
+                            FROM wp_btn_officers student
+                            JOIN wp_btn_stations station ON student.stationId = station.id
+                            WHERE station.agencyId = {$agency_id}) as user_ids ON user_ids.userId=trainingsession.userId" );
 
-        if (isset($_GET['startDate']) && $_GET['startDate'] != null) {
-            $query->where('trainingsession.completedAt', $_GET['startDate'], '>=');
-        }
+            
+            if (isset($_GET['startDate']) && $_GET['startDate'] != null) {
+                $query->where('trainingsession.completedAt', $_GET['startDate'], '>=');
+            }
 
-        if (isset($_GET['endDate']) && $_GET['endDate'] != null) {
-            $query->where('trainingsession.completedAt', $_GET['endDate'], '<=');
-        }
+            if (isset($_GET['endDate']) && $_GET['endDate'] != null) {
+                $query->where('trainingsession.completedAt', $_GET['endDate'], '<=');
+            }
 
-        $sessions = $query->getAll();
+            $sessions = $query->getAll();
 
-        if( ! is_array( $sessions ) ) return $data;
+            if( ! is_array( $sessions ) ) return $data;
 
-        $session_ids = [];
-        foreach( $sessions as $session ) {
-            $session_ids[] = $session->id;
+            $session_ids = [];
+            foreach( $sessions as $session ) {
+                $session_ids[] = $session->id;
+            }
+
         }
 
 
@@ -379,7 +349,15 @@ class SessionReport
 				continue; // skip invalid sessions
 			}
 
-            $records = $this->getTrainingRecords( $session );
+            // $records = $this->getTrainingRecords( $session );
+
+            // Exclude facilitator from students list
+            $records = array_filter(
+                $this->getTrainingRecords($session),
+                function($record) use ($session) {
+                    return $record->userId != $session->userId;
+                }
+            );
  
             $students = array_map( function ($record) {
 

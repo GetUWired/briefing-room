@@ -38,12 +38,6 @@ $redirect = home_url( $wp->request );
             <label for="title">Training Title</label>
             <input type="text" name="title" id="title" required>
         </div>
-   
-        <div>
-            <label for="description">Description (optional)</label>
-            <textarea  name="description" id="description" rows="3" maxlength="250" style="resize: none;"></textarea>
-        </div>
-        
     <?php endif; ?>
 
     <div>
@@ -53,6 +47,10 @@ $redirect = home_url( $wp->request );
 
     <?php /* 3rd party training, add description and url */ ?>
     <?php if(!isset($training)): ?>
+        <div>
+            <label for="description">Description (optional)</label>
+            <textarea  name="description" id="description" rows="3" maxlength="250" style="resize: none;"></textarea>
+        </div>
         <div>
             <label for="video_url">Video URL (optional)</label>
             <input type="url" name="video_url" id="video_url">
@@ -77,7 +75,6 @@ $redirect = home_url( $wp->request );
         </fieldset>
     </div>
     <!--<button type="button" style="color: #0274be; align-self: baseline; background-color: transparent; margin: 0; padding: 0;" onclick="window['add-officer-dialog'].showModal();">Add Student</button>-->
-
     <button type="submit">Log Training</button>
 
 </form>
@@ -246,13 +243,11 @@ $redirect = home_url( $wp->request );
 
         const officerList = $('#training-log-officer-list')
         officerSearch.on('click','[data-student]', (e) => {
-            let dataElm = e.currentTarget
-
-            const id = dataElm.getAttribute('data-student-id')
-            const userId = dataElm.getAttribute('data-student-user-id')
-            const firstName = dataElm.getAttribute('data-student-first-name')
-            const lastName = dataElm.getAttribute('data-student-last-name')
-            const referenceId = dataElm.getAttribute('data-student-reference-id')
+            const id = e.target.getAttribute('data-student-id')
+            const userId = e.target.getAttribute('data-student-user-id')
+            const firstName = e.target.getAttribute('data-student-first-name')
+            const lastName = e.target.getAttribute('data-student-last-name')
+            const referenceId = e.target.getAttribute('data-student-reference-id')
             officerList.find('ul').append(`
                 <li>
                     <label>

@@ -1,0 +1,7298 @@
+{
+  "version": "1.0.0",
+  "category": "components",
+  "patterns": [
+    {
+      "id": "4ff4279ee7d161d5",
+      "subcategory": "component-structure",
+      "name": "Component Structure Detector",
+      "description": "Learns component structure patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/component-structure",
+          "patternId": "components/component-structure/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.56,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 10,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 86,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 163,
+          "column": 3
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 244,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 256,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 264,
+          "column": 4
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 2
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 81
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 2
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 81
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 35,
+          "column": 17
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 69,
+          "column": 13
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 174,
+          "column": 15
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 180,
+          "column": 4
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 186,
+          "column": 13
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 72,
+          "column": 4
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 260,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 274,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 280,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 286,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 299,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 302,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 313,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 340,
+          "column": 5
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 346,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 2,
+          "column": 230
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 131,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 292,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 318,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 324,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 379,
+          "column": 4
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 432,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 446,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 452,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 458,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 471,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 474,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 70,
+          "column": 4
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 81,
+          "column": 4
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 109,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 176,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 190,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 196,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 202,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 215,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 218,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 238,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 264,
+          "column": 14
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 270,
+          "column": 3
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 156,
+          "column": 10
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 215,
+          "column": 14
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 248,
+          "column": 14
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 156,
+          "column": 10
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 215,
+          "column": 14
+        },
+        {
+          "file": "modules/marketplace/assets/css/styles.css",
+          "line": 248,
+          "column": 14
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 58,
+          "column": 5
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 69,
+          "column": 17
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "component-structure"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "27f92528c9d35180",
+      "subcategory": "props-patterns",
+      "name": "Props Patterns Detector",
+      "description": "Learns props patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/props-patterns",
+          "patternId": "components/props-patterns/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.92,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 9,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 3,
+          "column": 21
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 14,
+          "column": 17
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 3,
+          "column": 21
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 14,
+          "column": 17
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 68,
+          "column": 29
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 68,
+          "column": 29
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 70,
+          "column": 14
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 70,
+          "column": 14
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 6,
+          "column": 25
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 144,
+          "column": 14
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 6,
+          "column": 25
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 144,
+          "column": 14
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 34,
+          "column": 76
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 34,
+          "column": 76
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 41,
+          "column": 32
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 41,
+          "column": 32
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 42,
+          "column": 16
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 42,
+          "column": 16
+        },
+        {
+          "file": "css/admin.css",
+          "line": 6,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 28,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 34,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 50,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 54,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 58,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 59,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 64,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 128,
+          "column": 4
+        },
+        {
+          "file": "css/admin.css",
+          "line": 132,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 147,
+          "column": 36
+        },
+        {
+          "file": "css/admin.css",
+          "line": 152,
+          "column": 36
+        },
+        {
+          "file": "css/admin.css",
+          "line": 6,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 28,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 34,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 50,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 54,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 58,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 59,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 64,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 128,
+          "column": 4
+        },
+        {
+          "file": "css/admin.css",
+          "line": 132,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 147,
+          "column": 36
+        },
+        {
+          "file": "css/admin.css",
+          "line": 152,
+          "column": 36
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 85,
+          "column": 23
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 85,
+          "column": 23
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 200,
+          "column": 26
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 200,
+          "column": 26
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 2,
+          "column": 28
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 6,
+          "column": 14
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 7,
+          "column": 14
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 16,
+          "column": 29
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 16,
+          "column": 44
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 19,
+          "column": 14
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 23,
+          "column": 18
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 31,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 36,
+          "column": 35
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 2,
+          "column": 28
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 6,
+          "column": 14
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 7,
+          "column": 14
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 16,
+          "column": 29
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 16,
+          "column": 44
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 19,
+          "column": 14
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 23,
+          "column": 18
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 31,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 36,
+          "column": 35
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 117,
+          "column": 41
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 118,
+          "column": 56
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 132,
+          "column": 90
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 158,
+          "column": 41
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 162,
+          "column": 43
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 163,
+          "column": 41
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 175,
+          "column": 40
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 197,
+          "column": 64
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 199,
+          "column": 45
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 211,
+          "column": 44
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 219,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 316,
+          "column": 50
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 117,
+          "column": 41
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 118,
+          "column": 56
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 132,
+          "column": 90
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 158,
+          "column": 41
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 162,
+          "column": 43
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 163,
+          "column": 41
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 175,
+          "column": 40
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 197,
+          "column": 64
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 199,
+          "column": 45
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 211,
+          "column": 44
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 219,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 316,
+          "column": 50
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 85,
+          "column": 21
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 139,
+          "column": 15
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 85,
+          "column": 21
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 139,
+          "column": 15
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "props-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "da391c5b4f00584a",
+      "subcategory": "duplicate-detection",
+      "name": "Duplicate Detection Detector",
+      "description": "Learns duplicate component patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/duplicate-detection",
+          "patternId": "components/duplicate-detection/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 13,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 86,
+          "column": 35
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 42,
+          "column": 29
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 70,
+          "column": 62
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 79,
+          "column": 32
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 86,
+          "column": 12
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 90,
+          "column": 15
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 42,
+          "column": 29
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 70,
+          "column": 62
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 79,
+          "column": 32
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 86,
+          "column": 12
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 90,
+          "column": 15
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 32,
+          "column": 15
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 35,
+          "column": 11
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 41,
+          "column": 14
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 32,
+          "column": 15
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 35,
+          "column": 11
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 41,
+          "column": 14
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 36,
+          "column": 46
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 62,
+          "column": 15
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 71,
+          "column": 34
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 36,
+          "column": 46
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 62,
+          "column": 15
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 71,
+          "column": 34
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 84,
+          "column": 19
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 96,
+          "column": 33
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 84,
+          "column": 19
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 96,
+          "column": 33
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 163,
+          "column": 3
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 244,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 256,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 264,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 26,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 128,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 151,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 169,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 192,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 208,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 228,
+          "column": 3
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 252,
+          "column": 3
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 262,
+          "column": 3
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 273,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 282,
+          "column": 3
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 26,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 128,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 151,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 169,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 192,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 208,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 228,
+          "column": 3
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 252,
+          "column": 3
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 262,
+          "column": 3
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 273,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 282,
+          "column": 3
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 2
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 81
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 2
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 81
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 35,
+          "column": 17
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 69,
+          "column": 13
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 174,
+          "column": 15
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 180,
+          "column": 4
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 186,
+          "column": 13
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 152,
+          "column": 1
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 152,
+          "column": 1
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 2,
+          "column": 5
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 2,
+          "column": 5
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 72,
+          "column": 4
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 260,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 274,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 280,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 286,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 299,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 302,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 313,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 340,
+          "column": 5
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 346,
+          "column": 3
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 27,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 83,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 93,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 144,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 174,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 190,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 221,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 251,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 315,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 27,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 83,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 93,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 144,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 174,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 190,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 221,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 251,
+          "column": 2
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 315,
+          "column": 2
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "duplicate-detection"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "66f82a0745a04954",
+      "subcategory": "duplicate-detection",
+      "name": "Duplicate Detection Detector",
+      "description": "Learns duplicate component patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/duplicate-detection",
+          "patternId": "components/duplicate-detection/import"
+        }
+      },
+      "confidence": {
+        "frequency": 1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 40,
+          "column": 52
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 78,
+          "column": 25
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 40,
+          "column": 52
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 78,
+          "column": 25
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 40,
+          "column": 30
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 40,
+          "column": 30
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 71
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8529
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8942
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12960
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24109
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24253
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24412
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24582
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8529
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8942
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12960
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24109
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24253
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24412
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24582
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 364
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1518
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1630
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1957
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2165
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2435
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2658
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2766
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2940
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2958
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3051
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3369
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3664
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3748
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3824
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3855
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3922
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4182
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5146
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5328
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5366
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5523
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5681
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6087
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6356
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6847
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7031
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7199
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7240
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7602
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7643
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8043
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8145
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8485
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8642
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8923
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9220
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10233
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10413
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10560
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10749
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10950
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 11727
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 11994
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12212
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 13019
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15438
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15615
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15659
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15810
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16096
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16355
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16722
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16753
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16885
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17009
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17042
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17148
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17202
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17249
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20634
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20701
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20716
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20795
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20961
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21053
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21362
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21399
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21444
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21619
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21952
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23546
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23587
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25046
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25123
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25621
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25710
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25795
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25922
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "duplicate-detection"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "3b011ea642793fc1",
+      "subcategory": "near-duplicate",
+      "name": "Near Duplicate Detector",
+      "description": "Learns near-duplicate component patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/near-duplicate",
+          "patternId": "components/near-duplicate/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.5,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 9,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 86,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 163,
+          "column": 3
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 244,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 256,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 264,
+          "column": 4
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 2
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 81
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 2
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 81
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 35,
+          "column": 17
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 69,
+          "column": 13
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 174,
+          "column": 15
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 180,
+          "column": 4
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 186,
+          "column": 13
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 72,
+          "column": 4
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 260,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 274,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 280,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 286,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 299,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 302,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 313,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 340,
+          "column": 5
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 346,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 2,
+          "column": 230
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 131,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 292,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 318,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 324,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 379,
+          "column": 4
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 432,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 446,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 452,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 458,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 471,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 474,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 70,
+          "column": 4
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 81,
+          "column": 4
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 109,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 176,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 190,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 196,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 202,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 215,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 218,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 238,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 264,
+          "column": 14
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 270,
+          "column": 3
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 58,
+          "column": 5
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 69,
+          "column": 17
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "near-duplicate"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "cfd363c729866b6e",
+      "subcategory": "state-patterns",
+      "name": "State Patterns Detector",
+      "description": "Learns state management patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/state-patterns",
+          "patternId": "components/state-patterns/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 55,
+          "column": 50
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 56,
+          "column": 71
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 55,
+          "column": 50
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 56,
+          "column": 71
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 49,
+          "column": 34
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 49,
+          "column": 34
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 69,
+          "column": 40
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 91,
+          "column": 14
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 69,
+          "column": 40
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 91,
+          "column": 14
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "state-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "b3980197ebbc0c2c",
+      "subcategory": "modal-patterns",
+      "name": "Modal Patterns Detector",
+      "description": "Learns modal/dialog patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/modal-patterns",
+          "patternId": "components/modal-patterns/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.16,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 7,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 68,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 41,
+          "column": 5
+        },
+        {
+          "file": "css/admin.css",
+          "line": 297,
+          "column": 19
+        },
+        {
+          "file": "css/admin.css",
+          "line": 314,
+          "column": 19
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 6,
+          "column": 10
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 10,
+          "column": 14
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 16,
+          "column": 18
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 259,
+          "column": 21
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 262,
+          "column": 46
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 259,
+          "column": 32
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 431,
+          "column": 21
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 434,
+          "column": 46
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 431,
+          "column": 32
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 175,
+          "column": 21
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 178,
+          "column": 46
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 175,
+          "column": 32
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "modal-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "9aea7743288ef533",
+      "subcategory": "props-patterns",
+      "name": "Props Patterns Detector",
+      "description": "Learns props patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/props-patterns",
+          "patternId": "components/props-patterns/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.58,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 9,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot.yaml",
+          "line": 89,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 89,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 93,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 93,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 22,
+          "column": 16
+        },
+        {
+          "file": "css/admin.css",
+          "line": 22,
+          "column": 16
+        },
+        {
+          "file": "css/admin.css",
+          "line": 22,
+          "column": 16
+        },
+        {
+          "file": "css/admin.css",
+          "line": 22,
+          "column": 16
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 81,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 81,
+          "column": 45
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 81,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 81,
+          "column": 45
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 195,
+          "column": 9
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 195,
+          "column": 33
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 195,
+          "column": 9
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 195,
+          "column": 33
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 4,
+          "column": 18
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 4,
+          "column": 18
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 76,
+          "column": 22
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 77,
+          "column": 17
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 78,
+          "column": 14
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 76,
+          "column": 22
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 77,
+          "column": 17
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 78,
+          "column": 14
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 76,
+          "column": 22
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 77,
+          "column": 17
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 78,
+          "column": 14
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 76,
+          "column": 22
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 77,
+          "column": 17
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 78,
+          "column": 14
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 19,
+          "column": 3
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 19,
+          "column": 3
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 116,
+          "column": 41
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 116,
+          "column": 80
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 131,
+          "column": 43
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 131,
+          "column": 82
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 207,
+          "column": 55
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 116,
+          "column": 41
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 116,
+          "column": 80
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 131,
+          "column": 43
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 131,
+          "column": 82
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 207,
+          "column": 55
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 34,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 40,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 41,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 42,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 45,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 46,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 34,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 40,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 41,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 42,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 45,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 46,
+          "column": 3
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 54,
+          "column": 5
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 54,
+          "column": 5
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 138,
+          "column": 10
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 138,
+          "column": 10
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "props-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "1b16bf80aec177f6",
+      "subcategory": "duplicate-detection",
+      "name": "Duplicate Detection Detector",
+      "description": "Learns duplicate component patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/duplicate-detection",
+          "patternId": "components/duplicate-detection/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.32,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 8,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot.yaml",
+          "line": 29,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 119,
+          "column": 5
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 29,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 119,
+          "column": 5
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 26,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 70,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 26,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 70,
+          "column": 7
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 27,
+          "column": 16
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 29,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 29,
+          "column": 49
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 27,
+          "column": 16
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 29,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 29,
+          "column": 49
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 116,
+          "column": 26
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 116,
+          "column": 26
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 207,
+          "column": 38
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 209,
+          "column": 37
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 209,
+          "column": 93
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 209,
+          "column": 142
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 207,
+          "column": 38
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 209,
+          "column": 37
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 209,
+          "column": 93
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 209,
+          "column": 142
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 9,
+          "column": 47
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 9,
+          "column": 47
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 158,
+          "column": 88
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 158,
+          "column": 88
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 261,
+          "column": 50
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 261,
+          "column": 50
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 98,
+          "column": 50
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 98,
+          "column": 50
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "duplicate-detection"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "2e1524918ec9feaf",
+      "subcategory": "modal-patterns",
+      "name": "Modal Patterns Detector",
+      "description": "Learns modal/dialog patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/modal-patterns",
+          "patternId": "components/modal-patterns/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot.yaml",
+          "line": 90,
+          "column": 9
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 3,
+          "column": 10
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 3,
+          "column": 39
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 12,
+          "column": 7
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "modal-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "af6fdb99d15e736e",
+      "subcategory": "component-structure",
+      "name": "Component Structure Detector",
+      "description": "Learns component structure patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/component-structure",
+          "patternId": "components/component-structure/import"
+        }
+      },
+      "confidence": {
+        "frequency": 1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 71
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8529
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8942
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12960
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24109
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24253
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24412
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24582
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8529
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8942
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12960
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24109
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24253
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24412
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24582
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 364
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1518
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1630
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1957
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2165
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2435
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2658
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2766
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2940
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2958
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3051
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3369
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3664
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3748
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3824
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3855
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3922
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4182
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5146
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5328
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5366
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5523
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5681
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6087
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6356
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6847
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7031
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7199
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7240
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7602
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7643
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8043
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8145
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8485
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8642
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8923
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9220
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10233
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10413
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10560
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10749
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10950
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 11727
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 11994
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12212
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 13019
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15438
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15615
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15659
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15810
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16096
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16355
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16722
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16753
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16885
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17009
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17042
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17148
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17202
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17249
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20634
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20701
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20716
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20795
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20961
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21053
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21362
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21399
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21444
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21619
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21952
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23546
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23587
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25046
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25123
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25621
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25710
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25795
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25922
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25934
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25946
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 29749
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30074
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30170
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30977
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "component-structure"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "c92525659f3c7840",
+      "subcategory": "props-patterns",
+      "name": "Props Patterns Detector",
+      "description": "Learns props patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/props-patterns",
+          "patternId": "components/props-patterns/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.66,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.8825,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 77,
+          "column": 45
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 77,
+          "column": 45
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 18
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 347
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1696
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1724
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1749
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1800
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1834
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22071
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22143
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22193
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22230
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22277
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22334
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22376
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22407
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22438
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22486
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22524
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22565
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28972
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30601
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30689
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2852
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 18
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 347
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1696
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1724
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1749
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1800
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1834
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22071
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22143
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22193
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22230
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22277
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22334
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22376
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22407
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22438
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22486
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22524
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22565
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28972
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30601
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30689
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2852
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22737
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22810
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23055
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23126
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 26804
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22737
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22810
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23055
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23126
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 26804
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2716
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2947
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5594
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6011
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2716
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2947
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5594
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6011
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "props-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "4560217ef1411bf4",
+      "subcategory": "duplicate-detection",
+      "name": "Duplicate Detection Detector",
+      "description": "Learns duplicate component patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/duplicate-detection",
+          "patternId": "components/duplicate-detection/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 14,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 49,
+          "column": 41
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 49,
+          "column": 76
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 55,
+          "column": 2
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 49,
+          "column": 41
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 49,
+          "column": 76
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 55,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 276,
+          "column": 3
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 17,
+          "column": 34
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 29,
+          "column": 36
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 95,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 97,
+          "column": 36
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 102,
+          "column": 61
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 129,
+          "column": 36
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 136,
+          "column": 44
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 138,
+          "column": 37
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 153,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 174,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 178,
+          "column": 40
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 222,
+          "column": 22
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 288,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 17,
+          "column": 34
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 29,
+          "column": 36
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 95,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 97,
+          "column": 36
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 102,
+          "column": 61
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 129,
+          "column": 36
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 136,
+          "column": 44
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 138,
+          "column": 37
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 153,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 174,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 178,
+          "column": 40
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 222,
+          "column": 22
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 288,
+          "column": 20
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 1,
+          "column": 24
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 9,
+          "column": 40
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 14,
+          "column": 31
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 1,
+          "column": 24
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 9,
+          "column": 40
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 14,
+          "column": 31
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 1,
+          "column": 24
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 79,
+          "column": 50
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 1,
+          "column": 24
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 79,
+          "column": 50
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 1,
+          "column": 25
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 4,
+          "column": 50
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 16,
+          "column": 11
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 23,
+          "column": 11
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 1,
+          "column": 25
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 4,
+          "column": 50
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 16,
+          "column": 11
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 23,
+          "column": 11
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 3,
+          "column": 47
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 17,
+          "column": 15
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 29,
+          "column": 24
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 31,
+          "column": 59
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 38,
+          "column": 69
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 46,
+          "column": 26
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 49,
+          "column": 42
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 54,
+          "column": 44
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 60,
+          "column": 101
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 66,
+          "column": 24
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 72,
+          "column": 65
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 80,
+          "column": 26
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 83,
+          "column": 70
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 91,
+          "column": 25
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 125,
+          "column": 46
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 131,
+          "column": 20
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 141,
+          "column": 23
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 150,
+          "column": 22
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 158,
+          "column": 23
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 186,
+          "column": 22
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 206,
+          "column": 21
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 217,
+          "column": 30
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 3,
+          "column": 47
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 17,
+          "column": 15
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 29,
+          "column": 24
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 31,
+          "column": 59
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 38,
+          "column": 69
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 46,
+          "column": 26
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 49,
+          "column": 42
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 54,
+          "column": 44
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 60,
+          "column": 101
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 66,
+          "column": 24
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 72,
+          "column": 65
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 80,
+          "column": 26
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 83,
+          "column": 70
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 91,
+          "column": 25
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 125,
+          "column": 46
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 131,
+          "column": 20
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 141,
+          "column": 23
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 150,
+          "column": 22
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 158,
+          "column": 23
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 186,
+          "column": 22
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 206,
+          "column": 21
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 217,
+          "column": 30
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 3,
+          "column": 27
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 78,
+          "column": 45
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 90,
+          "column": 40
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "duplicate-detection"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "85c02d23fb208d4d",
+      "subcategory": "near-duplicate",
+      "name": "Near Duplicate Detector",
+      "description": "Learns near-duplicate component patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/near-duplicate",
+          "patternId": "components/near-duplicate/import"
+        }
+      },
+      "confidence": {
+        "frequency": 1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 71
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8529
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8942
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12960
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24109
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24253
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24412
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24582
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8529
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8942
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12960
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24109
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24253
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24412
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24582
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 364
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1518
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1630
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1957
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2165
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2435
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2658
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2766
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2940
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2958
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3051
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3369
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3664
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3748
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3824
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3855
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3922
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4182
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5146
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5328
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5366
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5523
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5681
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6087
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6356
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6847
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7031
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7199
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7240
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7602
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7643
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8043
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8145
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8485
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8642
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8923
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9220
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10233
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10413
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10560
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10749
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10950
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 11727
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 11994
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12212
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 13019
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15438
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15615
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15659
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15810
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16096
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16355
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16722
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16753
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16885
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17009
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17042
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17148
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17202
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17249
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20634
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20701
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20716
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20795
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20961
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21053
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21362
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21399
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21444
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21619
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21952
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23546
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23587
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25046
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25123
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25621
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25710
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25795
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25922
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25934
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25946
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 29749
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30074
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30170
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30977
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "near-duplicate"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "2d527d49f3e490bf",
+      "subcategory": "composition",
+      "name": "Composition Detector",
+      "description": "Learns component composition patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/composition",
+          "patternId": "components/composition/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.08,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 9,
+          "column": 36
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 9,
+          "column": 36
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 87,
+          "column": 40
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 88,
+          "column": 18
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 89,
+          "column": 11
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 87,
+          "column": 40
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 88,
+          "column": 18
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 89,
+          "column": 11
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "composition"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "781dab292ad922c9",
+      "subcategory": "component-structure",
+      "name": "Component Structure Detector",
+      "description": "Learns component structure patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/component-structure",
+          "patternId": "components/component-structure/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.8999999999999999,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 276,
+          "column": 3
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "component-structure"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "3103016ade43d842",
+      "subcategory": "near-duplicate",
+      "name": "Near Duplicate Detector",
+      "description": "Learns near-duplicate component patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/near-duplicate",
+          "patternId": "components/near-duplicate/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.8999999999999999,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 276,
+          "column": 3
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "near-duplicate"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "2647700b311baed0",
+      "subcategory": "state-patterns",
+      "name": "State Patterns Detector",
+      "description": "Learns state management patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/state-patterns",
+          "patternId": "components/state-patterns/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 103,
+          "column": 10
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 103,
+          "column": 10
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "state-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "627caf9d40ecc0c3",
+      "subcategory": "modal-patterns",
+      "name": "Modal Patterns Detector",
+      "description": "Learns modal/dialog patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/modal-patterns",
+          "patternId": "components/modal-patterns/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.08,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 4,
+        "score": 0.83,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/admin-modal.js",
+          "line": 2,
+          "column": 21
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 4,
+          "column": 10
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 13,
+          "column": 18
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 13,
+          "column": 53
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 15,
+          "column": 45
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 263,
+          "column": 11
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 435,
+          "column": 11
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 179,
+          "column": 11
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "modal-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "9aca4fe338bed9aa",
+      "subcategory": "duplicate-detection",
+      "name": "Duplicate Detection Detector",
+      "description": "Learns duplicate component patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/duplicate-detection",
+          "patternId": "components/duplicate-detection/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.27,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 5,
+        "score": 0.895,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/admin-settings.js",
+          "line": 3,
+          "column": 43
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 3,
+          "column": 43
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 34,
+          "column": 43
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 68,
+          "column": 39
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 34,
+          "column": 43
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 68,
+          "column": 39
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 124,
+          "column": 41
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 124,
+          "column": 41
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 5,
+          "column": 50
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 263,
+          "column": 46
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 266,
+          "column": 34
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 263,
+          "column": 46
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 266,
+          "column": 34
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 21,
+          "column": 20
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 22,
+          "column": 21
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 23,
+          "column": 22
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 62,
+          "column": 12
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 63,
+          "column": 13
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 66,
+          "column": 19
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 78,
+          "column": 12
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 21,
+          "column": 20
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 22,
+          "column": 21
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 23,
+          "column": 22
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 62,
+          "column": 12
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 63,
+          "column": 13
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 66,
+          "column": 19
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 78,
+          "column": 12
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "duplicate-detection"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "35ca031cbc190290",
+      "subcategory": "modal-patterns",
+      "name": "Modal Patterns Detector",
+      "description": "Learns modal/dialog patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/modal-patterns",
+          "patternId": "components/modal-patterns/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.8999999999999999,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 8,
+          "column": 15
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 8,
+          "column": 33
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 17,
+          "column": 20
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 24,
+          "column": 20
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "modal-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "fd6625e31c617b1e",
+      "subcategory": "component-structure",
+      "name": "Component Structure Detector",
+      "description": "Learns component structure patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/component-structure",
+          "patternId": "components/component-structure/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.09,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 34,
+          "column": 43
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 68,
+          "column": 39
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 34,
+          "column": 43
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 68,
+          "column": 39
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21372
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21414
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21372
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21414
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 5,
+          "column": 50
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "component-structure"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "8a5c5f8495e8017f",
+      "subcategory": "props-patterns",
+      "name": "Props Patterns Detector",
+      "description": "Learns props patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/props-patterns",
+          "patternId": "components/props-patterns/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.2,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 5,
+        "score": 0.8825,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 197,
+          "column": 12
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 197,
+          "column": 22
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 197,
+          "column": 12
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 197,
+          "column": 22
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 5,
+          "column": 18
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 5,
+          "column": 18
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 58,
+          "column": 19
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 122,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 128,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 131,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 134,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 58,
+          "column": 19
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 122,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 128,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 131,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 134,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 43,
+          "column": 31
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 43,
+          "column": 31
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 137,
+          "column": 31
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 137,
+          "column": 31
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "props-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "f90635373fe31da9",
+      "subcategory": "near-duplicate",
+      "name": "Near Duplicate Detector",
+      "description": "Learns near-duplicate component patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/near-duplicate",
+          "patternId": "components/near-duplicate/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.05,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 34,
+          "column": 43
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 68,
+          "column": 39
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 34,
+          "column": 43
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 68,
+          "column": 39
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 5,
+          "column": 50
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "near-duplicate"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "72358a6fb30b6f15",
+      "subcategory": "state-patterns",
+      "name": "State Patterns Detector",
+      "description": "Learns state management patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/state-patterns",
+          "patternId": "components/state-patterns/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 4,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 134,
+          "column": 13
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 144,
+          "column": 16
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 134,
+          "column": 13
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 144,
+          "column": 16
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 253,
+          "column": 8
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 253,
+          "column": 8
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 425,
+          "column": 8
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 425,
+          "column": 8
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 231,
+          "column": 8
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 231,
+          "column": 8
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "state-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "90a2e08e6631e4bb",
+      "subcategory": "composition",
+      "name": "Composition Detector",
+      "description": "Learns component composition patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/composition",
+          "patternId": "components/composition/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 34,
+          "column": 43
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 68,
+          "column": 39
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 34,
+          "column": 43
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 68,
+          "column": 39
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "composition"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "e20beea368022af3",
+      "subcategory": "modal-patterns",
+      "name": "Modal Patterns Detector",
+      "description": "Learns modal/dialog patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/modal-patterns",
+          "patternId": "components/modal-patterns/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.08,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 6,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 103,
+          "column": 13
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 106,
+          "column": 13
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 189,
+          "column": 20
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 198,
+          "column": 8
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 14,
+          "column": 23
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 327,
+          "column": 26
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 305,
+          "column": 26
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 251,
+          "column": 26
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "modal-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "a18f72ee5363d9bf",
+      "subcategory": "props-patterns",
+      "name": "Props Patterns Detector",
+      "description": "Learns props patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/props-patterns",
+          "patternId": "components/props-patterns/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 4,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/postmetabox.js",
+          "line": 41,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 45,
+          "column": 46
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 46,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 47,
+          "column": 37
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 48,
+          "column": 31
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 51,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 55,
+          "column": 44
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 56,
+          "column": 33
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 57,
+          "column": 34
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 58,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 62,
+          "column": 44
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 63,
+          "column": 33
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 64,
+          "column": 34
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 65,
+          "column": 29
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 69,
+          "column": 44
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 70,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 71,
+          "column": 29
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 75,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 81,
+          "column": 34
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 85,
+          "column": 34
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 92,
+          "column": 47
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 93,
+          "column": 37
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 94,
+          "column": 38
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 95,
+          "column": 32
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 98,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 103,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 109,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 110,
+          "column": 45
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 111,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 112,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 118,
+          "column": 45
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 119,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 120,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 121,
+          "column": 30
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 129,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 130,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 131,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 132,
+          "column": 30
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 140,
+          "column": 45
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 141,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 142,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 143,
+          "column": 30
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 146,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 147,
+          "column": 30
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 41,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 45,
+          "column": 46
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 46,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 47,
+          "column": 37
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 48,
+          "column": 31
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 51,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 55,
+          "column": 44
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 56,
+          "column": 33
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 57,
+          "column": 34
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 58,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 62,
+          "column": 44
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 63,
+          "column": 33
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 64,
+          "column": 34
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 65,
+          "column": 29
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 69,
+          "column": 44
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 70,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 71,
+          "column": 29
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 75,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 81,
+          "column": 34
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 85,
+          "column": 34
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 92,
+          "column": 47
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 93,
+          "column": 37
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 94,
+          "column": 38
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 95,
+          "column": 32
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 98,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 103,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 109,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 110,
+          "column": 45
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 111,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 112,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 118,
+          "column": 45
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 119,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 120,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 121,
+          "column": 30
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 129,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 130,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 131,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 132,
+          "column": 30
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 140,
+          "column": 45
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 141,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 142,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 143,
+          "column": 30
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 146,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 147,
+          "column": 30
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 68,
+          "column": 30
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 68,
+          "column": 30
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7349
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7402
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7779
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7831
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9048
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9272
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9479
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9544
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16795
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16828
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "props-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "f48a74b540002f1e",
+      "subcategory": "state-patterns",
+      "name": "State Patterns Detector",
+      "description": "Learns state management patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/state-patterns",
+          "patternId": "components/state-patterns/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/postmetabox.js",
+          "line": 199,
+          "column": 22
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 204,
+          "column": 54
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 199,
+          "column": 22
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 204,
+          "column": 54
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "state-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "93c85d3c852543e4",
+      "subcategory": "composition",
+      "name": "Composition Detector",
+      "description": "Learns component composition patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/composition",
+          "patternId": "components/composition/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.42,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/quickedit.js",
+          "line": 55,
+          "column": 39
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 55,
+          "column": 39
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 958
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1215
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1814
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1861
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1946
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3290
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3330
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5264
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5288
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15408
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15424
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20809
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20821
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20872
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20908
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20940
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20970
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 958
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1215
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1814
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1861
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1946
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3290
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3330
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5264
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5288
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15408
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15424
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20809
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20821
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20872
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20908
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20940
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20970
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 15
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 910
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1487
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 15
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 910
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1487
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "composition"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "659b08fc2a67f6cd",
+      "subcategory": "component-structure",
+      "name": "Component Structure Detector",
+      "description": "Learns component structure patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/component-structure",
+          "patternId": "components/component-structure/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.06,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.9458620689655173,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 15
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 910
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1487
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 15
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 910
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1487
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "component-structure"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "83f0614b0822ef72",
+      "subcategory": "duplicate-detection",
+      "name": "Duplicate Detection Detector",
+      "description": "Learns duplicate component patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/duplicate-detection",
+          "patternId": "components/duplicate-detection/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.12,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 15
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 910
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1487
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 15
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 910
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1487
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 130,
+          "column": 18
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 130,
+          "column": 18
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 42,
+          "column": 22
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 46,
+          "column": 22
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 42,
+          "column": 22
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 46,
+          "column": 22
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "duplicate-detection"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "f89502191b509eb4",
+      "subcategory": "near-duplicate",
+      "name": "Near Duplicate Detector",
+      "description": "Learns near-duplicate component patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/near-duplicate",
+          "patternId": "components/near-duplicate/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.06,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 15
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 910
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1487
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 15
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 910
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1487
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "near-duplicate"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "69efea9a951d5fd3",
+      "subcategory": "state-patterns",
+      "name": "State Patterns Detector",
+      "description": "Learns state management patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/state-patterns",
+          "patternId": "components/state-patterns/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 7440
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 7440
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "state-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "f919adc7890763cb",
+      "subcategory": "composition",
+      "name": "Composition Detector",
+      "description": "Learns component composition patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/composition",
+          "patternId": "components/composition/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.32,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.8144444444444444,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 3253
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 3282
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4454
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4476
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4512
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4550
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4576
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 3253
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 3282
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4454
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4476
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4512
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4550
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4576
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8529
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8942
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12960
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24109
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24253
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24412
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24582
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8529
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8942
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12960
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24109
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24253
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24412
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24582
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 143
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5277
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 143
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5277
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "composition"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "53e60f1d490245f1",
+      "subcategory": "modal-patterns",
+      "name": "Modal Patterns Detector",
+      "description": "Learns modal/dialog patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/modal-patterns",
+          "patternId": "components/modal-patterns/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 8522
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 8554
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "modal-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "3c6acc799f8e7b4c",
+      "subcategory": "props-patterns",
+      "name": "Props Patterns Detector",
+      "description": "Learns props patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "components/props-patterns",
+          "patternId": "components/props-patterns/function_definition"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 30,
+          "column": 28
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 30,
+          "column": 28
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "components",
+          "props-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    }
+  ],
+  "lastUpdated": "2026-01-21T02:38:25.925Z",
+  "checksum": "981118906223059e"
+}

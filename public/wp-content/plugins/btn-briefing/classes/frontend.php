@@ -226,6 +226,7 @@ final class btn_briefing_frontend {
 		$prefix = "btn_briefing_";
 		$this->shortcode_map = [
 			"{$prefix}posts"	=> "{$prefix}shortcodes",
+			"{$prefix}second_look"	=> "{$prefix}shortcodes",
 			"{$prefix}video"	=> "{$prefix}shortcodes",
 			"{$prefix}playlist"	=> "{$prefix}shortcodes",
 			"{$prefix}category_count"	=> "{$prefix}shortcodes",
@@ -237,8 +238,10 @@ final class btn_briefing_frontend {
 			"{$prefix}single_category_post"	=> "{$prefix}shortcodes",
 			"{$prefix}hide_categories"	=> "{$prefix}shortcodes",
 			"{$prefix}hide_briefing_button"	=> "{$prefix}shortcodes",
+			"{$prefix}hide_briefing_modal_html"	=> "{$prefix}shortcodes",
 			"{$prefix}assigned_training_category_selector"	=> "{$prefix}shortcodes",
 			"{$prefix}assigned_training_assigned_end_user"	=> "{$prefix}shortcodes",
+			"{$prefix}assigned_training_carousel"	=> "{$prefix}shortcodes",
 			"{$prefix}get_progress"	=> "{$prefix}shortcodes",
 			"{$prefix}assigned_training_assigned_admin"	=> "{$prefix}shortcodes",
 			"{$prefix}agency_policy_form"	=> "{$prefix}shortcodes",
@@ -328,12 +331,17 @@ function frontend_print_scripts(){
         return;
   } else {
 	 $to_json['post_id'] = 0;
+	$to_json['already_completed'] = false;
 	if(is_singular( 'briefing' )){
 		$to_json['post_id'] = get_the_ID();
+		$completed = get_user_meta( get_current_user_id(), 'btn-briefing-completed', true );
+		$to_json['already_completed'] = ( !empty( $completed ) && in_array( $to_json['post_id'], $completed ) );
 	}
 
 
 	$to_json['ajax_url'] = admin_url( 'admin-ajax.php' );
+	$to_json['nonce']    = wp_create_nonce('btn-briefing-ajax');
+	$to_json['completion_threshold'] = apply_filters( 'btn_briefing_completion_threshold', 0.75 );
 	wp_localize_script( 'btn-briefing-frontend-js', 'btn_briefing_data', $to_json );
 	
     wp_enqueue_style('btn-briefing-frontend-css');

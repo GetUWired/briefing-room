@@ -153,7 +153,7 @@ $stations = Station::query()->where('agencyId',$agencyId)->getAll();
 			<label for="station">
                 <span class="screen-reader-text">Station</span>
                 <select id="station" name="stID">
-                    <option value="">Choose Station</option>disabled
+                    <option value="" disabled>Choose Station</option>
 					<?php if($stations != null){
 							foreach($stations as $station){ ?>
                     <option value="<?php echo $station->id; ?>" <?php selected( $_REQUEST['stID'], $station->id ); ?>><?php echo $station->name; ?></option>

@@ -21,7 +21,7 @@ $sort = $_REQUEST['sort'] ?? '';
 
 $currentPage = 1;
 
-$stationId = $_REQUEST['stID'] ?? '';
+$stationId = $_REQUEST['stID'] ?? null;
 
 // Pagination setup
 $perPage = 25;
@@ -64,7 +64,7 @@ $stations = Station::query()->where('agencyId', $memb_agency_id)->getAll();
 			<label for="station">
                 <span class="screen-reader-text">Station</span>
                 <select id="station" name="stID">
-                    <option value="">Choose Station</option>disabled
+                    <option value="" disabled>Choose Station</option>
 					<?php if($stations != null){
 							foreach($stations as $station){ ?>
                     <option value="<?php echo $station->id; ?>" <?php selected( $_REQUEST['stID'], $station->id ); ?>><?php echo $station->name; ?></option>

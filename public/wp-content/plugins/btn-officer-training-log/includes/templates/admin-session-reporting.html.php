@@ -5,7 +5,7 @@ if(isset($_REQUEST['endDate']) && $_REQUEST['endDate']) $endDate = date('Y-m-d',
 
 $search = $_REQUEST['search'] ?? null;
 $sort = $_REQUEST['sort'] ?? null;
-
+ 
 $currentPage = 1;
 
 ?>
@@ -223,7 +223,7 @@ $currentPage = 1;
 
 	/*======================================================
 	 * Download Report
-	 *====================================================*/
+	 *====================================================*/ 
 
 	jQuery(document).ready(function($){
 		// Initialize visibility
@@ -233,7 +233,25 @@ $currentPage = 1;
 		$(document).on('change', '.select_all_item_session', function() {
 			const isChecked = $(this).is(':checked');
 			$('input[name="select_all_item_session[]"]').prop('checked', isChecked).trigger('change');
+			
+			// if checked, update the Download Selected Sessions (CSV) and (PDF) urls to include session_id=all, otherwise remove it
+		 
+			if (isChecked) {
+				$('.all-session-csv, .all-session-pdf').each(function() {
+					const linkUrl = new URL($(this).attr('href'), window.location.origin);
+					linkUrl.searchParams.set('session_id', 'all');
+					$(this).attr('href', linkUrl.toString());
+				});
+			} else {
+				$('.all-session-csv, .all-session-pdf').each(function() {
+					const linkUrl = new URL($(this).attr('href'), window.location.origin);
+					linkUrl.searchParams.delete('session_id');
+					$(this).attr('href', linkUrl.toString());
+				});
+			}
+
 			toggleExportButtons(isChecked);
+
 		});
 
 		// Handle individual checkbox change
@@ -246,22 +264,26 @@ $currentPage = 1;
 		$('.all-session-csv, .all-session-pdf').on('click', function(e) {
 			e.preventDefault();
 			const $this = $(this);
-			const selectedIds = $('input[name="select_all_item_session[]"]:checked')
-				.map(function() { return $(this).val(); })
-				.get()
-				.join(',');
-
-			if (!selectedIds) {
-				return;
-			}
 
 			const linkUrl = new URL($this.attr('href'), window.location.origin);
 			const params = linkUrl.searchParams;
-			params.set('session_id', selectedIds);
 
-			const urlParams = new URLSearchParams(window.location.search);
-			const startDate = urlParams.get('startDate');
-			const endDate = urlParams.get('endDate');
+			// session_id=all is set via the select-all checkbox change handler; don't overwrite it
+			if (params.get('session_id') !== 'all') {
+				const selectedIds = $('input[name="select_all_item_session[]"]:checked')
+					.map(function() { return $(this).val(); })
+					.get()
+					.join(',');
+
+				if (!selectedIds) {
+					return;
+				}
+
+				params.set('session_id', selectedIds);
+			}
+
+			const startDate = $('#startDate').val();
+			const endDate = $('#endDate').val();
 
 			if (startDate) {
 				params.set('startDate', startDate);

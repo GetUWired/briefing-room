@@ -89,7 +89,7 @@ function get_sessions_report()
 
     $data = get_session_report_data($agency_id, $startDate, $endDate, $page, $search, $sort);
 
-    $sessions = generate_session_rows($data['sessions'], $agency_id);
+    $sessions = generate_session_rows($data['sessions']);
 
 	$response = [
 		'message' => 'Report generated successfully',
@@ -210,12 +210,8 @@ function get_session_report_data($agency_id = null, $startDate = null, $endDate 
     return $results;
 }
 
-function generate_session_rows($sessions, $agency_id = null){
-
-    if(!$agency_id){
-        $agency_id = Memberium::getContactField('_AgencyID');
-    }
-
+function generate_session_rows($sessions){
+    
     $sessionRows = [];
     $loadedSessionIds = [];
 
@@ -228,22 +224,6 @@ function generate_session_rows($sessions, $agency_id = null){
             ->innerJoin( TrainingRecord::getTable(), 'trainingrecord.sessionId', 'trainingsession.id', 'trainingrecord' )
             ->whereIn('trainingsession.id', $loadedSessionIds )
             ->where('trainingrecord.userId', 0, '>')
-            // Match SessionReport::getTrainingRecords() so the displayed "officers"
-            // count only reflects attendees belonging to this agency.
-            ->joinRaw(
-                "INNER JOIN (SELECT userId FROM wp_btn_managers WHERE organizationId = %d
-                    UNION
-                    SELECT facilitator.userId
-                    FROM wp_btn_sergeants facilitator
-                    JOIN wp_btn_stations station ON facilitator.stationId = station.id
-                    WHERE station.agencyId = %d
-                    UNION
-                    SELECT student.userId
-                    FROM wp_btn_officers student
-                    JOIN wp_btn_stations station ON student.stationId = station.id
-                    WHERE station.agencyId = %d) as agency_user_ids ON agency_user_ids.userId = trainingrecord.userId",
-                $agency_id, $agency_id, $agency_id
-            )
             ->groupBy('trainingsession.id');
 
 
@@ -291,7 +271,7 @@ function get_students_report()
 {
 
     $agency_id = Memberium::getContactField('_AgencyID'); 
-    $stationId = $_REQUEST['stID'] ?? '';
+    $stationId = $_REQUEST['stID'] ?? null;
     $startDate = $_REQUEST['startDate'] ?? null;
     $endDate = $_REQUEST['endDate'] ?? null;
     $page = isset($_REQUEST['report_page']) ? absint($_REQUEST['report_page']) : 1;
@@ -593,8 +573,7 @@ function get_facilitators_report() {
     $page = isset($_REQUEST['report_page']) ? absint($_REQUEST['report_page']) : 1;
     $search = $_REQUEST['search'] ?? null;
     $sort = $_REQUEST['sort'] ?? null;
-    $stationId = $_REQUEST['stID'] ?? '';
-
+    $stationId = $_REQUEST['stID'] ?? null;
 
     $data = get_facilitator_report_data($agency_id, $stationId, $startDate, $endDate, $page, $search, $sort);
 
@@ -605,6 +584,7 @@ function get_facilitators_report() {
         'status'  => 'success',
         'data'    => $data,
         'facilitators'    => $rows,
+        'agency_id'    => $agency_id,
     ];
 
     return new WP_REST_Response($response);
@@ -813,7 +793,9 @@ function generate_facilitator_rows($rows)
 
     foreach ($rows as $data) {
 
-        
+//         $output[] = get_userdata( $data->userId );
+// ;
+//         continue;
 
         if(user_has_role_by_id( $data->userId, 'memberium_stationadmin' )){
             $person = new Manager(get_object_vars($data));
@@ -858,36 +840,36 @@ function generate_facilitator_rows($rows)
 }
 
 
-if (!function_exists('generateWeekSelect')) {
-    function generateWeekSelect($id = 'weekSelect') {
-        $today = new DateTime();
-        
-        // Find start of this week (Monday)
-        $weekStart = clone $today;
-        $weekStart->modify('monday this week');
 
-        echo "<select id=\"$id\">\n";
-        echo "<option value=\"\">Select Week</option>\n";
+function generateWeekSelect($id = 'weekSelect') {
+    $today = new DateTime();
+    
+    // Find start of this week (Monday)
+    $weekStart = clone $today;
+    $weekStart->modify('monday this week');
 
-        for ($i = 0; $i < 12; $i++) {
-            $start = clone $weekStart;
-            $start->modify("-{$i} week");
-            $end = clone $start;
-            $end->modify('+6 days');
+    echo "<select id=\"$id\">\n";
+    echo "<option value=\"\">Select Week</option>\n";
 
-            $value = $start->format('Y-m-d') . ',' . $end->format('Y-m-d');
-            $label = $start->format('m/d/y') . ' - ' . $end->format('m/d/y');
+    for ($i = 0; $i < 12; $i++) {
+        $start = clone $weekStart;
+        $start->modify("-{$i} week");
+        $end = clone $start;
+        $end->modify('+6 days');
 
-            echo "<option value=\"$value\">$label</option>\n";
-        }
+        $value = $start->format('Y-m-d') . ',' . $end->format('Y-m-d');
+        $label = $start->format('m/d/y') . ' - ' . $end->format('m/d/y');
 
-        echo '</select><button type="button" onclick="weekReport()">Weekly CSV Report</button>';
+        echo "<option value=\"$value\">$label</option>\n";
     }
+
+    echo '</select><button type="button" onclick="weekReport()">Weekly CSV Report</button>';
 }
 
 // add_shortcode('briefing_room_admin_session_reporting', function() {
 //     return '<div id="session_report_container"></div>';
 // });
+
 
 function user_has_role_by_id( $user_id, $role ) {
     $user = get_userdata( $user_id );

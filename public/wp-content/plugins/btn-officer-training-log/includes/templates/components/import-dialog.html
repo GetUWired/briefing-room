@@ -1,0 +1,54 @@
+<script>
+    class ImportDialog extends HTMLDialogElement {
+
+        connectedCallback() {
+
+            const template = document.getElementById('import-dialog-template');
+            this.innerHTML = template.innerHTML + this.innerHTML
+
+            document.getElementById(this.getAttribute('data-target'))
+                    .addEventListener('click', this.showModal.bind(this))
+
+            this.querySelector('h2').innerHTML = this.getAttribute('data-title') ?? 'Import'
+
+            this.querySelector('input[name="action"]').value = this.getAttribute('data-action')
+
+            this.querySelector('input[name="_wpnonce"]').value = this.getAttribute('data-nonce')
+
+            this.querySelector('input[name="redirect"]').value = this.getAttribute('data-redirect')
+
+            this.querySelector('input[name="agencyId"]').value = this.getAttribute('data-agency-id')
+
+            this.querySelector('input[type="file"]').name = this.getAttribute('data-file-name')
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        customElements.define('import-dialog', ImportDialog, {extends: 'dialog'})
+    });
+</script>
+
+<template id="import-dialog-template">
+
+    <h2>Import</h2>
+
+    <form method="dialog" style="position: absolute; top: 15px; right: 15px;">
+        <button style="cursor: pointer; border: 0; background: 0 0;">Close</button>
+    </form>
+
+    <form id="import-dialog-form" action="/wp-admin/admin-post.php" method="post" enctype="multipart/form-data">
+
+        <input type="hidden" name="action" value="">
+        <input type="hidden" name="agencyId" value="">
+        <input type="hidden" name="_wpnonce" value="">
+        <input type="hidden" name="redirect" value="">
+
+        <label for="file-upload">Select File To Upload</label>
+        <input type="file" id="file-upload" name="upload" />
+
+        <div class="submit" style="display: flex; justify-content: space-between;">
+            <button type="submit" class="button button-primary">Upload</button>
+        </div>
+    </form>
+
+</template>

@@ -1,0 +1,6 @@
+node_modules/
+vendor/
+.idea/
+.phpunit.result.cache
+wp-tests.env
+composer.phar

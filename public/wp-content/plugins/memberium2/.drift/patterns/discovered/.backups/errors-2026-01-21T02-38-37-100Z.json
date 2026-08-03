@@ -1,0 +1,2488 @@
+{
+  "version": "1.0.0",
+  "category": "errors",
+  "patterns": [
+    {
+      "id": "bbfc5255cbd05fcb",
+      "subcategory": "exception-hierarchy",
+      "name": "Exception Hierarchy Detector",
+      "description": "Learns exception and error handling patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/exception-hierarchy",
+          "patternId": "errors/exception-hierarchy/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.05,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 101,
+          "column": 73
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 101,
+          "column": 73
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 106,
+          "column": 21
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 106,
+          "column": 21
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 106,
+          "column": 21
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "exception-hierarchy"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "a5570cd8e3442b31",
+      "subcategory": "error-codes",
+      "name": "Error Codes Detector",
+      "description": "Learns error code patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/error-codes",
+          "patternId": "errors/error-codes/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.07,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 4,
+          "column": 5
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 15,
+          "column": 16
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 26,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 98,
+          "column": 12
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 12,
+          "column": 5
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 211,
+          "column": 31
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 213,
+          "column": 55
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "error-codes"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "54f605cb963e3269",
+      "subcategory": "circuit-breaker",
+      "name": "Circuit Breaker Detector",
+      "description": "Learns circuit breaker and resilience patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/circuit-breaker",
+          "patternId": "errors/circuit-breaker/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.2,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 55,
+          "column": 9
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 68,
+          "column": 15
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 119,
+          "column": 25
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 124,
+          "column": 25
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 129,
+          "column": 25
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 136,
+          "column": 25
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 268,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 378,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 379,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 386,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 387,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 571,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 576,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 582,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 588,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 600,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 681,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 686,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 693,
+          "column": 56
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 757,
+          "column": 56
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "circuit-breaker"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "4436b81f8a0d1b4a",
+      "subcategory": "error-logging",
+      "name": "Error Logging Detector",
+      "description": "Learns error logging patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/error-logging",
+          "patternId": "errors/error-logging/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.15,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 6,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 86,
+          "column": 62
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 92,
+          "column": 15
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 106,
+          "column": 21
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 106,
+          "column": 13
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 197,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 149,
+          "column": 16
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 190,
+          "column": 45
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 115,
+          "column": 25
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 116,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 115,
+          "column": 25
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 116,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 90,
+          "column": 21
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 96,
+          "column": 23
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 104,
+          "column": 19
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "error-logging"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "eb107d336d052889",
+      "subcategory": "circuit-breaker",
+      "name": "Circuit Breaker Detector",
+      "description": "Learns circuit breaker and resilience patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/circuit-breaker",
+          "patternId": "errors/circuit-breaker/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.03,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot.yaml",
+          "line": 48,
+          "column": 9
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 66,
+          "column": 21
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 93,
+          "column": 5
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "circuit-breaker"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "c08dffa33126a590",
+      "subcategory": "exception-hierarchy",
+      "name": "Exception Hierarchy Detector",
+      "description": "Learns exception and error handling patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/exception-hierarchy",
+          "patternId": "errors/exception-hierarchy/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.26,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.8533333333333333,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 40,
+          "column": 10
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 48,
+          "column": 83
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 48,
+          "column": 111
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 77,
+          "column": 52
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 40,
+          "column": 10
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 48,
+          "column": 83
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 48,
+          "column": 111
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 77,
+          "column": 52
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 40,
+          "column": 10
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 48,
+          "column": 83
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 48,
+          "column": 111
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 77,
+          "column": 52
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9338
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9353
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9505
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9495
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9338
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9353
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9505
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4085
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4137
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4320
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16729
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9338
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9353
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9505
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "exception-hierarchy"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "6d0099238e8c61a0",
+      "subcategory": "exception-hierarchy",
+      "name": "Exception Hierarchy Detector",
+      "description": "Learns exception and error handling patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/exception-hierarchy",
+          "patternId": "errors/exception-hierarchy/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.05,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.8533333333333333,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 105,
+          "column": 17
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 105,
+          "column": 17
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 105,
+          "column": 17
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20230
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20259
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "exception-hierarchy"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "32d62ed6c31c5f62",
+      "subcategory": "error-codes",
+      "name": "Error Codes Detector",
+      "description": "Learns error code patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/error-codes",
+          "patternId": "errors/error-codes/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 40,
+          "column": 10
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "error-codes"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "8fe674457a153c70",
+      "subcategory": "try-catch",
+      "name": "Try/Catch Detector",
+      "description": "Learns try/catch patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/try-catch",
+          "patternId": "errors/try-catch/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.15,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.8533333333333333,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 40,
+          "column": 10
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 48,
+          "column": 83
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 48,
+          "column": 111
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 77,
+          "column": 52
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 40,
+          "column": 10
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 48,
+          "column": 83
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 48,
+          "column": 111
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 77,
+          "column": 52
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9495
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9338
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9353
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9505
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9338
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9353
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9505
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "try-catch"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "8bd48e0898ecf82f",
+      "subcategory": "try-catch",
+      "name": "Try/Catch Detector",
+      "description": "Learns try/catch patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/try-catch",
+          "patternId": "errors/try-catch/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.8533333333333333,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 105,
+          "column": 17
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 105,
+          "column": 17
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20230
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20259
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "try-catch"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "6e9cbeb02c59fbaf",
+      "subcategory": "try-catch",
+      "name": "Try/Catch Detector",
+      "description": "Learns try/catch patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/try-catch",
+          "patternId": "errors/try-catch/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.6533333333333333,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 106,
+          "column": 21
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 106,
+          "column": 21
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "try-catch"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "3a42dfd8c34e12ca",
+      "subcategory": "error-logging",
+      "name": "Error Logging Detector",
+      "description": "Learns error logging patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/error-logging",
+          "patternId": "errors/error-logging/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.7,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.9497101449275362,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 40,
+          "column": 10
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 48,
+          "column": 83
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 48,
+          "column": 111
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 77,
+          "column": 52
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 40,
+          "column": 27
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9338
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9353
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9505
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20355
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20369
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22676
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22690
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23002
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23016
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30449
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30463
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30808
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30822
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 31112
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 31126
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2050
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2064
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2899
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2913
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4764
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4778
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4068
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4077
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4129
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20338
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20347
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20361
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22659
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22668
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22682
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22985
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22994
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23008
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30432
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30441
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30455
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30791
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30800
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30814
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 31095
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 31104
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 31118
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2033
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2042
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2056
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2882
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2891
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2905
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4747
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4756
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4770
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9321
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9330
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9345
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4052
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20324
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21154
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22645
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22971
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30416
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30755
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 31079
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2017
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2873
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 4731
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "error-logging"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "aa78e9b293b8a529",
+      "subcategory": "error-logging",
+      "name": "Error Logging Detector",
+      "description": "Learns error logging patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/error-logging",
+          "patternId": "errors/error-logging/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 105,
+          "column": 17
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 105,
+          "column": 24
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 105,
+          "column": 24
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 185,
+          "column": 57
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "error-logging"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "097fcea20edd3aa3",
+      "subcategory": "async-errors",
+      "name": "Async Errors Detector",
+      "description": "Learns async error handling patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/async-errors",
+          "patternId": "errors/async-errors/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 285,
+          "column": 11
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "async-errors"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "81163e8f9d1096b0",
+      "subcategory": "error-logging",
+      "name": "Error Logging Detector",
+      "description": "Learns error logging patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/error-logging",
+          "patternId": "errors/error-logging/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.09,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 4,
+        "score": 0.9497101449275362,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 197,
+          "column": 12
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4085
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4137
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4320
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16729
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 6,
+          "column": 9
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 90,
+          "column": 29
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 96,
+          "column": 31
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 104,
+          "column": 27
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "error-logging"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "9967cc737cf8c310",
+      "subcategory": "error-codes",
+      "name": "Error Codes Detector",
+      "description": "Learns error code patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/error-codes",
+          "patternId": "errors/error-codes/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.05,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 217,
+          "column": 34
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 218,
+          "column": 34
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 186,
+          "column": 5
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 210,
+          "column": 18
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 210,
+          "column": 52
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "error-codes"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "e0fca390889a9631",
+      "subcategory": "circuit-breaker",
+      "name": "Circuit Breaker Detector",
+      "description": "Learns circuit breaker and resilience patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/circuit-breaker",
+          "patternId": "errors/circuit-breaker/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.06,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 4,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 59,
+          "column": 36
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20455
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 94,
+          "column": 101
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 105,
+          "column": 21
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 15,
+          "column": 36
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 23,
+          "column": 52
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "circuit-breaker"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "b87a2ad9ed71310b",
+      "subcategory": "circuit-breaker",
+      "name": "Circuit Breaker Detector",
+      "description": "Learns circuit breaker and resilience patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/circuit-breaker",
+          "patternId": "errors/circuit-breaker/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/postmetabox.js",
+          "line": 185,
+          "column": 30
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 213,
+          "column": 26
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "circuit-breaker"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "e6091b3480f17656",
+      "subcategory": "async-errors",
+      "name": "Async Errors Detector",
+      "description": "Learns async error handling patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/async-errors",
+          "patternId": "errors/async-errors/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/quickedit.js",
+          "line": 88,
+          "column": 13
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "async-errors"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "9a8dcd7323cdd951",
+      "subcategory": "exception-hierarchy",
+      "name": "Exception Hierarchy Detector",
+      "description": "Learns exception and error handling patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/exception-hierarchy",
+          "patternId": "errors/exception-hierarchy/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.08,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.8084615384615385,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4085
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4137
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4320
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16729
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4085
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4137
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4320
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16729
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "exception-hierarchy"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "d2f5729b33f0de49",
+      "subcategory": "exception-hierarchy",
+      "name": "Exception Hierarchy Detector",
+      "description": "Learns exception and error handling patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/exception-hierarchy",
+          "patternId": "errors/exception-hierarchy/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.8084615384615385,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20250
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20313
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "exception-hierarchy"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "ba56f9c555a180ba",
+      "subcategory": "error-codes",
+      "name": "Error Codes Detector",
+      "description": "Learns error code patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/error-codes",
+          "patternId": "errors/error-codes/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4258
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4274
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "error-codes"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "76612b4c92074d18",
+      "subcategory": "try-catch",
+      "name": "Try/Catch Detector",
+      "description": "Learns try/catch patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/try-catch",
+          "patternId": "errors/try-catch/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7673684210526316,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20250
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20313
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "try-catch"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "ae353da983ec7f0c",
+      "subcategory": "try-catch",
+      "name": "Try/Catch Detector",
+      "description": "Learns try/catch patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/try-catch",
+          "patternId": "errors/try-catch/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.08,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7673684210526316,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4085
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4137
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4320
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16729
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4085
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4137
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4320
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 16729
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "try-catch"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "a39a626171f2647b",
+      "subcategory": "error-propagation",
+      "name": "Error Propagation Detector",
+      "description": "Learns error propagation patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/error-propagation",
+          "patternId": "errors/error-propagation/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9495
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9495
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "error-propagation"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "c6991edda5697c5b",
+      "subcategory": "async-errors",
+      "name": "Async Errors Detector",
+      "description": "Learns async error handling patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/async-errors",
+          "patternId": "errors/async-errors/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20250
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20313
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "async-errors"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "3cab9254317bd334",
+      "subcategory": "circuit-breaker",
+      "name": "Circuit Breaker Detector",
+      "description": "Learns circuit breaker and resilience patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/circuit-breaker",
+          "patternId": "errors/circuit-breaker/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.14,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.9466666666666667,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9589
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12291
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12881
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 27731
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 27794
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 27879
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28202
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28861
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 29571
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 29577
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 29896
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 29917
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30130
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9012
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "circuit-breaker"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "673be52568da2324",
+      "subcategory": "error-propagation",
+      "name": "Error Propagation Detector",
+      "description": "Learns error propagation patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/error-propagation",
+          "patternId": "errors/error-propagation/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.03,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 252,
+          "column": 40
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 424,
+          "column": 40
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 230,
+          "column": 40
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "error-propagation"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "a2ed54966134e4e0",
+      "subcategory": "error-logging",
+      "name": "Error Logging Detector",
+      "description": "Learns error logging patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/error-logging",
+          "patternId": "errors/error-logging/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "modules/divi/editor.js",
+          "line": 114,
+          "column": 9
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 114,
+          "column": 73
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 114,
+          "column": 9
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 114,
+          "column": 73
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "error-logging"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "de42b4ce41d454db",
+      "subcategory": "exception-hierarchy",
+      "name": "Exception Hierarchy Detector",
+      "description": "Learns exception and error handling patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/exception-hierarchy",
+          "patternId": "errors/exception-hierarchy/function_definition"
+        }
+      },
+      "confidence": {
+        "frequency": 0.12,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 95,
+          "column": 19
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 95,
+          "column": 35
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 103,
+          "column": 15
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 103,
+          "column": 31
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 95,
+          "column": 19
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 95,
+          "column": 35
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 103,
+          "column": 15
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 103,
+          "column": 31
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 95,
+          "column": 19
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 95,
+          "column": 35
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 103,
+          "column": 15
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 103,
+          "column": 31
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "exception-hierarchy"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "c65ab145c0a96a74",
+      "subcategory": "try-catch",
+      "name": "Try/Catch Detector",
+      "description": "Learns try/catch patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/try-catch",
+          "patternId": "errors/try-catch/function_definition"
+        }
+      },
+      "confidence": {
+        "frequency": 0.08,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 95,
+          "column": 19
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 95,
+          "column": 35
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 103,
+          "column": 15
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 103,
+          "column": 31
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 95,
+          "column": 19
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 95,
+          "column": 35
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 103,
+          "column": 15
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 103,
+          "column": 31
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "try-catch"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "30ac50d9c1f6e11b",
+      "subcategory": "error-logging",
+      "name": "Error Logging Detector",
+      "description": "Learns error logging patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "errors/error-logging",
+          "patternId": "errors/error-logging/function_definition"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.91,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 95,
+          "column": 19
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 95,
+          "column": 35
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 103,
+          "column": 15
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 103,
+          "column": 31
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "errors",
+          "error-logging"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    }
+  ],
+  "lastUpdated": "2026-01-21T02:38:25.930Z",
+  "checksum": "0f5330ad5be12485"
+}

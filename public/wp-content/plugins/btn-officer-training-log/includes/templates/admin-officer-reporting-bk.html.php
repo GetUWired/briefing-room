@@ -12,217 +12,261 @@ use StellarWP\DB\QueryBuilder\JoinQueryBuilder;
 use StellarWP\DB\QueryBuilder\QueryBuilder;
 
 include_once 'components/list-table.html';
-include_once 'components/list-table-pagination.html';
 
-$startDate = !empty($_REQUEST['startDate']) ? date('Y-m-d', strtotime($_REQUEST['startDate'])) : null;
-$endDate   = !empty($_REQUEST['endDate']) ? date('Y-m-d', strtotime($_REQUEST['endDate'])) : null;
+
+if(isset($_REQUEST['startDate']) && $_REQUEST['startDate']) $startDate = date('Y-m-d', strtotime($_REQUEST['startDate']));
+if(isset($_REQUEST['endDate']) && $_REQUEST['endDate']) $endDate = date('Y-m-d', strtotime($_REQUEST['endDate']));
+
 $memb_agency_id = Memberium::getContactField('_AgencyID') ?: 1;
 
-$search = $_REQUEST['search'] ?? '';
-$sort = $_REQUEST['sort'] ?? '';
-$stationId = $_REQUEST['stID'] ?? '';
+$stationId = $_REQUEST['stID'] ?? null;
 
-// Pagination setup
-$perPage = 25;
-$currentPage = isset($_REQUEST['off_report_page']) ? max(1, (int)$_REQUEST['off_report_page']) : 1;
-$offset = ($currentPage - 1) * $perPage;
+$query = Officer::query();
 
-/* -------------------------
- * Officers Query
- * ------------------------ */
-$officerQuery = Officer::query()->where('stationAgencyId', $memb_agency_id);
+$user = wp_get_current_user();
+
+$query->where('stationAgencyId', Memberium::getContactField('_AgencyID') ?: 1);
 
 if (!empty($stationId)) {
-    $officerQuery->where('officer.stationId', $stationId, '=');
+    $query->where('officer.stationId', $stationId, '=');
 }
 
 // JOIN STATION NAME
-$officerQuery->join(function (JoinQueryBuilder $builder) {
+$query->join(function (JoinQueryBuilder $builder) {
+
     $stationQuery = Station::query()
         ->select(['id as station_id,name AS stationName, agencyId as stationAgencyId']);
+
     $builder->joinRaw("LEFT JOIN ({$stationQuery->getSQL()}) station ON officer.stationId = station_id");
+
 });
 
-// JOIN TRAINING SESSIONS
-$officerQuery->join(function (JoinQueryBuilder $builder) use ($startDate, $endDate) {
-    $whereClauses = [];
-    if ($startDate) $whereClauses[] = "trainingsession.completedAt >= '" . esc_sql($startDate) . "'";
-    if ($endDate) $whereClauses[] = "trainingsession.completedAt <= '" . esc_sql($endDate) . "'";
-    $whereSql = $whereClauses ? 'WHERE ' . implode(' AND ', $whereClauses) : '';
 
-    $subquery = "
-        SELECT record.userId,
-               SUM(duration) AS totalDuration,
-               COUNT(*) AS trainingSessionCount
-        FROM wp_btn_training_sessions AS trainingsession
-        INNER JOIN wp_btn_training_records AS record
-          ON trainingsession.id = record.sessionId
-        {$whereSql}
-        GROUP BY record.userId
-    ";
+$query->join(function (JoinQueryBuilder $builder) {
+    // Subquery for training sessions
+    $trainingQuery = TrainingSession::query()
+        ->select(['record.userId'])
+        ->selectRaw('SUM(duration) as totalDuration, COUNT(*) as trainingSessionCount')
+        ->join(function (JoinQueryBuilder $builder) {
 
-    $builder->joinRaw("LEFT JOIN ({$subquery}) training ON officer.userId = training.userId");
+            $builder->leftJoin(TrainingRecord::getTable(), 'record')
+                ->on('trainingsession.id', 'record.sessionId');
+
+        });
+
+	// Add date filtering directly in the subquery
+	if (isset($_GET['startDate']) && $_GET['startDate'] != null) {
+
+        $trainingQuery->where('trainingsession.completedAt', $_GET['startDate'], '>=');
+
+    }
+
+	if (isset($_GET['endDate']) && $_GET['endDate'] != null) {
+
+        $trainingQuery->where('trainingsession.completedAt', $_GET['endDate'], '<=');
+
+    }
+
+    $trainingQuery->groupBy('record.userId');
+
+    // Add alias to subquery and correct JOIN condition
+    $builder->joinRaw("LEFT JOIN ({$trainingQuery->getSQL()}) training ON officer.userId = training.userId");
 });
 
-// Search
-if (!empty($search)) {
-    $officerQuery->where(function($query) use ($search) {
+
+// Search By Officer Name
+if (isset($_GET['search'])) {
+    $search = $_GET['search'];
+    $query->where(function($query) use ($search) {
         $query->whereLike('officer.firstName', $search)
               ->orWhereLike('officer.lastName', $search);
     });
 }
 
-// Sort
-if (!empty($sort)) {
-    [$sortColumn, $sortDirection] = explode(',', $sort);
+
+// SORT BY ID OR NAME
+if (!empty($_REQUEST['sort'])) {
+
+    [$sortColumn, $sortDirection] = explode(',', $_REQUEST['sort']);
+
     $allowedSortColumns = ['id', 'firstName'];
-    $officerQuery->orderBy(
+
+    $query->orderBy(
         in_array($sortColumn, $allowedSortColumns, true) ? $sortColumn : 'id',
-        in_array($sortDirection, ['ASC','DESC'], true) ? $sortDirection : 'DESC'
+        in_array($sortDirection, ['ASC', 'DESC'], true) ? $sortDirection : 'DESC'
     );
-} else {
-    $officerQuery->orderBy('id','ASC');
+
+}else{
+
+	 $query->orderBy( 'id','ASC' );
+
 }
 
-// Get total count for pagination
-$officerTotal = clone $officerQuery;
-$totalOfficers = count($officerTotal->getAll());
 
-// Apply limit and offset
-$officers = $officerQuery->limit($perPage)->offset($offset)->getAll();
+$officers = $query->getAll();
 
 $officerRows = array_map(function($officer) {
+
     $reportUrl = new \BTN\BriefingRoom\Reports\LinkBuilder('student', $officer->id);
     $reportUrl->tap(function($url) {
-        if(!empty($_REQUEST['startDate'])) $url->addArg('startDate', $_REQUEST['startDate']);
-        if(!empty($_REQUEST['endDate'])) $url->addArg('endDate', $_REQUEST['endDate']);
+        if(!empty($_GET['startDate'])) $url->addArg('startDate', $_GET['startDate']);
+        if(!empty($_GET['endDate'])) $url->addArg('endDate', $_GET['endDate']);
     });
     return [
         'id' => $officer->id,
         'sortId' => $officer->userId,
         'sortName' => $officer->lastName . ', ' . $officer->firstName,
-        'officerName' => $officer->firstName . ' ' . $officer->lastName . '<br><span class="wrapper-station-row">'.$officer->stationName.'</span>',
-        'duration' => TimeFormatter::minutesToHours($officer->totalDuration),
-        'sessions' => $officer->trainingSessionCount,
-        'action' => "<div class='wrapper-csv-pdf'>
-                        <a href='{$reportUrl->getCsvUrl()}'>CSV</a>
-                        <a href='{$reportUrl->getHtmlUrl()}' target='_blank' rel='noopener noreferrer'>PDF</a>
-                     </div>"
+        'officerName' => $officer->firstName . ' ' . $officer->lastName .'<br><span class="wrapper-station-row">'.$officer->stationName.'</span>',			
+		'duration' => TimeFormatter::minutesToHours($officer->totalDuration),
+		'sessions' => $officer->trainingSessionCount,
+        'action' => implode(' ', [
+			"<div class='wrapper-csv-pdf'>",
+            "<a href='{$reportUrl->getCsvUrl()}'>CSV</a>",
+            "<a href='{$reportUrl->getHtmlUrl()}' target='_blank' rel='noopener noreferrer'>PDF</a>",
+			"</div>",
+        ])
     ];
 }, $officers);
 
+/*---------------------------------
+ * Sergeants as Students
+ * TODO: Replace queries to pull directly from Users.
+ **/
 
-/* -------------------------
- * Sergeants Query
- * ------------------------ */
-$sergeantQuery = Sergeant::query()->where('stationAgencyId', $memb_agency_id);
+$query = Sergeant::query();
+
+$query->where('stationAgencyId', Memberium::getContactField('_AgencyID') ?: 1);
+
+// if( isset($_REQUEST['stID']) && $_REQUEST['stID'] != null ){
+
+//     $query->where('officer.stationId', $_GET['stID'], '=');
+
+// }
 
 if (!empty($stationId)) {
-    $sergeantQuery->where('sergeant.stationId', $stationId, '=');
+    $query->where('sergeant.stationId', $stationId, '=');
 }
 
 // JOIN STATION NAME
-$sergeantQuery->join(function (JoinQueryBuilder $builder) {
+$query->join(function (JoinQueryBuilder $builder) {
+
     $stationQuery = Station::query()
         ->select(['id as station_id,name AS stationName, agencyId as stationAgencyId']);
+
     $builder->joinRaw("LEFT JOIN ({$stationQuery->getSQL()}) station ON sergeant.stationId = station_id");
+
 });
 
-// JOIN TRAINING SESSIONS
-$sergeantQuery->join(function (JoinQueryBuilder $builder) use ($startDate, $endDate) {
-    $whereClauses = [];
-    if ($startDate) $whereClauses[] = "trainingsession.completedAt >= '" . esc_sql($startDate) . "'";
-    if ($endDate) $whereClauses[] = "trainingsession.completedAt <= '" . esc_sql($endDate) . "'";
-    $whereSql = $whereClauses ? 'WHERE ' . implode(' AND ', $whereClauses) : '';
 
-    $subquery = "
-        SELECT record.userId,
-               SUM(duration) AS totalDuration,
-               COUNT(*) AS trainingSessionCount
-        FROM wp_btn_training_sessions AS trainingsession
-        INNER JOIN wp_btn_training_records AS record
-          ON trainingsession.id = record.sessionId
-        {$whereSql}
-        GROUP BY record.userId
-    ";
+$query->join(function (JoinQueryBuilder $builder) {
+    // Subquery for training sessions
+    $trainingQuery = TrainingSession::query()
+        ->select(['record.userId'])
+        ->selectRaw('SUM(duration) as totalDuration, COUNT(*) as trainingSessionCount')
+        ->join(function (JoinQueryBuilder $builder) {
 
-    $builder->joinRaw("LEFT JOIN ({$subquery}) training ON sergeant.userId = training.userId");
+            $builder->leftJoin(TrainingRecord::getTable(), 'record')
+                ->on('trainingsession.id', 'record.sessionId');
+
+        });
+
+    // Add date filtering directly in the subquery
+    if (isset($_GET['startDate']) && $_GET['startDate'] != null) {
+
+        $trainingQuery->where('trainingsession.completedAt', $_GET['startDate'], '>=');
+
+    }
+
+    if (isset($_GET['endDate']) && $_GET['endDate'] != null) {
+
+        $trainingQuery->where('trainingsession.completedAt', $_GET['endDate'], '<=');
+
+    }
+
+    $trainingQuery->groupBy('record.userId');
+
+    // Add alias to subquery and correct JOIN condition
+    $builder->joinRaw("LEFT JOIN ({$trainingQuery->getSQL()}) training ON sergeant.userId = training.userId");
 });
 
-// Search
-if (!empty($search)) {
-    $sergeantQuery->where(function($query) use ($search) {
+
+// Search By Officer Name
+if (isset($_GET['search'])) {
+    $search = $_GET['search'];
+    $query->where(function($query) use ($search) {
         $query->whereLike('sergeant.firstName', $search)
-              ->orWhereLike('sergeant.lastName', $search);
+            ->orWhereLike('sergeant.lastName', $search);
     });
 }
 
-// Sort
-if (!empty($sort)) {
-    [$sortColumn, $sortDirection] = explode(',', $sort);
+
+// SORT BY ID OR NAME
+if (!empty($_REQUEST['sort'])) {
+
+    [$sortColumn, $sortDirection] = explode(',', $_REQUEST['sort']);
+
     $allowedSortColumns = ['id', 'firstName'];
-    $sergeantQuery->orderBy(
+
+    $query->orderBy(
         in_array($sortColumn, $allowedSortColumns, true) ? $sortColumn : 'id',
-        in_array($sortDirection, ['ASC','DESC'], true) ? $sortDirection : 'DESC'
+        in_array($sortDirection, ['ASC', 'DESC'], true) ? $sortDirection : 'DESC'
     );
-} else {
-    $sergeantQuery->orderBy('id','ASC');
+
+}else{
+
+    $query->orderBy( 'id','ASC' );
+
 }
 
-// Get total count for pagination
-$sergeantTotal = clone $sergeantQuery;
-$totalSergeants = count($sergeantTotal->getAll());
 
-// Apply limit and offset
-$sergeants = $sergeantQuery->limit($perPage)->offset($offset)->getAll();
+$sergeants = $query->getAll();
 
 $sergeantRows = array_map(function($sergeant) {
+
     $reportUrl = new \BTN\BriefingRoom\Reports\LinkBuilder('sergeant_student', $sergeant->id);
     $reportUrl->tap(function($url) {
-        if(!empty($_REQUEST['startDate'])) $url->addArg('startDate', $_REQUEST['startDate']);
-        if(!empty($_REQUEST['endDate'])) $url->addArg('endDate', $_REQUEST['endDate']);
+        if(!empty($_GET['startDate'])) $url->addArg('startDate', $_GET['startDate']);
+        if(!empty($_GET['endDate'])) $url->addArg('endDate', $_GET['endDate']);
     });
 
     return [
         'id' => $sergeant->id,
         'sortId' => $sergeant->userId,
         'sortName' => $sergeant->lastName . ', ' . $sergeant->firstName,
-        'officerName' => $sergeant->firstName . ' ' . $sergeant->lastName . '<br><span class="wrapper-station-row">'.$sergeant->stationName.'</span>',
+        'officerName' => $sergeant->firstName . ' ' . $sergeant->lastName .'<br><span class="wrapper-station-row">'.$officer->stationName.'</span>',
         'duration' => TimeFormatter::minutesToHours($sergeant->totalDuration),
         'sessions' => $sergeant->trainingSessionCount,
-        'action' => "<div class='wrapper-csv-pdf'>
-                        <a href='{$reportUrl->getCsvUrl()}'>CSV</a>
-                        <a href='{$reportUrl->getHtmlUrl()}' target='_blank' rel='noopener noreferrer'>PDF</a>
-                     </div>"
+        'action' => implode(' ', [
+            "<a href='{$reportUrl->getCsvUrl()}'>CSV</a>",
+            "<a href='{$reportUrl->getHtmlUrl()}' target='_blank' rel='noopener noreferrer'>PDF</a>",
+        ])
     ];
 }, $sergeants);
 
+/* END SERGEANTS AS STUDENTS */
 
-/* -------------------------
- * Combine Rows + Paginate
- * ------------------------ */
 $rows = [...$officerRows, ...$sergeantRows];
 
-if (!empty($sort)) {
-    [$sortColumn, $sortDirection] = explode(',', $sort);
-    if ($sortColumn === 'firstName') {
-        usort($rows, fn($a,$b) => $sortDirection === 'ASC' ? strcmp($a['sortName'],$b['sortName']) : strcmp($b['sortName'],$a['sortName']));
+[$sortColumn, $sortDirection] = explode(',', $_REQUEST['sort']);
+
+if('firstName' == $sortColumn) { // @TODO: Should be just 'name' - update the UI
+    if('ASC' == $sortDirection) {
+        usort($rows, fn($a, $b) => strcmp($a->sortName, $b->sortName));
+    } else {
+        usort($rows, fn($a, $b) => strcmp($b->sortName, $a->sortName));
     }
 }
 
-$totalCount = $totalOfficers + $totalSergeants;
-$pageCount = max(1, ceil($totalCount / $perPage));
-$rows = array_slice($rows, 0, $perPage); // already limited by queries
+$stations = Station::query()->where('agencyId',$memb_agency_id)->getAll();
 
-$stations = Station::query()->where('agencyId', $memb_agency_id)->getAll();
 ?>
+
+
 
 
 <div class="btn-admin-sergeant-reporting">
 
-    <form id="officerForm" method="GET">
-        <input type="hidden" class="report_page" name="off_report_page" value="<?php echo $currentPage; ?>" />
-
+    <form method="GET">
         <div style="display: flex; flex-direction: row; gap: 20px;">
             <label for="search">
                 <span class="screen-reader-text">Search</span>
@@ -247,29 +291,19 @@ $stations = Station::query()->where('agencyId', $memb_agency_id)->getAll();
 					<?php } } ?>
                 </select>
             </label>
+
             <label for="startDate">
                 <span class="screen-reader-text">Start Date</span>
-                <input id="startDate" name="startDate" type="date" placeholder="Start Date" value="<?php echo $startDate ?: ''; ?>" />
+                <input id="startDate" name="startDate" type="text" placeholder="Start Date" onfocus="(this.type='date')" value="<?php echo $_GET['startDate'] ?: ''; ?>" />
             </label>
             <label for="endDate">
                 <span class="screen-reader-text">End Date</span>
-                <input id="endDate" name="endDate" type="date" placeholder="Start Date" value="<?php echo $endDate ?: ''; ?>" />
+                <input id="endDate" name="endDate" type="text" placeholder="End Date" onfocus="(this.type='date')" value="<?php echo $_GET['endDate'] ?: ''; ?>" />
             </label>
             <button type="submit">Filter</button>
         </div>
     </form>
 
-
-<div class="tablenav top">
-    <list-table-pagination
-        data-label="Students"
-        data-page="<?php echo $currentPage; ?>"
-        data-page-count="<?php echo $pageCount; ?>"
-        data-row-count="<?php echo count($rows); ?>"
-        data-total-count="<?php echo $totalCount; ?>"
-        data-form="officerForm"
-    ></list-table-pagination>
-</div>
 <list-table
     data-columns='[
 				  {"id": "id","label": "ID"},
@@ -353,13 +387,6 @@ $stations = Station::query()->where('agencyId', $memb_agency_id)->getAll();
 		color: #838f98;
 		line-height: 1.1em;
 	}
-    .tablenav-pages {
-		float: right;
-	}
-
-	a.prev-page, a.next-page {
-		padding: 10px 20px;
-	}
 	/* General styling for the table */
 	table.tablesorter th {
 		position: relative;
@@ -404,19 +431,8 @@ $stations = Station::query()->where('agencyId', $memb_agency_id)->getAll();
 	th#action .tablesorter-header-inner::after{
 		display:none;
 	}
-    .generate_all {
-        display: flex;
-        justify-content: center;
-        display: none;
-    }
+	
 
-    .tablenav.top {
-        margin: 1rem auto 0;
-    }
-    	
-	input[type="date"]{
-    	background-color: #fff !important;
-	}
 </style>
 
 <script src="https://mottie.github.io/tablesorter/dist/js/jquery.tablesorter.min.js"></script>
@@ -489,8 +505,8 @@ $stations = Station::query()->where('agencyId', $memb_agency_id)->getAll();
 
 <?php
 
-// echo '<pre>';
-// 	print_r($officerQuery->getSQL());
-// echo '</pre>';
+echo '<pre>';
+	print_r($query->getSQL());
+echo '</pre>';
 
 ?>

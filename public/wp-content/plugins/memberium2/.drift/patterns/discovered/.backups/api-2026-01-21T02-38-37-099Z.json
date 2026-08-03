@@ -1,0 +1,181 @@
+{
+  "version": "1.0.0",
+  "category": "api",
+  "patterns": [
+    {
+      "id": "c030c220aa296ce4",
+      "subcategory": "response-envelope",
+      "name": "Response Envelope Detector",
+      "description": "Detects response envelope patterns and flags inconsistencies",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "api/response-envelope",
+          "patternId": "api/response-envelope/format-standard"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/admin-settings.js",
+          "line": 9,
+          "column": 54
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3730
+        }
+      ],
+      "outliers": [
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 96,
+          "column": 20,
+          "reason": "Response uses standard format but project predominantly uses custom",
+          "deviationScore": 0.7
+        }
+      ],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "api",
+          "response-envelope"
+        ]
+      },
+      "severity": "warning",
+      "autoFixable": false
+    },
+    {
+      "id": "985950904ab1f53c",
+      "subcategory": "response-envelope",
+      "name": "Response Envelope Detector",
+      "description": "Detects response envelope patterns and flags inconsistencies",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "api/response-envelope",
+          "patternId": "api/response-envelope/envelope-structure"
+        }
+      },
+      "confidence": {
+        "frequency": 0.06,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 6,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/admin-settings.js",
+          "line": 9,
+          "column": 54
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 174,
+          "column": 15
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3730
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 340,
+          "column": 5
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 318,
+          "column": 14
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 264,
+          "column": 14
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "api",
+          "response-envelope"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "384c24dcf4b1ebcf",
+      "subcategory": "response-envelope",
+      "name": "Response Envelope Detector",
+      "description": "Detects response envelope patterns and flags inconsistencies",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "api/response-envelope",
+          "patternId": "api/response-envelope/format-custom"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 4,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 174,
+          "column": 15
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 340,
+          "column": 5
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 318,
+          "column": 14
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 264,
+          "column": 14
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "api",
+          "response-envelope"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    }
+  ],
+  "lastUpdated": "2026-01-21T02:38:25.928Z",
+  "checksum": "c838083d0fcb74f6"
+}

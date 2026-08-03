@@ -12,7 +12,7 @@ error_reporting(E_ALL);
  * btn-officer-training-log plugin via the guw-chartcss helper functions.
  */
 
-use BTN\BriefingRoom\Agency;
+use BTN\BriefingRoom\Agency; 
 use BTN\BriefingRoom\Manager;
 use BTN\BriefingRoom\Officer;
 use BTN\BriefingRoom\Sergeant;

@@ -1,0 +1,3393 @@
+{
+  "version": "1.0.0",
+  "category": "structural",
+  "patterns": [
+    {
+      "id": "a9c8e5f2c8eb33a4",
+      "subcategory": "file-naming",
+      "name": "File Naming Detector",
+      "description": "Learns file naming convention patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/file-naming",
+          "patternId": "structural/file-naming/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.26,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 9,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 30,
+          "column": 9
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 91,
+          "column": 30
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 101,
+          "column": 15
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 104,
+          "column": 14
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 28,
+          "column": 16
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 31,
+          "column": 16
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 34,
+          "column": 16
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 25,
+          "column": 32
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 62,
+          "column": 28
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 25,
+          "column": 26
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 290,
+          "column": 6
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 50
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 129
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 10,
+          "column": 5
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 115,
+          "column": 5
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 129,
+          "column": 6
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 264,
+          "column": 10
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 267,
+          "column": 10
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 228,
+          "column": 5
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 234,
+          "column": 5
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 391,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 394,
+          "column": 6
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 436,
+          "column": 10
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 439,
+          "column": 10
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 180,
+          "column": 10
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 183,
+          "column": 10
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "file-naming"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "b5f37a9433bb022c",
+      "subcategory": "file-naming",
+      "name": "File Naming Detector",
+      "description": "Learns file naming convention patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/file-naming",
+          "patternId": "structural/file-naming/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.06,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.83,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 78,
+          "column": 9
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 40,
+          "column": 9
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 87,
+          "column": 79
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25178
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25193
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 29702
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "file-naming"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "ee05dcc374f47563",
+      "subcategory": "directory-structure",
+      "name": "Directory Structure Detector",
+      "description": "Learns directory structure patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/directory-structure",
+          "patternId": "structural/directory-structure/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.06,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.8745454545454545,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 34,
+          "column": 68
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 152,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 236,
+          "column": 9
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 397
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 829
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1406
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "directory-structure"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "e087583e4f4a09ae",
+      "subcategory": "directory-structure",
+      "name": "Directory Structure Detector",
+      "description": "Learns directory structure patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/directory-structure",
+          "patternId": "structural/directory-structure/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.14,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 4,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 36,
+          "column": 59
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 74,
+          "column": 15
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 84,
+          "column": 10
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 50,
+          "column": 47
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 51,
+          "column": 40
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 80,
+          "column": 45
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 81,
+          "column": 40
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 151,
+          "column": 28
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 153,
+          "column": 16
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 154,
+          "column": 21
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 226,
+          "column": 46
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 232,
+          "column": 24
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 233,
+          "column": 17
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 282,
+          "column": 33
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "directory-structure"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "a8f690d0777d6550",
+      "subcategory": "co-location",
+      "name": "Co-Location Detector",
+      "description": "Learns co-location patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/co-location",
+          "patternId": "structural/co-location/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.21,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 7,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 4,
+          "column": 71
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 7,
+          "column": 39
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 92,
+          "column": 27
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 10,
+          "column": 9
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 128,
+          "column": 13
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 10,
+          "column": 18
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 10,
+          "column": 45
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 11,
+          "column": 12
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 102,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 103,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 107,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 136,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 98,
+          "column": 19
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 249,
+          "column": 18
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 252,
+          "column": 30
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 254,
+          "column": 28
+        },
+        {
+          "file": "css/admin.css",
+          "line": 2,
+          "column": 10
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 21,
+          "column": 47
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 64,
+          "column": 47
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 102,
+          "column": 19
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "co-location"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "73fb16764b4092c0",
+      "subcategory": "import-ordering",
+      "name": "Import Ordering Detector",
+      "description": "Learns import ordering patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/import-ordering",
+          "patternId": "structural/import-ordering/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.08,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 5,
+        "score": 0.9147368421052631,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 34,
+          "column": 45
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 62,
+          "column": 57
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 107,
+          "column": 23
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 42,
+          "column": 20
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 199,
+          "column": 12
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 212,
+          "column": 17
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17315
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21663
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "import-ordering"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "3c886b7262da50de",
+      "subcategory": "import-ordering",
+      "name": "Import Ordering Detector",
+      "description": "Learns import ordering patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/import-ordering",
+          "patternId": "structural/import-ordering/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 11,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 35,
+          "column": 65
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 7,
+          "column": 79
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 17,
+          "column": 23
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 40,
+          "column": 3
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 45,
+          "column": 25
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 47,
+          "column": 11
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 51,
+          "column": 3
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 52,
+          "column": 3
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 60,
+          "column": 3
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 62,
+          "column": 5
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 63,
+          "column": 5
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 69,
+          "column": 75
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 78,
+          "column": 3
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 80,
+          "column": 10
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 81,
+          "column": 3
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 85,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 4,
+          "column": 83
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 11,
+          "column": 22
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 69,
+          "column": 19
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 8,
+          "column": 14
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 19
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 40,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 41,
+          "column": 27
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 45,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 46,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 47,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 48,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 70,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 77,
+          "column": 13
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 82,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 87,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 90,
+          "column": 21
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 91,
+          "column": 28
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 113,
+          "column": 47
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 118,
+          "column": 49
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 123,
+          "column": 40
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 268,
+          "column": 23
+        },
+        {
+          "file": "css/admin.css",
+          "line": 77,
+          "column": 19
+        },
+        {
+          "file": "css/admin.css",
+          "line": 83,
+          "column": 19
+        },
+        {
+          "file": "css/admin.css",
+          "line": 125,
+          "column": 19
+        },
+        {
+          "file": "css/admin.css",
+          "line": 129,
+          "column": 22
+        },
+        {
+          "file": "css/admin.css",
+          "line": 224,
+          "column": 17
+        },
+        {
+          "file": "css/admin.css",
+          "line": 225,
+          "column": 23
+        },
+        {
+          "file": "css/admin.css",
+          "line": 266,
+          "column": 18
+        },
+        {
+          "file": "css/admin.css",
+          "line": 270,
+          "column": 15
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 113,
+          "column": 25
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 115,
+          "column": 24
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 124,
+          "column": 24
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 44,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 7,
+          "column": 18
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 8,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 11,
+          "column": 16
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 12,
+          "column": 17
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 19,
+          "column": 25
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 20,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 21,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 22,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 38,
+          "column": 22
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 39,
+          "column": 28
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 40,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 41,
+          "column": 25
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 46,
+          "column": 16
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 47,
+          "column": 22
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 48,
+          "column": 21
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 53,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 58,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 63,
+          "column": 20
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 69,
+          "column": 24
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 10,
+          "column": 16
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 14,
+          "column": 16
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 18,
+          "column": 16
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 35,
+          "column": 14
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 42,
+          "column": 14
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 43,
+          "column": 21
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 145,
+          "column": 22
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 146,
+          "column": 21
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 84,
+          "column": 27
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 86,
+          "column": 22
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 108,
+          "column": 16
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 186,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 187,
+          "column": 24
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 188,
+          "column": 16
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 189,
+          "column": 17
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 190,
+          "column": 21
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 191,
+          "column": 15
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 192,
+          "column": 23
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 193,
+          "column": 15
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 764,
+          "column": 16
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 781,
+          "column": 10
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 787,
+          "column": 21
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 788,
+          "column": 19
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 21,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 22,
+          "column": 11
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 51,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 52,
+          "column": 11
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 109,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 110,
+          "column": 11
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 799,
+          "column": 3
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.css",
+          "line": 4,
+          "column": 21
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 32,
+          "column": 35
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "import-ordering"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "a09bb848f789e9b0",
+      "subcategory": "import-ordering",
+      "name": "Import Ordering Detector",
+      "description": "Learns import ordering patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/import-ordering",
+          "patternId": "structural/import-ordering/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.12,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.9147368421052631,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 52,
+          "column": 91
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 81,
+          "column": 54
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 75,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 75,
+          "column": 26
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9644
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9654
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9670
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20472
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22767
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30588
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 31248
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 3050
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "import-ordering"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "366dacbacf2a06e4",
+      "subcategory": "module-boundaries",
+      "name": "Module Boundaries Detector",
+      "description": "Learns module boundary patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/module-boundaries",
+          "patternId": "structural/module-boundaries/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 4,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 92,
+          "column": 27
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 128,
+          "column": 13
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 98,
+          "column": 19
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 102,
+          "column": 19
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "module-boundaries"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "46a3761c8d17b94e",
+      "subcategory": "circular-deps",
+      "name": "Circular Dependencies Detector",
+      "description": "Learns circular dependency patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/circular-deps",
+          "patternId": "structural/circular-deps/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.83,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 34,
+          "column": 45
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 42,
+          "column": 20
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17315
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21663
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "circular-deps"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "cbe6ba82b67d1144",
+      "subcategory": "circular-deps",
+      "name": "Circular Dependencies Detector",
+      "description": "Learns circular dependency patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/circular-deps",
+          "patternId": "structural/circular-deps/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.59,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 9,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 35,
+          "column": 65
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 4,
+          "column": 83
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 11,
+          "column": 22
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 69,
+          "column": 19
+        },
+        {
+          "file": "css/admin.css",
+          "line": 77,
+          "column": 19
+        },
+        {
+          "file": "css/admin.css",
+          "line": 83,
+          "column": 19
+        },
+        {
+          "file": "css/admin.css",
+          "line": 125,
+          "column": 19
+        },
+        {
+          "file": "css/admin.css",
+          "line": 129,
+          "column": 22
+        },
+        {
+          "file": "css/admin.css",
+          "line": 224,
+          "column": 17
+        },
+        {
+          "file": "css/admin.css",
+          "line": 225,
+          "column": 23
+        },
+        {
+          "file": "css/admin.css",
+          "line": 266,
+          "column": 18
+        },
+        {
+          "file": "css/admin.css",
+          "line": 270,
+          "column": 15
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 113,
+          "column": 25
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 115,
+          "column": 24
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 124,
+          "column": 24
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 44,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 7,
+          "column": 18
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 8,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 11,
+          "column": 16
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 12,
+          "column": 17
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 19,
+          "column": 25
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 20,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 21,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 22,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 38,
+          "column": 22
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 39,
+          "column": 28
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 40,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 41,
+          "column": 25
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 46,
+          "column": 16
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 47,
+          "column": 22
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 48,
+          "column": 21
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 53,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 58,
+          "column": 23
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 63,
+          "column": 20
+        },
+        {
+          "file": "modules/avada/css/select2_css.css",
+          "line": 69,
+          "column": 24
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 10,
+          "column": 16
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 14,
+          "column": 16
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 18,
+          "column": 16
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 35,
+          "column": 14
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 42,
+          "column": 14
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 43,
+          "column": 21
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 145,
+          "column": 22
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 146,
+          "column": 21
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 84,
+          "column": 27
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 86,
+          "column": 22
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 108,
+          "column": 16
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 186,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 187,
+          "column": 24
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 188,
+          "column": 16
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 189,
+          "column": 17
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 190,
+          "column": 21
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 191,
+          "column": 15
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 192,
+          "column": 23
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 193,
+          "column": 15
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 764,
+          "column": 16
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 781,
+          "column": 10
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 787,
+          "column": 21
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 788,
+          "column": 19
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.css",
+          "line": 4,
+          "column": 21
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "circular-deps"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "cfe6ee51e7d77a9b",
+      "subcategory": "circular-deps",
+      "name": "Circular Dependencies Detector",
+      "description": "Learns circular dependency patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/circular-deps",
+          "patternId": "structural/circular-deps/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.05,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.83,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 52,
+          "column": 91
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 81,
+          "column": 54
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9644
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9654
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9670
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "circular-deps"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "781cb92a5b3fa755",
+      "subcategory": "file-naming",
+      "name": "File Naming Detector",
+      "description": "Learns file naming convention patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/file-naming",
+          "patternId": "structural/file-naming/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 6,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot.yaml",
+          "line": 22,
+          "column": 5
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 25,
+          "column": 5
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 102,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 24,
+          "column": 37
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 3,
+          "column": 18
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 103,
+          "column": 82
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 116,
+          "column": 86
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 131,
+          "column": 88
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 62,
+          "column": 72
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 763,
+          "column": 26
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "file-naming"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "9d162ce4819faa53",
+      "subcategory": "co-location",
+      "name": "Co-Location Detector",
+      "description": "Learns co-location patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/co-location",
+          "patternId": "structural/co-location/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.29,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 7,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot.yaml",
+          "line": 28,
+          "column": 9
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 31,
+          "column": 9
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 34,
+          "column": 9
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 104,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 204,
+          "column": 10
+        },
+        {
+          "file": "css/admin.css",
+          "line": 284,
+          "column": 10
+        },
+        {
+          "file": "css/admin.css",
+          "line": 254,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 300,
+          "column": 7
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 45,
+          "column": 12
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 21,
+          "column": 7
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 1650
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 3719
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 4821
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 4972
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 11357
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 13713
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 1569
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 2636
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 9,
+          "column": 72
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 101,
+          "column": 8
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 233,
+          "column": 10
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 284,
+          "column": 8
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 292,
+          "column": 8
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 543,
+          "column": 10
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 627,
+          "column": 10
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 120,
+          "column": 5
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 179,
+          "column": 5
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.css",
+          "line": 20,
+          "column": 7
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "co-location"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "b99bfb437a0829e2",
+      "subcategory": "module-boundaries",
+      "name": "Module Boundaries Detector",
+      "description": "Learns module boundary patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/module-boundaries",
+          "patternId": "structural/module-boundaries/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot.yaml",
+          "line": 79,
+          "column": 9
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "module-boundaries"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "fb3987e0207ed968",
+      "subcategory": "directory-structure",
+      "name": "Directory Structure Detector",
+      "description": "Learns directory structure patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/directory-structure",
+          "patternId": "structural/directory-structure/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.09,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.8745454545454545,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 78
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2504
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3431
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8381
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8887
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12092
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17480
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21697
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23717
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "directory-structure"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "2596d748ee2d44d3",
+      "subcategory": "co-location",
+      "name": "Co-Location Detector",
+      "description": "Learns co-location patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/co-location",
+          "patternId": "structural/co-location/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.17,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.935,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 78
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 7894
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25613
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25740
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25765
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 12890
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 14430
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 14916
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15125
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25442
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1323
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1897
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 8533
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 8565
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6345
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20007
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21062
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "co-location"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "d4298c6f2347d76a",
+      "subcategory": "import-ordering",
+      "name": "Import Ordering Detector",
+      "description": "Learns import ordering patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/import-ordering",
+          "patternId": "structural/import-ordering/type_annotation"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.8999999999999999,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 128,
+          "column": 58
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "import-ordering"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "ec8e213335dd23d0",
+      "subcategory": "package-boundaries",
+      "name": "Package Boundaries Detector",
+      "description": "Learns package boundary patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/package-boundaries",
+          "patternId": "structural/package-boundaries/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 9,
+          "column": 51
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "package-boundaries"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "29a3e126470a84c4",
+      "subcategory": "directory-structure",
+      "name": "Directory Structure Detector",
+      "description": "Learns directory structure patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/directory-structure",
+          "patternId": "structural/directory-structure/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.12,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 28,
+          "column": 8
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 156,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 229,
+          "column": 8
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 229,
+          "column": 50
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 235,
+          "column": 5
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 235,
+          "column": 31
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 239,
+          "column": 7
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 239,
+          "column": 13
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 207,
+          "column": 86
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 191,
+          "column": 4
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom.js",
+          "line": 31,
+          "column": 17
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom.js",
+          "line": 31,
+          "column": 53
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "directory-structure"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "3690f52d17c949f2",
+      "subcategory": "directory-structure",
+      "name": "Directory Structure Detector",
+      "description": "Learns directory structure patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/directory-structure",
+          "patternId": "structural/directory-structure/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.13,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 31,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 31,
+          "column": 23
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 39,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 39,
+          "column": 37
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 53,
+          "column": 37
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 71,
+          "column": 26
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 155,
+          "column": 24
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 157,
+          "column": 34
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 157,
+          "column": 41
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 286,
+          "column": 11
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 286,
+          "column": 19
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 2
+        },
+        {
+          "file": "css/gutenberg-editor-access.css",
+          "line": 1,
+          "column": 81
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "directory-structure"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "ebc3b4ca827a5444",
+      "subcategory": "co-location",
+      "name": "Co-Location Detector",
+      "description": "Learns co-location patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/co-location",
+          "patternId": "structural/co-location/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.18,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 5,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 54,
+          "column": 16
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 58,
+          "column": 17
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 63,
+          "column": 17
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 74,
+          "column": 22
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 83,
+          "column": 22
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 156,
+          "column": 21
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 236,
+          "column": 37
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 538
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 659
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1096
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1671
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 288,
+          "column": 38
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 108,
+          "column": 35
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 372,
+          "column": 16
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 397,
+          "column": 20
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 460,
+          "column": 38
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 109,
+          "column": 15
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 204,
+          "column": 38
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "co-location"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "893824d7bd1b4839",
+      "subcategory": "barrel-exports",
+      "name": "Barrel Exports Detector",
+      "description": "Learns barrel export patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/barrel-exports",
+          "patternId": "structural/barrel-exports/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.18,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 5,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 54,
+          "column": 16
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 58,
+          "column": 17
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 63,
+          "column": 17
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 74,
+          "column": 22
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 83,
+          "column": 22
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 156,
+          "column": 21
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 236,
+          "column": 37
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 538
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 659
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1096
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1671
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 288,
+          "column": 38
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 108,
+          "column": 35
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 372,
+          "column": 16
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 397,
+          "column": 20
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 460,
+          "column": 38
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 109,
+          "column": 15
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 204,
+          "column": 38
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "barrel-exports"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "8647ffbe0e13c568",
+      "subcategory": "barrel-exports",
+      "name": "Barrel Exports Detector",
+      "description": "Learns barrel export patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/barrel-exports",
+          "patternId": "structural/barrel-exports/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.05,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 249,
+          "column": 18
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 252,
+          "column": 30
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 254,
+          "column": 28
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 21,
+          "column": 47
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 64,
+          "column": 47
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "barrel-exports"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "71b092cae6da574f",
+      "subcategory": "barrel-exports",
+      "name": "Barrel Exports Detector",
+      "description": "Learns barrel export patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/barrel-exports",
+          "patternId": "structural/barrel-exports/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.09,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 5,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "css/admin.css",
+          "line": 254,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 300,
+          "column": 7
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 21,
+          "column": 7
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 1569
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 2636
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 120,
+          "column": 5
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 179,
+          "column": 5
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.css",
+          "line": 20,
+          "column": 7
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "barrel-exports"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "840624e94055b9c2",
+      "subcategory": "import-ordering",
+      "name": "Import Ordering Detector",
+      "description": "Learns import ordering patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/import-ordering",
+          "patternId": "structural/import-ordering/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.931111111111111,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 189,
+          "column": 7
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 211,
+          "column": 17
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 51,
+          "column": 9
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 51,
+          "column": 26
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 52,
+          "column": 9
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 52,
+          "column": 25
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 84,
+          "column": 19
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 84,
+          "column": 31
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 85,
+          "column": 19
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 85,
+          "column": 31
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "import-ordering"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "93b2302d3b65ebcf",
+      "subcategory": "file-naming",
+      "name": "File Naming Detector",
+      "description": "Learns file naming convention patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/file-naming",
+          "patternId": "structural/file-naming/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.83,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20401
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "file-naming"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "11062ae229427b64",
+      "subcategory": "file-naming",
+      "name": "File Naming Detector",
+      "description": "Learns file naming convention patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/file-naming",
+          "patternId": "structural/file-naming/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.83,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21531
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "file-naming"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "fd39992ee888ac72",
+      "subcategory": "barrel-exports",
+      "name": "Barrel Exports Detector",
+      "description": "Learns barrel export patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/barrel-exports",
+          "patternId": "structural/barrel-exports/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6337
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6352
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20007
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21062
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "barrel-exports"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "7ee0200e3edf74c6",
+      "subcategory": "import-ordering",
+      "name": "Import Ordering Detector",
+      "description": "Learns import ordering patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/import-ordering",
+          "patternId": "structural/import-ordering/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.8533333333333333,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21771
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21971
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "import-ordering"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "aaf4811d2a5791f1",
+      "subcategory": "module-boundaries",
+      "name": "Module Boundaries Detector",
+      "description": "Learns module boundary patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/module-boundaries",
+          "patternId": "structural/module-boundaries/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6345
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "module-boundaries"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "5127e266418cd51e",
+      "subcategory": "file-naming",
+      "name": "File Naming Detector",
+      "description": "Learns file naming convention patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/file-naming",
+          "patternId": "structural/file-naming/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.05,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.8825,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 98,
+          "column": 25
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 207,
+          "column": 24
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 155,
+          "column": 40
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 121,
+          "column": 25
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 150,
+          "column": 66
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "file-naming"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "72f3000b7675554b",
+      "subcategory": "co-location",
+      "name": "Co-Location Detector",
+      "description": "Learns co-location patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/co-location",
+          "patternId": "structural/co-location/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.06,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.8825,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 29,
+          "column": 47
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 55,
+          "column": 66
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 68,
+          "column": 64
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 116,
+          "column": 18
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 121,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 126,
+          "column": 22
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "co-location"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "40cba254dce51045",
+      "subcategory": "co-location",
+      "name": "Co-Location Detector",
+      "description": "Learns co-location patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "structural/co-location",
+          "patternId": "structural/co-location/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.css",
+          "line": 1,
+          "column": 20
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "structural",
+          "co-location"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    }
+  ],
+  "lastUpdated": "2026-01-21T02:38:25.921Z",
+  "checksum": "f0fd3d072ce506a8"
+}

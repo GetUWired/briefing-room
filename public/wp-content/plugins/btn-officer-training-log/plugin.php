@@ -15,6 +15,7 @@ add_action( 'plugins_loaded', function() {
     \StellarWP\DB\DB::init();
 }, 0 );
 
+
 add_action('init', function() {
     include plugin_dir_path(__FILE__) . '/includes/shortcodes.php';
     include plugin_dir_path(__FILE__) . '/includes/functions.php';
@@ -56,19 +57,10 @@ add_action( 'wp_ajax_btn_search_officers', function() {
 
 add_action( 'wp_login', function( $user_login, \WP_User $user ) {
 
-    global $wpdb;
+    if ( ! empty($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], 'wp-login.php') === false ) {
+        return; // ignore non-standard login flows
+    }
 
-    $recent = $wpdb->get_var($wpdb->prepare(
-        "SELECT 1 FROM {$wpdb->prefix}btn_user_login
-         WHERE userId = %d AND loginAt > NOW() - INTERVAL 90 SECOND LIMIT 1",
-        $user->ID
-    ));
-    if ($recent) return;
-
-    // if ( ! empty($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], 'wp-login.php') === false ) {
-    //     return; // ignore non-standard login flows
-    // }
-    
     $targetRoles = [
         \BTN\BriefingRoom\Manager::ROLE,
         \BTN\BriefingRoom\Sergeant::ROLE,
@@ -82,6 +74,7 @@ add_action( 'wp_login', function( $user_login, \WP_User $user ) {
         ]);
     }
 }, 10, 2 );
+
 
 if(class_exists('WP_CLI')) {
     include plugin_dir_path(__FILE__) . '/includes/cli.php';
@@ -200,7 +193,6 @@ if(defined('YEAR_IN_SECONDS')){
 //if(defined('KINSTA_DEV_ENV') && KINSTA_DEV_ENV ) {
 //    add_filter( 'auth_cookie_expiration', fn() => 5 * MINUTE_IN_SECONDS );
 //}
-
 
 define('WP_INACTIVITY_TIMEOUT', 3600); // 1 hour
 

@@ -238,6 +238,7 @@ add_action('admin_post_log_training', function() {
 
     }
 
+    // Ensure students is an array
     if (!is_array($_REQUEST['students'])) {
         wp_die('No Students Selected');
     }

@@ -1,4 +1,3 @@
-db_backup.sql
+public/wp-config.php
 .vscode/sftp.json
-wp-config.php
-wp-content/uploads/
+.DS_Store

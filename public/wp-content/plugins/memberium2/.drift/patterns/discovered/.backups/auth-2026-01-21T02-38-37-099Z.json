@@ -1,0 +1,1888 @@
+{
+  "version": "1.0.0",
+  "category": "auth",
+  "patterns": [
+    {
+      "id": "a4f91563d7cea9ca",
+      "subcategory": "middleware",
+      "name": "Auth Middleware Detector",
+      "description": "Learns auth middleware patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/middleware",
+          "patternId": "auth/middleware/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.8825,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 34,
+          "column": 77
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "middleware"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "7ac2fd6782cd38f9",
+      "subcategory": "middleware",
+      "name": "Auth Middleware Detector",
+      "description": "Learns auth middleware patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/middleware",
+          "patternId": "auth/middleware/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 36,
+          "column": 69
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 4,
+          "column": 18
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 99,
+          "column": 10
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 75,
+          "column": 15
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.535Z",
+        "lastSeen": "2026-01-21T02:38:11.535Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "middleware"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "597c31b0baee327c",
+      "subcategory": "permission-checks",
+      "name": "Permission Checks Detector",
+      "description": "Learns permission check patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/permission-checks",
+          "patternId": "auth/permission-checks/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.13,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot.yaml",
+          "line": 55,
+          "column": 9
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 110,
+          "column": 9
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 127,
+          "column": 9
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 23,
+          "column": 25
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 66,
+          "column": 21
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 118,
+          "column": 11
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 118,
+          "column": 62
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 199,
+          "column": 51
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 199,
+          "column": 61
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 209,
+          "column": 10
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 209,
+          "column": 28
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 211,
+          "column": 50
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 211,
+          "column": 60
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "permission-checks"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "1f1cee3d1920a98e",
+      "subcategory": "middleware",
+      "name": "Auth Middleware Detector",
+      "description": "Learns auth middleware patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/middleware",
+          "patternId": "auth/middleware/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.17,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 82,
+          "column": 54
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 10767
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 28627
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 30027
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 30158
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 59299
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 60748
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 60896
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 61628
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 61644
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 63189
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 63533
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 72959
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 86693
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 86763
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 86827
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 86890
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "middleware"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "cb42025821d0e575",
+      "subcategory": "permission-checks",
+      "name": "Permission Checks Detector",
+      "description": "Learns permission check patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/permission-checks",
+          "patternId": "auth/permission-checks/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.18,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 9,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 49,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 49,
+          "column": 34
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 89,
+          "column": 21
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 106,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 105,
+          "column": 3
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 268,
+          "column": 19
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 190,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 132,
+          "column": 18
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 135,
+          "column": 17
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 69,
+          "column": 48
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 119,
+          "column": 15
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 197,
+          "column": 70
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 336,
+          "column": 17
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 79,
+          "column": 95
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 156,
+          "column": 74
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 822,
+          "column": 40
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 58,
+          "column": 6
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 74,
+          "column": 6
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "permission-checks"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "fe4578910d8de4a2",
+      "subcategory": "permission-checks",
+      "name": "Permission Checks Detector",
+      "description": "Learns permission check patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/permission-checks",
+          "patternId": "auth/permission-checks/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.87,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 88,
+          "column": 28
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "permission-checks"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "9a4b44937aca5cd2",
+      "subcategory": "permission-checks",
+      "name": "Permission Checks Detector",
+      "description": "Learns permission check patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/permission-checks",
+          "patternId": "auth/permission-checks/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.31,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 9,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 88,
+          "column": 15
+        },
+        {
+          "file": "css/admin.css",
+          "line": 2,
+          "column": 23
+        },
+        {
+          "file": "css/admin.css",
+          "line": 28,
+          "column": 19
+        },
+        {
+          "file": "css/admin.css",
+          "line": 28,
+          "column": 41
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 44,
+          "column": 44
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 54,
+          "column": 40
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 61,
+          "column": 46
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 68,
+          "column": 45
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 74,
+          "column": 57
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 91,
+          "column": 45
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 108,
+          "column": 41
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 117,
+          "column": 47
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 128,
+          "column": 56
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 139,
+          "column": 46
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 68,
+          "column": 21
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 68,
+          "column": 36
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 1,
+          "column": 19300
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 1,
+          "column": 19544
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17419
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 19604
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 58,
+          "column": 30
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 122,
+          "column": 18
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 128,
+          "column": 18
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 131,
+          "column": 18
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 134,
+          "column": 18
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 190,
+          "column": 45
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 198,
+          "column": 28
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 210,
+          "column": 10
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 210,
+          "column": 21
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 334,
+          "column": 44
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 15,
+          "column": 26
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "permission-checks"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "2a7b961e7227485b",
+      "subcategory": "rbac-patterns",
+      "name": "RBAC Patterns Detector",
+      "description": "Learns role-based access control patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/rbac-patterns",
+          "patternId": "auth/rbac-patterns/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.28,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 89,
+          "column": 55
+        },
+        {
+          "file": "css/admin.css",
+          "line": 75,
+          "column": 2
+        },
+        {
+          "file": "css/admin.css",
+          "line": 81,
+          "column": 2
+        },
+        {
+          "file": "css/admin.css",
+          "line": 287,
+          "column": 2
+        },
+        {
+          "file": "css/admin.css",
+          "line": 292,
+          "column": 2
+        },
+        {
+          "file": "css/admin.css",
+          "line": 297,
+          "column": 2
+        },
+        {
+          "file": "css/admin.css",
+          "line": 314,
+          "column": 2
+        },
+        {
+          "file": "css/admin.css",
+          "line": 326,
+          "column": 2
+        },
+        {
+          "file": "css/admin.css",
+          "line": 334,
+          "column": 2
+        },
+        {
+          "file": "css/admin.css",
+          "line": 335,
+          "column": 2
+        },
+        {
+          "file": "css/admin.css",
+          "line": 188,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 202,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 208,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 214,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 219,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 223,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 228,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 228,
+          "column": 41
+        },
+        {
+          "file": "css/admin.css",
+          "line": 238,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 244,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 244,
+          "column": 40
+        },
+        {
+          "file": "css/admin.css",
+          "line": 258,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 258,
+          "column": 46
+        },
+        {
+          "file": "css/admin.css",
+          "line": 280,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 280,
+          "column": 69
+        },
+        {
+          "file": "css/admin.css",
+          "line": 287,
+          "column": 21
+        },
+        {
+          "file": "css/admin.css",
+          "line": 292,
+          "column": 21
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 50,
+          "column": 23
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "rbac-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "e637da9282a9d427",
+      "subcategory": "ownership",
+      "name": "Resource Ownership Detector",
+      "description": "Learns resource ownership patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/ownership",
+          "patternId": "auth/ownership/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.8999999999999999,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 62,
+          "column": 57
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 180,
+          "column": 17
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "ownership"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "3e54a9482573283d",
+      "subcategory": "ownership",
+      "name": "Resource Ownership Detector",
+      "description": "Learns resource ownership patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/ownership",
+          "patternId": "auth/ownership/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.05,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.7,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 113,
+          "column": 47
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 118,
+          "column": 49
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 123,
+          "column": 40
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 128,
+          "column": 58
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 2,
+          "column": 113
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "ownership"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "981cfc6f49e0910e",
+      "subcategory": "audit",
+      "name": "Audit Logging Detector",
+      "description": "Learns audit logging patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/audit",
+          "patternId": "auth/audit/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.15,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 9,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 76,
+          "column": 5
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 14,
+          "column": 40
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 4,
+          "column": 59
+        },
+        {
+          "file": "js/cancellation-confirm.js",
+          "line": 5,
+          "column": 5
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 49,
+          "column": 51
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 54,
+          "column": 53
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 249,
+          "column": 13
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 253,
+          "column": 22
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 177,
+          "column": 49
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 421,
+          "column": 13
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 425,
+          "column": 22
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 227,
+          "column": 13
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 231,
+          "column": 22
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.css",
+          "line": 7,
+          "column": 7
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 83,
+          "column": 35
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.536Z",
+        "lastSeen": "2026-01-21T02:38:11.536Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "audit"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "2ffbf4deb7723ade",
+      "subcategory": "ownership",
+      "name": "Resource Ownership Detector",
+      "description": "Learns resource ownership patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/ownership",
+          "patternId": "auth/ownership/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 87,
+          "column": 75
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 91,
+          "column": 102
+        },
+        {
+          "file": "css/memb_coursegrid.css",
+          "line": 95,
+          "column": 75
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 32,
+          "column": 35
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "ownership"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "7521c91dabbbc5f5",
+      "subcategory": "middleware",
+      "name": "Auth Middleware Detector",
+      "description": "Learns auth middleware patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/middleware",
+          "patternId": "auth/middleware/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 2667
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 9989
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 11083
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 12711
+        },
+        {
+          "file": "css/wpal-select2.min.css",
+          "line": 1,
+          "column": 13246
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 181,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 494,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 537,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 596,
+          "column": 3
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 608,
+          "column": 3
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "middleware"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "5b6434b7d3af8f61",
+      "subcategory": "audit",
+      "name": "Audit Logging Detector",
+      "description": "Learns audit logging patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/audit",
+          "patternId": "auth/audit/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/admin-modal.js",
+          "line": 15,
+          "column": 19
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "audit"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "53688649baea25a2",
+      "subcategory": "rbac-patterns",
+      "name": "RBAC Patterns Detector",
+      "description": "Learns role-based access control patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/rbac-patterns",
+          "patternId": "auth/rbac-patterns/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7366666666666666,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/admin-settings.js",
+          "line": 6,
+          "column": 18
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "rbac-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "751372b35826fa86",
+      "subcategory": "rbac-patterns",
+      "name": "RBAC Patterns Detector",
+      "description": "Learns role-based access control patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/rbac-patterns",
+          "patternId": "auth/rbac-patterns/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7366666666666666,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/admin-settings.js",
+          "line": 48,
+          "column": 20
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "rbac-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "dabad59763f8346e",
+      "subcategory": "audit",
+      "name": "Audit Logging Detector",
+      "description": "Learns audit logging patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/audit",
+          "patternId": "auth/audit/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.11,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 4,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 134,
+          "column": 31
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 144,
+          "column": 34
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 252,
+          "column": 8
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 252,
+          "column": 20
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 252,
+          "column": 26
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 424,
+          "column": 8
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 424,
+          "column": 20
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 424,
+          "column": 26
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 230,
+          "column": 8
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 230,
+          "column": 20
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 230,
+          "column": 26
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "audit"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "8715644f378146f3",
+      "subcategory": "permission-checks",
+      "name": "Permission Checks Detector",
+      "description": "Learns permission check patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/permission-checks",
+          "patternId": "auth/permission-checks/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.2,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 5215
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 27526
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 5215
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 27526
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 3454
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 3515
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 3790
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 10214
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 10248
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 10286
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 10342
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 10623
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 10727
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 10825
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 10933
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 11521
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 11531
+        },
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 86705
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17112
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30846
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "permission-checks"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "6696e10a4cef14d3",
+      "subcategory": "ownership",
+      "name": "Resource Ownership Detector",
+      "description": "Learns resource ownership patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/ownership",
+          "patternId": "auth/ownership/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/gutenberg-editor-access.js",
+          "line": 1,
+          "column": 12895
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "ownership"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "7416d4421f20087e",
+      "subcategory": "middleware",
+      "name": "Auth Middleware Detector",
+      "description": "Learns auth middleware patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/middleware",
+          "patternId": "auth/middleware/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.07,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 1,
+          "column": 7640
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2745
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3175
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6338
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 13328
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 13819
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 108,
+          "column": 40
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "middleware"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "24d7c25beff24d4e",
+      "subcategory": "audit",
+      "name": "Audit Logging Detector",
+      "description": "Learns audit logging patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/audit",
+          "patternId": "auth/audit/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.9063636363636364,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 1,
+          "column": 23713
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 1,
+          "column": 24028
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "audit"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "d4f2eb3a290c6e1e",
+      "subcategory": "audit",
+      "name": "Audit Logging Detector",
+      "description": "Learns audit logging patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/audit",
+          "patternId": "auth/audit/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.09,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.9063636363636364,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 17465
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6410
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6469
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 7434
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 7452
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 7799
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 7838
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 7863
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 7888
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.537Z",
+        "lastSeen": "2026-01-21T02:38:11.537Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "audit"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "da1df3f8cb5e93b1",
+      "subcategory": "audit",
+      "name": "Audit Logging Detector",
+      "description": "Learns audit logging patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/audit",
+          "patternId": "auth/audit/function_definition"
+        }
+      },
+      "confidence": {
+        "frequency": 0.03,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.945,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 251,
+          "column": 38
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 423,
+          "column": 37
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 229,
+          "column": 37
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "audit"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "9e91c727b3640f35",
+      "subcategory": "audit",
+      "name": "Audit Logging Detector",
+      "description": "Learns audit logging patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "auth/audit",
+          "patternId": "auth/audit/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.03,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 823,
+          "column": 13
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 46,
+          "column": 9
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 46,
+          "column": 24
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:38:11.538Z",
+        "lastSeen": "2026-01-21T02:38:11.538Z",
+        "source": "auto-detected",
+        "tags": [
+          "auth",
+          "audit"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    }
+  ],
+  "lastUpdated": "2026-01-21T02:38:25.929Z",
+  "checksum": "ea794222b48de5d1"
+}

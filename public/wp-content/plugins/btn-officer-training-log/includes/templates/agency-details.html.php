@@ -271,7 +271,7 @@ MANAGERS
             {"id": "email", "label": "Email"},
             {"id": "actions", "label": "Actions"}
         ]'
-        data-rows='<?php echo json_encode($managerData, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP); ?>'
+        data-rows='<?php echo json_encode($managerData, JSON_HEX_APOS); ?>'
     ></list-table>
 
     <?php foreach($managerData as $manager): ?>
@@ -347,7 +347,7 @@ MANAGERS
             {"id": "officers","label": "Students"},
             {"id": "actions", "label": "Actions"}
         ]'
-        data-rows='<?php echo json_encode($stationData, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP); ?>'
+        data-rows='<?php echo json_encode($stationData, JSON_HEX_APOS); ?>'
     ></list-table>
 
     <footer style="margin-top: 10px; display: flex; justify-content: space-between;">
@@ -528,7 +528,7 @@ MANAGERS
             {"id": "station", "label": "Station"},
             {"id": "actions", "label": "Actions"}
         ]'
-        data-rows='<?php echo json_encode($officerData, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP); ?>'
+        data-rows='<?php echo json_encode($officerData, JSON_HEX_APOS); ?>'
     ></list-table>
 
     <footer style="margin-top: 10px; display: flex; justify-content: space-between;">
@@ -553,7 +553,7 @@ MANAGERS
                 ['id' => 'lieutenant', 'name' => 'Lieutenant'],
                 ['id' => 'captain', 'name' => 'Captain'],
                 ['id' => 'chief', 'name' => 'Chief']
-            ],  JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP)?>, "value": "<?php echo $officer['rank']; ?>"},
+            ], JSON_HEX_APOS)?>, "value": "<?php echo $officer['rank']; ?>"},
         {"id": "stationId","label": "Station", "options": <?php echo Station::where('agencyId', $agency->id)->toJSON(); ?>, "value": "<?php echo $officer['stationId']; ?>"},
         {"id": "badgeId","label": "Badge ID","value": "<?php echo $officer['badgeId']; ?>"},
         {"id": "stateId","label": "State ID","value": "<?php echo $officer['stateId']; ?>"},
@@ -562,7 +562,7 @@ MANAGERS
                 ['id' => 'student', 'name' => 'Student'],
                 ['id' => 'facilitator', 'name' => 'Facilitator'],
                 ['id' => 'manager', 'name' => 'Manager']
-            ],  JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP)?>}
+            ], JSON_HEX_APOS)?>}
     ]'
             data-redirect="<?php echo admin_url('admin.php?page=briefing-room.php&agency_id=' . $agency->id); ?>"
         >

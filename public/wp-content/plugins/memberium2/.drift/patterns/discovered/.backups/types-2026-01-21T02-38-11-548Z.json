@@ -1,0 +1,6508 @@
+{
+  "version": "1.0.0",
+  "category": "types",
+  "patterns": [
+    {
+      "id": "4f2a0732f4e3fd42",
+      "subcategory": "file-location",
+      "name": "File Location Detector",
+      "description": "Learns type file location patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/file-location",
+          "patternId": "types/file-location/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.19,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 60,
+          "column": 7
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 78
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 46,
+          "column": 18
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 78
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4477
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4519
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4581
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9088
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10576
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 19975
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25786
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2858
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6247
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6330
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6484
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 7569
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9087
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9185
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "file-location"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "455e9082e3df8eaa",
+      "subcategory": "file-location",
+      "name": "File Location Detector",
+      "description": "Learns type file location patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/file-location",
+          "patternId": "types/file-location/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.09,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 7,
+        "score": 0.7,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 69,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 97,
+          "column": 23
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 76,
+          "column": 24
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 85,
+          "column": 24
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 11,
+          "column": 5
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 103,
+          "column": 75
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 259,
+          "column": 43
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 431,
+          "column": 43
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 175,
+          "column": 43
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "file-location"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "eb89bca660d35aeb",
+      "subcategory": "naming-conventions",
+      "name": "Naming Conventions Detector",
+      "description": "Learns type naming convention patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/naming-conventions",
+          "patternId": "types/naming-conventions/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.78,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 60,
+          "column": 7
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 78
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 46,
+          "column": 18
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4477
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4519
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4581
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9088
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10576
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 19975
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25786
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2858
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6247
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6330
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6484
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 7569
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9087
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9185
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2412
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4039
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6594
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8440
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8667
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 11947
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 15018
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21652
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21747
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21791
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21812
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21892
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21928
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22028
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22052
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22100
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22124
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22172
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22211
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22297
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22360
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22393
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22455
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22503
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22545
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22586
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22637
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 22963
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23481
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23507
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23529
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23599
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23646
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23705
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23890
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24032
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24089
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24153
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24213
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24316
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24374
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24473
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 24529
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25409
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28935
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28995
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 29838
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30403
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30742
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 31066
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 213
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 307
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 955
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1041
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1208
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1532
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1617
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1783
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 3489
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 5071
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "naming-conventions"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "cf0f3a436e7509eb",
+      "subcategory": "naming-conventions",
+      "name": "Naming Conventions Detector",
+      "description": "Learns type naming convention patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/naming-conventions",
+          "patternId": "types/naming-conventions/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.32,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 9,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 69,
+          "column": 3
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 55,
+          "column": 50
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 56,
+          "column": 71
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 49,
+          "column": 34
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 97,
+          "column": 23
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 69,
+          "column": 40
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 91,
+          "column": 14
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 9,
+          "column": 76
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 10,
+          "column": 56
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 76,
+          "column": 24
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 85,
+          "column": 24
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 11,
+          "column": 5
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 103,
+          "column": 75
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 259,
+          "column": 43
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 98,
+          "column": 18
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 99,
+          "column": 26
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 99,
+          "column": 46
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 102,
+          "column": 18
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 120,
+          "column": 19
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 120,
+          "column": 43
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 207,
+          "column": 17
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 207,
+          "column": 47
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 431,
+          "column": 43
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 214,
+          "column": 26
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 214,
+          "column": 46
+        },
+        {
+          "file": "modules/divi/select2_divi.css",
+          "line": 11,
+          "column": 8
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 175,
+          "column": 43
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 121,
+          "column": 18
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 122,
+          "column": 23
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 123,
+          "column": 26
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 123,
+          "column": 46
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 125,
+          "column": 18
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "naming-conventions"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "97697b9d233c9c63",
+      "subcategory": "interface-vs-type",
+      "name": "Interface vs Type Detector",
+      "description": "Learns interface vs type usage patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/interface-vs-type",
+          "patternId": "types/interface-vs-type/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.18,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 60,
+          "column": 7
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 78
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 46,
+          "column": 18
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4477
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4519
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4581
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9088
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 10576
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 19975
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 25786
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2858
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6247
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6330
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 6484
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 7569
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9087
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9185
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "interface-vs-type"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "4f13767127cc4d2e",
+      "subcategory": "interface-vs-type",
+      "name": "Interface vs Type Detector",
+      "description": "Learns interface vs type usage patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/interface-vs-type",
+          "patternId": "types/interface-vs-type/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.09,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 7,
+        "score": 0.6824999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 69,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 97,
+          "column": 23
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 76,
+          "column": 24
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 85,
+          "column": 24
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 11,
+          "column": 5
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 103,
+          "column": 75
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 259,
+          "column": 43
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 431,
+          "column": 43
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 175,
+          "column": 43
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "interface-vs-type"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "49219499d08fdf98",
+      "subcategory": "generic-patterns",
+      "name": "Generic Patterns Detector",
+      "description": "Learns generic type patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/generic-patterns",
+          "patternId": "types/generic-patterns/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 22,
+        "score": 0.7116666666666667,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 8,
+          "column": 4
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 14,
+          "column": 3
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 15,
+          "column": 62
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 18,
+          "column": 55
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 30,
+          "column": 49
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 30,
+          "column": 53
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 36,
+          "column": 39
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 55,
+          "column": 27
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 55,
+          "column": 38
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 56,
+          "column": 40
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 56,
+          "column": 53
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 69,
+          "column": 3
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 70,
+          "column": 27
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 91,
+          "column": 19
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 98,
+          "column": 17
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 98,
+          "column": 39
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 100,
+          "column": 34
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 32,
+          "column": 43
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 56,
+          "column": 24
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 68,
+          "column": 3
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 69,
+          "column": 58
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 86,
+          "column": 42
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 6,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 6,
+          "column": 74
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 23,
+          "column": 34
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 50,
+          "column": 25
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 51,
+          "column": 34
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 71,
+          "column": 27
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 77,
+          "column": 30
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 78,
+          "column": 25
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 83,
+          "column": 16
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 90,
+          "column": 19
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 91,
+          "column": 19
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 94,
+          "column": 43
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 107,
+          "column": 28
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 117,
+          "column": 23
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 121,
+          "column": 33
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 125,
+          "column": 26
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 134,
+          "column": 24
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 135,
+          "column": 32
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 136,
+          "column": 36
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 138,
+          "column": 20
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 139,
+          "column": 18
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 140,
+          "column": 26
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 56,
+          "column": 13
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 111,
+          "column": 16
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 4,
+          "column": 39
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 10,
+          "column": 18
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 10,
+          "column": 45
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 11,
+          "column": 12
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 12,
+          "column": 19
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 32,
+          "column": 33
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 83,
+          "column": 21
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 102,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 103,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 136,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 137,
+          "column": 40
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 4,
+          "column": 15
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 4,
+          "column": 60
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 39,
+          "column": 40
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 103,
+          "column": 25
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 137,
+          "column": 20
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 25,
+          "column": 13
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 41,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 62,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 105,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 135,
+          "column": 50
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 59,
+          "column": 22
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 76,
+          "column": 24
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 85,
+          "column": 24
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 118,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 138,
+          "column": 18
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 138,
+          "column": 46
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 140,
+          "column": 36
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 140,
+          "column": 46
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 140,
+          "column": 49
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 170,
+          "column": 31
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 171,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 174,
+          "column": 16
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 174,
+          "column": 44
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 179,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 179,
+          "column": 44
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 183,
+          "column": 34
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 183,
+          "column": 43
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 195,
+          "column": 29
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 196,
+          "column": 43
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 198,
+          "column": 31
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 206,
+          "column": 13
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 226,
+          "column": 40
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 2,
+          "column": 11
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 28,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 29,
+          "column": 45
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 31,
+          "column": 12
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 32,
+          "column": 13
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 37,
+          "column": 17
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 38,
+          "column": 17
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "generic-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "d03ed7c9275e2376",
+      "subcategory": "generic-patterns",
+      "name": "Generic Patterns Detector",
+      "description": "Learns generic type patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/generic-patterns",
+          "patternId": "types/generic-patterns/import"
+        }
+      },
+      "confidence": {
+        "frequency": 1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 7,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 45,
+          "column": 29
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 62,
+          "column": 9
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 63,
+          "column": 9
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 40,
+          "column": 67
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 52,
+          "column": 44
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 78,
+          "column": 39
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 81,
+          "column": 75
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 46,
+          "column": 18
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 87,
+          "column": 62
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 40,
+          "column": 45
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 45,
+          "column": 29
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 46,
+          "column": 42
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 46,
+          "column": 59
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 46,
+          "column": 73
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 47,
+          "column": 30
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 70,
+          "column": 40
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 268,
+          "column": 34
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 35
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 195
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 231
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 252
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 266
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 325
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 333
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 439
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 453
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 477
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 619
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 677
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 682
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 825
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 878
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 937
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 944
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 995
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1158
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1272
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1325
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1339
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1353
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1372
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1457
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1467
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1475
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1495
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1671
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1678
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1741
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1755
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1793
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1826
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1840
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1921
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1966
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2097
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2121
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2195
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2215
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2224
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2231
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2236
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2279
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2308
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2330
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2407
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2606
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2616
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2632
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2716
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2787
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2817
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2832
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2876
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2967
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2996
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3003
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3067
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3116
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3190
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3227
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3270
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3306
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3480
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3497
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3538
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3572
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3592
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3654
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3774
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3782
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3833
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 3985
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4157
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4201
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4222
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4284
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4357
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4368
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4397
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "generic-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "800bf80ab1f46e95",
+      "subcategory": "generic-patterns",
+      "name": "Generic Patterns Detector",
+      "description": "Learns generic type patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/generic-patterns",
+          "patternId": "types/generic-patterns/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 17,
+        "score": 0.9116666666666666,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 46,
+          "column": 3
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 46,
+          "column": 60
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 90,
+          "column": 75
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 31,
+          "column": 16
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 37,
+          "column": 20
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 74,
+          "column": 27
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 107,
+          "column": 3
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 88,
+          "column": 15
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 49,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 74,
+          "column": 30
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 79,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 83,
+          "column": 30
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 98,
+          "column": 23
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 130,
+          "column": 23
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 139,
+          "column": 26
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 139,
+          "column": 34
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 139,
+          "column": 44
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 139,
+          "column": 47
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 173,
+          "column": 7
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 173,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 176,
+          "column": 13
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 176,
+          "column": 22
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 176,
+          "column": 44
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 190,
+          "column": 16
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 190,
+          "column": 21
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 194,
+          "column": 51
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 236,
+          "column": 45
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 54,
+          "column": 10
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 58,
+          "column": 11
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 63,
+          "column": 11
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 79,
+          "column": 19
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 98,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 130,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 130,
+          "column": 33
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 139,
+          "column": 23
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 157,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 157,
+          "column": 31
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 176,
+          "column": 41
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 194,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 236,
+          "column": 25
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 290,
+          "column": 12
+        },
+        {
+          "file": "css/admin.css",
+          "line": 50,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 59,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 64,
+          "column": 13
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 2,
+          "column": 17
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 8,
+          "column": 18
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 8,
+          "column": 33
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 13,
+          "column": 49
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 15,
+          "column": 25
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 3,
+          "column": 9
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 8,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 14,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 20,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 20,
+          "column": 20
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 30,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 30,
+          "column": 20
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 42,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 48,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 54,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 54,
+          "column": 20
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 60,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 70,
+          "column": 13
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 19,
+          "column": 13
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 19,
+          "column": 15
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 22,
+          "column": 19
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 22,
+          "column": 21
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 25,
+          "column": 18
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 25,
+          "column": 20
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 25,
+          "column": 30
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 124,
+          "column": 17
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 124,
+          "column": 24
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 155,
+          "column": 9
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 157,
+          "column": 10
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 161,
+          "column": 13
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 161,
+          "column": 27
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 154,
+          "column": 8
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 12,
+          "column": 30
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 14,
+          "column": 9
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 14,
+          "column": 17
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 22,
+          "column": 21
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 65,
+          "column": 17
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 35,
+          "column": 30
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 58,
+          "column": 5
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 58,
+          "column": 25
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 31,
+          "column": 17
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 43,
+          "column": 22
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 74,
+          "column": 9
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 74,
+          "column": 30
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 74,
+          "column": 67
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 114,
+          "column": 19
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 121,
+          "column": 11
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 124,
+          "column": 31
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 124,
+          "column": 37
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 129,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 188,
+          "column": 5
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 196,
+          "column": 10
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 196,
+          "column": 28
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 321,
+          "column": 8
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 323,
+          "column": 9
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 327,
+          "column": 12
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "generic-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "33e4f782f852899e",
+      "subcategory": "generic-patterns",
+      "name": "Generic Patterns Detector",
+      "description": "Learns generic type patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/generic-patterns",
+          "patternId": "types/generic-patterns/class_definition"
+        }
+      },
+      "confidence": {
+        "frequency": 0.03,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 60,
+          "column": 7
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 35,
+          "column": 78
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "generic-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "83a812300a6649b2",
+      "subcategory": "utility-types",
+      "name": "Utility Types Detector",
+      "description": "Learns utility type patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/utility-types",
+          "patternId": "types/utility-types/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 34,
+          "column": 45
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 42,
+          "column": 20
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "utility-types"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "c90b498df1a963f6",
+      "subcategory": "utility-types",
+      "name": "Utility Types Detector",
+      "description": "Learns utility type patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/utility-types",
+          "patternId": "types/utility-types/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 35,
+          "column": 65
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 11,
+          "column": 22
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 69,
+          "column": 19
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 44,
+          "column": 23
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "utility-types"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "451361a5d6116bc3",
+      "subcategory": "utility-types",
+      "name": "Utility Types Detector",
+      "description": "Learns utility type patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/utility-types",
+          "patternId": "types/utility-types/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 52,
+          "column": 91
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 81,
+          "column": 54
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "utility-types"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "df45fc43cdf3cd2f",
+      "subcategory": "type-assertions",
+      "name": "Type Assertions Detector",
+      "description": "Learns type assertion patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/type-assertions",
+          "patternId": "types/type-assertions/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.28,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 5,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 34,
+          "column": 19
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 35,
+          "column": 19
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 3,
+          "column": 14
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 7,
+          "column": 17
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 14,
+          "column": 14
+        },
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 35,
+          "column": 51
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 6,
+          "column": 20
+        },
+        {
+          "file": "css/admin.css",
+          "line": 188,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 197,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 197,
+          "column": 34
+        },
+        {
+          "file": "css/admin.css",
+          "line": 202,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 208,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 214,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 219,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 223,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 228,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 228,
+          "column": 35
+        },
+        {
+          "file": "css/admin.css",
+          "line": 238,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 244,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 244,
+          "column": 34
+        },
+        {
+          "file": "css/admin.css",
+          "line": 258,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 258,
+          "column": 40
+        },
+        {
+          "file": "css/admin.css",
+          "line": 280,
+          "column": 7
+        },
+        {
+          "file": "css/admin.css",
+          "line": 280,
+          "column": 34
+        },
+        {
+          "file": "css/admin.css",
+          "line": 280,
+          "column": 63
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 9,
+          "column": 16
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 152,
+          "column": 12
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "type-assertions"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "9dad51875f0c3b0d",
+      "subcategory": "type-assertions",
+      "name": "Type Assertions Detector",
+      "description": "Learns type assertion patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/type-assertions",
+          "patternId": "types/type-assertions/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.33,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 81,
+          "column": 51
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 398
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1006
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1022
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1644
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1774
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 2070
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4109
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4386
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5029
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9439
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 9806
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 20118
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 21826
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 23462
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28181
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 28463
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 29025
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 29869
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 29938
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30008
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 30056
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 31340
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 994
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1249
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1570
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 1823
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2213
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2285
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2655
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2970
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 3032
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 9422
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "type-assertions"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "88f82a5b951bb9ba",
+      "subcategory": "type-assertions",
+      "name": "Type Assertions Detector",
+      "description": "Learns type assertion patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/type-assertions",
+          "patternId": "types/type-assertions/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 5,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "line": 90,
+          "column": 81
+        },
+        {
+          "file": "js/admin-modal.js",
+          "line": 8,
+          "column": 50
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 74,
+          "column": 26
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 105,
+          "column": 18
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 111,
+          "column": 8
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 135,
+          "column": 14
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 266,
+          "column": 49
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 58,
+          "column": 20
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 74,
+          "column": 20
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 162,
+          "column": 12
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "type-assertions"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "d75367185d200b5e",
+      "subcategory": "file-location",
+      "name": "File Location Detector",
+      "description": "Learns type file location patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/file-location",
+          "patternId": "types/file-location/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.28,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 7,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot.yaml",
+          "line": 86,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 92,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 234,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 240,
+          "column": 7
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 240,
+          "column": 14
+        },
+        {
+          "file": "css/admin.css",
+          "line": 6,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 28,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 34,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 50,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 54,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 58,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 59,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 64,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 132,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 147,
+          "column": 42
+        },
+        {
+          "file": "css/admin.css",
+          "line": 152,
+          "column": 42
+        },
+        {
+          "file": "css/admin.css",
+          "line": 197,
+          "column": 40
+        },
+        {
+          "file": "css/admin.css",
+          "line": 280,
+          "column": 40
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 191,
+          "column": 17
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 87,
+          "column": 13
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 1,
+          "column": 51
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 22,
+          "column": 16
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 34,
+          "column": 52
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 41,
+          "column": 16
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 141,
+          "column": 9
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 142,
+          "column": 9
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 143,
+          "column": 9
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 191,
+          "column": 31
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "file-location"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "9616187e47bda6a6",
+      "subcategory": "naming-conventions",
+      "name": "Naming Conventions Detector",
+      "description": "Learns type naming convention patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/naming-conventions",
+          "patternId": "types/naming-conventions/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.34,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 10,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot.yaml",
+          "line": 86,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 92,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 234,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 240,
+          "column": 7
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 240,
+          "column": 14
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 103,
+          "column": 10
+        },
+        {
+          "file": "css/admin.css",
+          "line": 6,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 28,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 34,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 50,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 54,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 58,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 59,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 64,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 132,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 147,
+          "column": 42
+        },
+        {
+          "file": "css/admin.css",
+          "line": 152,
+          "column": 42
+        },
+        {
+          "file": "css/admin.css",
+          "line": 197,
+          "column": 40
+        },
+        {
+          "file": "css/admin.css",
+          "line": 280,
+          "column": 40
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 16,
+          "column": 5
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 191,
+          "column": 17
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 87,
+          "column": 13
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 1,
+          "column": 51
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 22,
+          "column": 16
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 34,
+          "column": 52
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 41,
+          "column": 16
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 141,
+          "column": 9
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 142,
+          "column": 9
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 143,
+          "column": 9
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 97,
+          "column": 8
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 206,
+          "column": 9
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 191,
+          "column": 31
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 212,
+          "column": 8
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 120,
+          "column": 8
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "naming-conventions"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "e40ffaa75b1667df",
+      "subcategory": "interface-vs-type",
+      "name": "Interface vs Type Detector",
+      "description": "Learns interface vs type usage patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/interface-vs-type",
+          "patternId": "types/interface-vs-type/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.28,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 7,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot.yaml",
+          "line": 86,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 92,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 234,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 240,
+          "column": 7
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 240,
+          "column": 14
+        },
+        {
+          "file": "css/admin.css",
+          "line": 6,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 28,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 34,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 50,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 54,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 58,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 59,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 64,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 132,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 147,
+          "column": 42
+        },
+        {
+          "file": "css/admin.css",
+          "line": 152,
+          "column": 42
+        },
+        {
+          "file": "css/admin.css",
+          "line": 197,
+          "column": 40
+        },
+        {
+          "file": "css/admin.css",
+          "line": 280,
+          "column": 40
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 191,
+          "column": 17
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 87,
+          "column": 13
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 1,
+          "column": 51
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 22,
+          "column": 16
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 34,
+          "column": 52
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 41,
+          "column": 16
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 141,
+          "column": 9
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 142,
+          "column": 9
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 143,
+          "column": 9
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 191,
+          "column": 31
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "interface-vs-type"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "ac430b40d7d0d45b",
+      "subcategory": "generic-patterns",
+      "name": "Generic Patterns Detector",
+      "description": "Learns generic type patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/generic-patterns",
+          "patternId": "types/generic-patterns/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 1,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 23,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": ".github/copilot.yaml",
+          "line": 8,
+          "column": 5
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 85,
+          "column": 5
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 86,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 92,
+          "column": 9
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 92,
+          "column": 32
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 137,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 32,
+          "column": 7
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 77,
+          "column": 9
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 90,
+          "column": 9
+        },
+        {
+          "file": ".github/copilot.yaml",
+          "line": 108,
+          "column": 7
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 8,
+          "column": 37
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 116,
+          "column": 14
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 118,
+          "column": 2
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 121,
+          "column": 14
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 32,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 32,
+          "column": 24
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 40,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 40,
+          "column": 27
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 41,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 42,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 44,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 44,
+          "column": 43
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 114,
+          "column": 22
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 131,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 131,
+          "column": 36
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 137,
+          "column": 21
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 172,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 172,
+          "column": 31
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 175,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 175,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 175,
+          "column": 30
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 178,
+          "column": 21
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 200,
+          "column": 5
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 200,
+          "column": 12
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 211,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 211,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 234,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 240,
+          "column": 7
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 240,
+          "column": 14
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 284,
+          "column": 11
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 284,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 30,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 30,
+          "column": 33
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 45,
+          "column": 17
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 45,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 50,
+          "column": 18
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 50,
+          "column": 21
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 53,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 53,
+          "column": 10
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 53,
+          "column": 30
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 68,
+          "column": 7
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 68,
+          "column": 15
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 70,
+          "column": 7
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 70,
+          "column": 15
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 80,
+          "column": 18
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 80,
+          "column": 21
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 100,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 100,
+          "column": 28
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 100,
+          "column": 31
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 154,
+          "column": 5
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 154,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 155,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 155,
+          "column": 14
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 171,
+          "column": 3
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 171,
+          "column": 7
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 171,
+          "column": 32
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 198,
+          "column": 5
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 198,
+          "column": 28
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 199,
+          "column": 5
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 199,
+          "column": 17
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 231,
+          "column": 4
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 231,
+          "column": 21
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 263,
+          "column": 22
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 263,
+          "column": 27
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 263,
+          "column": 32
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 263,
+          "column": 37
+        },
+        {
+          "file": "css/admin.css",
+          "line": 6,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 28,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 34,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 54,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 58,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 61,
+          "column": 5
+        },
+        {
+          "file": "css/admin.css",
+          "line": 61,
+          "column": 10
+        },
+        {
+          "file": "css/admin.css",
+          "line": 132,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 147,
+          "column": 42
+        },
+        {
+          "file": "css/admin.css",
+          "line": 152,
+          "column": 42
+        },
+        {
+          "file": "css/admin.css",
+          "line": 162,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 197,
+          "column": 40
+        },
+        {
+          "file": "css/admin.css",
+          "line": 235,
+          "column": 12
+        },
+        {
+          "file": "css/admin.css",
+          "line": 258,
+          "column": 20
+        },
+        {
+          "file": "css/admin.css",
+          "line": 258,
+          "column": 53
+        },
+        {
+          "file": "css/admin.css",
+          "line": 280,
+          "column": 40
+        },
+        {
+          "file": "css/admin.css",
+          "line": 280,
+          "column": 46
+        },
+        {
+          "file": "css/admin.css",
+          "line": 301,
+          "column": 13
+        },
+        {
+          "file": "css/admin.css",
+          "line": 303,
+          "column": 5
+        },
+        {
+          "file": "css/admin.css",
+          "line": 245,
+          "column": 5
+        },
+        {
+          "file": "css/admin.css",
+          "line": 259,
+          "column": 5
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "generic-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "43354fec75d2ccf8",
+      "subcategory": "generic-patterns",
+      "name": "Generic Patterns Detector",
+      "description": "Learns generic type patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/generic-patterns",
+          "patternId": "types/generic-patterns/type_annotation"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7990697674418604,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 123,
+          "column": 50
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "generic-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "e775e063979513ab",
+      "subcategory": "generic-patterns",
+      "name": "Generic Patterns Detector",
+      "description": "Learns generic type patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/generic-patterns",
+          "patternId": "types/generic-patterns/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.94,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 10,
+        "score": 0.8634782608695653,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 136,
+          "column": 42
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 210,
+          "column": 14
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 29,
+          "column": 11
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 97,
+          "column": 10
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 129,
+          "column": 10
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 138,
+          "column": 13
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 153,
+          "column": 11
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 174,
+          "column": 11
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 159,
+          "column": 18
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 159,
+          "column": 29
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 159,
+          "column": 46
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 159,
+          "column": 49
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 195,
+          "column": 4
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 81,
+          "column": 9
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 81,
+          "column": 53
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 85,
+          "column": 19
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 95,
+          "column": 45
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 112,
+          "column": 16
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 112,
+          "column": 29
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 189,
+          "column": 33
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 207,
+          "column": 17
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 211,
+          "column": 38
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 219,
+          "column": 51
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 39,
+          "column": 79
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 79,
+          "column": 78
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 204,
+          "column": 87
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 167,
+          "column": 65
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 168,
+          "column": 64
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 197,
+          "column": 4
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 197,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 205,
+          "column": 20
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 206,
+          "column": 19
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 13,
+          "column": 13
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 20,
+          "column": 13
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 20,
+          "column": 70
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 28,
+          "column": 13
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 28,
+          "column": 79
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 29,
+          "column": 13
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 29,
+          "column": 81
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 30,
+          "column": 13
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 30,
+          "column": 83
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 31,
+          "column": 13
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 31,
+          "column": 85
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 32,
+          "column": 13
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 32,
+          "column": 75
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 43,
+          "column": 53
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 44,
+          "column": 48
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 61,
+          "column": 9
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 61,
+          "column": 73
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 69,
+          "column": 57
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 75,
+          "column": 9
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 75,
+          "column": 83
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 76,
+          "column": 9
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 76,
+          "column": 74
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 77,
+          "column": 9
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 77,
+          "column": 79
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 78,
+          "column": 9
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 78,
+          "column": 81
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 79,
+          "column": 9
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 79,
+          "column": 83
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 80,
+          "column": 9
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 80,
+          "column": 77
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 81,
+          "column": 9
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 81,
+          "column": 67
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 26,
+          "column": 35
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 16,
+          "column": 13
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 16,
+          "column": 35
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 16,
+          "column": 50
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 17,
+          "column": 21
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 23,
+          "column": 24
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 23,
+          "column": 36
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 23,
+          "column": 52
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 26,
+          "column": 21
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 286,
+          "column": 19
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 286,
+          "column": 30
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 96,
+          "column": 10
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 122,
+          "column": 15
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 194,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 205,
+          "column": 11
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 458,
+          "column": 19
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 458,
+          "column": 30
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 159,
+          "column": 12
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 211,
+          "column": 10
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 339,
+          "column": 11
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 153,
+          "column": 40
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 153,
+          "column": 50
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 163,
+          "column": 10
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 163,
+          "column": 35
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 163,
+          "column": 45
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 202,
+          "column": 19
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 202,
+          "column": 30
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 119,
+          "column": 10
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 142,
+          "column": 13
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 147,
+          "column": 15
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "generic-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "52be4ec780a63471",
+      "subcategory": "any-usage",
+      "name": "Any Usage Detector",
+      "description": "Learns any/unknown/never/void usage patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/any-usage",
+          "patternId": "types/any-usage/unknown"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.77,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "AGENTS.md",
+          "line": 39,
+          "column": 5
+        },
+        {
+          "file": "AGENTS.md",
+          "line": 137,
+          "column": 3
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.881Z",
+        "lastSeen": "2026-01-21T02:37:36.881Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "any-usage"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "e9e3d104f5c7aa5b",
+      "subcategory": "file-location",
+      "name": "File Location Detector",
+      "description": "Learns type file location patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/file-location",
+          "patternId": "types/file-location/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.23,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 6,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 32,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 32,
+          "column": 24
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 40,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 40,
+          "column": 27
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 98,
+          "column": 23
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 130,
+          "column": 23
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 171,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 198,
+          "column": 31
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 284,
+          "column": 11
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 14,
+          "column": 5
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 14,
+          "column": 40
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 19,
+          "column": 15
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 22,
+          "column": 21
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 25,
+          "column": 20
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 35,
+          "column": 30
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 31,
+          "column": 17
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 43,
+          "column": 22
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 102,
+          "column": 9
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 102,
+          "column": 25
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 114,
+          "column": 19
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 227,
+          "column": 19
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 125,
+          "column": 9
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 125,
+          "column": 25
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.882Z",
+        "lastSeen": "2026-01-21T02:37:36.882Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "file-location"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "40d79365544a95b9",
+      "subcategory": "file-location",
+      "name": "File Location Detector",
+      "description": "Learns type file location patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/file-location",
+          "patternId": "types/file-location/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.19,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 6,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 49,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 74,
+          "column": 30
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 79,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 83,
+          "column": 30
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 236,
+          "column": 45
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 3,
+          "column": 9
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 8,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 14,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 20,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 30,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 42,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 48,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 54,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 60,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 70,
+          "column": 13
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 124,
+          "column": 17
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 58,
+          "column": 25
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 30,
+          "column": 10
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom.js",
+          "line": 26,
+          "column": 10
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.882Z",
+        "lastSeen": "2026-01-21T02:37:36.882Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "file-location"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "1757a66e4bb7434f",
+      "subcategory": "naming-conventions",
+      "name": "Naming Conventions Detector",
+      "description": "Learns type naming convention patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/naming-conventions",
+          "patternId": "types/naming-conventions/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.27,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 7,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 32,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 32,
+          "column": 24
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 40,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 40,
+          "column": 27
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 98,
+          "column": 23
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 130,
+          "column": 23
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 171,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 198,
+          "column": 31
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 284,
+          "column": 11
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 14,
+          "column": 5
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 14,
+          "column": 40
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 19,
+          "column": 15
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 22,
+          "column": 21
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 25,
+          "column": 20
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 93,
+          "column": 22
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 94,
+          "column": 21
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 199,
+          "column": 22
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 204,
+          "column": 54
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 35,
+          "column": 30
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 31,
+          "column": 17
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 43,
+          "column": 22
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 102,
+          "column": 9
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 102,
+          "column": 25
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 114,
+          "column": 19
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 227,
+          "column": 19
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 125,
+          "column": 9
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 125,
+          "column": 25
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.882Z",
+        "lastSeen": "2026-01-21T02:37:36.882Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "naming-conventions"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "a4e421f866766e2b",
+      "subcategory": "naming-conventions",
+      "name": "Naming Conventions Detector",
+      "description": "Learns type naming convention patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/naming-conventions",
+          "patternId": "types/naming-conventions/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.24,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 8,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 49,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 74,
+          "column": 30
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 79,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 83,
+          "column": 30
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 236,
+          "column": 45
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 3,
+          "column": 9
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 8,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 14,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 20,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 30,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 42,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 48,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 54,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 60,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 70,
+          "column": 13
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 124,
+          "column": 17
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 58,
+          "column": 25
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 114,
+          "column": 12
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 130,
+          "column": 11
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 227,
+          "column": 12
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 235,
+          "column": 10
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 94,
+          "column": 67
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 30,
+          "column": 10
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom.js",
+          "line": 26,
+          "column": 10
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.882Z",
+        "lastSeen": "2026-01-21T02:37:36.882Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "naming-conventions"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "b6effb31d7c514b9",
+      "subcategory": "interface-vs-type",
+      "name": "Interface vs Type Detector",
+      "description": "Learns interface vs type usage patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/interface-vs-type",
+          "patternId": "types/interface-vs-type/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.23,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 6,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 32,
+          "column": 6
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 32,
+          "column": 24
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 40,
+          "column": 20
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 40,
+          "column": 27
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 98,
+          "column": 23
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 130,
+          "column": 23
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 171,
+          "column": 35
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 198,
+          "column": 31
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 284,
+          "column": 11
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 14,
+          "column": 5
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 14,
+          "column": 40
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 19,
+          "column": 15
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 22,
+          "column": 21
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 25,
+          "column": 20
+        },
+        {
+          "file": "modules/avada/js/select2_injection.js",
+          "line": 35,
+          "column": 30
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 31,
+          "column": 17
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 43,
+          "column": 22
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 102,
+          "column": 9
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 102,
+          "column": 25
+        },
+        {
+          "file": "modules/beaver-builder/editor.js",
+          "line": 114,
+          "column": 19
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 227,
+          "column": 19
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 125,
+          "column": 9
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 125,
+          "column": 25
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.882Z",
+        "lastSeen": "2026-01-21T02:37:36.882Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "interface-vs-type"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "ce10f9a74e5a1e0a",
+      "subcategory": "interface-vs-type",
+      "name": "Interface vs Type Detector",
+      "description": "Learns interface vs type usage patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/interface-vs-type",
+          "patternId": "types/interface-vs-type/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.19,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 6,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 49,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 74,
+          "column": 30
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 79,
+          "column": 9
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 83,
+          "column": 30
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 236,
+          "column": 45
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 3,
+          "column": 9
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 8,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 14,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 20,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 30,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 42,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 48,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 54,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 60,
+          "column": 13
+        },
+        {
+          "file": "js/admin-settings.js",
+          "line": 70,
+          "column": 13
+        },
+        {
+          "file": "js/core-wp-asset-access.js",
+          "line": 124,
+          "column": 17
+        },
+        {
+          "file": "modules/beaver-builder/editor.css",
+          "line": 58,
+          "column": 25
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 30,
+          "column": 10
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom.js",
+          "line": 26,
+          "column": 10
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.882Z",
+        "lastSeen": "2026-01-21T02:37:36.882Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "interface-vs-type"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "b038175c3f8143ab",
+      "subcategory": "generic-patterns",
+      "name": "Generic Patterns Detector",
+      "description": "Learns generic type patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/generic-patterns",
+          "patternId": "types/generic-patterns/function_definition"
+        }
+      },
+      "confidence": {
+        "frequency": 0.09,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 192,
+          "column": 39
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 208,
+          "column": 38
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 169,
+          "column": 34
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 208,
+          "column": 13
+        },
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 252,
+          "column": 12
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 294,
+          "column": 40
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 294,
+          "column": 33
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 240,
+          "column": 40
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 240,
+          "column": 33
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.882Z",
+        "lastSeen": "2026-01-21T02:37:36.882Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "generic-patterns"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "ff52dfe9b9bf0803",
+      "subcategory": "type-assertions",
+      "name": "Type Assertions Detector",
+      "description": "Learns type assertion patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/type-assertions",
+          "patternId": "types/type-assertions/assignment"
+        }
+      },
+      "confidence": {
+        "frequency": 0.07,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 5,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "classes/shortcodes/video-progress/js/video-progress.js",
+          "line": 285,
+          "column": 11
+        },
+        {
+          "file": "js/quickedit.js",
+          "line": 88,
+          "column": 13
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 109,
+          "column": 4
+        },
+        {
+          "file": "modules/divi/editor.js",
+          "line": 151,
+          "column": 4
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 60,
+          "column": 7
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 76,
+          "column": 7
+        },
+        {
+          "file": "modules/zoom/assets/wpal-zoom-frame.js",
+          "line": 79,
+          "column": 15
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.882Z",
+        "lastSeen": "2026-01-21T02:37:36.882Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "type-assertions"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "7f670144fe79fed1",
+      "subcategory": "type-assertions",
+      "name": "Type Assertions Detector",
+      "description": "Learns type assertion patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/type-assertions",
+          "patternId": "types/type-assertions/property_access"
+        }
+      },
+      "confidence": {
+        "frequency": 0.23,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 3,
+        "score": 0.95,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/admin-modal.js",
+          "line": 15,
+          "column": 33
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 44,
+          "column": 17
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 44,
+          "column": 39
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 54,
+          "column": 17
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 54,
+          "column": 35
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 61,
+          "column": 17
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 61,
+          "column": 41
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 68,
+          "column": 17
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 68,
+          "column": 40
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 74,
+          "column": 52
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 91,
+          "column": 18
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 91,
+          "column": 40
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 108,
+          "column": 18
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 108,
+          "column": 36
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 117,
+          "column": 18
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 117,
+          "column": 42
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 128,
+          "column": 51
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 139,
+          "column": 18
+        },
+        {
+          "file": "js/postmetabox.js",
+          "line": 139,
+          "column": 41
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 139,
+          "column": 21
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 151,
+          "column": 38
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 161,
+          "column": 9
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 161,
+          "column": 31
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.882Z",
+        "lastSeen": "2026-01-21T02:37:36.882Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "type-assertions"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "019d5ebedc5ca2a4",
+      "subcategory": "file-location",
+      "name": "File Location Detector",
+      "description": "Learns type file location patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/file-location",
+          "patternId": "types/file-location/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/quickedit.js",
+          "line": 13,
+          "column": 13
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.882Z",
+        "lastSeen": "2026-01-21T02:37:36.882Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "file-location"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "4a439972f6c8148e",
+      "subcategory": "naming-conventions",
+      "name": "Naming Conventions Detector",
+      "description": "Learns type naming convention patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/naming-conventions",
+          "patternId": "types/naming-conventions/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/quickedit.js",
+          "line": 13,
+          "column": 13
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.882Z",
+        "lastSeen": "2026-01-21T02:37:36.882Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "naming-conventions"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "30e00e128cbdbcc5",
+      "subcategory": "interface-vs-type",
+      "name": "Interface vs Type Detector",
+      "description": "Learns interface vs type usage patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/interface-vs-type",
+          "patternId": "types/interface-vs-type/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.01,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "js/quickedit.js",
+          "line": 13,
+          "column": 13
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.882Z",
+        "lastSeen": "2026-01-21T02:37:36.882Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "interface-vs-type"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "a64b3dc1a94b23ef",
+      "subcategory": "any-usage",
+      "name": "Any Usage Detector",
+      "description": "Learns any/unknown/never/void usage patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/any-usage",
+          "patternId": "types/any-usage/import"
+        }
+      },
+      "confidence": {
+        "frequency": 0.17,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.9331578947368421,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 434
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 472
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 1314
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4920
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 4979
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5350
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5579
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 5601
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 6039
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7303
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7427
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7733
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 7856
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8208
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 8310
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 29648
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 2,
+          "column": 29756
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.883Z",
+        "lastSeen": "2026-01-21T02:37:36.883Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "any-usage"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "e707f9db9b06a110",
+      "subcategory": "any-usage",
+      "name": "Any Usage Detector",
+      "description": "Learns any/unknown/never/void usage patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/any-usage",
+          "patternId": "types/any-usage/conditional"
+        }
+      },
+      "confidence": {
+        "frequency": 0.02,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 1,
+        "score": 0.9331578947368421,
+        "level": "high"
+      },
+      "locations": [
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2553
+        },
+        {
+          "file": "js/wpal-select2.full.min.js",
+          "line": 3,
+          "column": 2573
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.883Z",
+        "lastSeen": "2026-01-21T02:37:36.883Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "any-usage"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    },
+    {
+      "id": "b351c636ef0ef14e",
+      "subcategory": "type-assertions",
+      "name": "Type Assertions Detector",
+      "description": "Learns type assertion patterns from your codebase",
+      "detector": {
+        "type": "regex",
+        "config": {
+          "detectorId": "types/type-assertions",
+          "patternId": "types/type-assertions/function_call"
+        }
+      },
+      "confidence": {
+        "frequency": 0.04,
+        "consistency": 0.9,
+        "age": 0,
+        "spread": 2,
+        "score": 0.7949999999999999,
+        "level": "medium"
+      },
+      "locations": [
+        {
+          "file": "modules/divi/editor.js",
+          "line": 268,
+          "column": 15
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 16,
+          "column": 11
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 28,
+          "column": 17
+        },
+        {
+          "file": "modules/elementor/editor.js",
+          "line": 39,
+          "column": 12
+        }
+      ],
+      "outliers": [],
+      "metadata": {
+        "firstSeen": "2026-01-21T02:37:36.883Z",
+        "lastSeen": "2026-01-21T02:37:36.883Z",
+        "source": "auto-detected",
+        "tags": [
+          "types",
+          "type-assertions"
+        ]
+      },
+      "severity": "info",
+      "autoFixable": false
+    }
+  ],
+  "lastUpdated": "2026-01-21T02:37:36.891Z",
+  "checksum": "3dfa27bc96b7f3ed"
+}
