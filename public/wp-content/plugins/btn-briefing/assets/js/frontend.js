@@ -45,43 +45,54 @@ var btnBriefing = function(data) {
       thisBriefing = this;
       thisBriefing.pagination();
       thisBriefing.favoriteAndComplete();
+      thisBriefing.assignedTrainingCarousel();
 	  //thisBriefing.assignTrainingReport();
 	  startdate  = new Date().toISOString().slice(0, 19).replace('T', ' ');
 	  
 		
 		// Initialize the Video.js player
-		
-		/*
-		// Listen for the 'ended' event
-		player.on('ended', () => {
-			var id = btn_briefing_data.post_id;
-			if(id > 0){
-				btnBriefingPreLoader('Loading...');
-                    setTimeout(function(){
-					  var $this = document.querySelector(".btn-briefing-add-to-complete");
-                      btnBriefingPost( {
-                          action       :'btn_briefing_complete_action',
-                          post_id      : id,
-						  start_date   : startdate
-                      }, function(response){
-                        if(response.success){
-                            $btnBriefingModal.remove();
-                            $this.classList.remove("btn-briefing-add-to-complete");
-                            $this.classList.add("btn-briefing-completed");
-                            $this.textContent = "You have completed this training block";
-							document.querySelector("#my-video").classList.add('completed-video');
-                        }
-                      });
-                    }, 300);
-			}
-
-		});
-		
-		*/
 		const videoElement = document.getElementById('my-video');
 
 		if (videoElement) {
 			const player = videojs('my-video');
+			const completionThreshold = (typeof btn_briefing_data !== 'undefined' && btn_briefing_data.completion_threshold)
+				? parseFloat(btn_briefing_data.completion_threshold)
+				: 0.75;
+			var hasAutoCompleted = (typeof btn_briefing_data !== 'undefined' && !!btn_briefing_data.already_completed);
+
+			player.on('timeupdate', () => {
+				if (hasAutoCompleted) return;
+
+				var duration = player.duration();
+				if (!duration || isNaN(duration)) return;
+
+				var percentWatched = player.currentTime() / duration;
+				if (percentWatched < completionThreshold) return;
+
+				hasAutoCompleted = true;
+				var id = btn_briefing_data.post_id;
+				if(id > 0){
+					btnBriefingPreLoader('Loading...');
+					setTimeout(function(){
+						var $this = document.querySelector(".btn-briefing-add-to-complete");
+						btnBriefingPost( {
+							action       :'btn_briefing_complete_action',
+							post_id      : id,
+							start_date   : startdate
+						}, function(response){
+							if(response.success){
+								$btnBriefingModal.remove();
+								if ($this) {
+									$this.classList.remove("btn-briefing-add-to-complete");
+									$this.classList.add("btn-briefing-completed");
+									$this.textContent = "You have completed this training block";
+								}
+								videoElement.classList.add('completed-video');
+							}
+						});
+					}, 300);
+				}
+			});
 
 			player.on('play', () => {
 				videoElement.classList.remove('completed-video');
@@ -294,6 +305,62 @@ var btnBriefing = function(data) {
 		}, false);
 
     },
+    assignedTrainingCarousel : function(){
+	  var wrappers = document.querySelectorAll('.btn-briefing-carousel-wrapper');
+	  wrappers.forEach(function(wrapper){
+		  var track = wrapper.querySelector('.btn-briefing-carousel-track'),
+			  nextBtn = wrapper.querySelector('.btn-briefing-carousel-next'),
+			  visible = parseInt(wrapper.getAttribute('data-visible'), 10) || 3,
+			  realSlides = Array.prototype.slice.call(track.children),
+			  total = realSlides.length;
+
+		  if (!nextBtn || total <= visible) {
+			  if (nextBtn) { nextBtn.style.display = 'none'; }
+			  return;
+		  }
+
+		  // Clone the first `visible` slides and append them so advancing past
+		  // the real slides scrolls into a duplicate set, then snaps back to 0
+		  // without a transition to fake a seamless infinite loop.
+		  realSlides.slice(0, visible).forEach(function(node){
+			  track.appendChild(node.cloneNode(true));
+		  });
+
+		  var index = 0,
+			  animating = false;
+
+		  var getVisibleCount = function(){
+			  if (window.innerWidth <= 767) { return 1; }
+			  if (window.innerWidth <= 991) { return 2; }
+			  return visible;
+		  };
+
+		  var goTo = function(i, withTransition){
+			  var perView = getVisibleCount();
+			  track.style.transition = withTransition ? 'transform 0.4s ease' : 'none';
+			  track.style.transform = 'translateX(-' + (i * (100 / perView)) + '%)';
+		  };
+
+		  nextBtn.addEventListener('click', function(){
+			  if (animating) { return; }
+			  animating = true;
+			  index++;
+			  goTo(index, true);
+		  });
+
+		  track.addEventListener('transitionend', function(){
+			  animating = false;
+			  if (index >= total) {
+				  index = 0;
+				  goTo(index, false);
+			  }
+		  });
+
+		  window.addEventListener('resize', function(){
+			  goTo(index, false);
+		  });
+	  });
+    },
   }
 };
 
@@ -313,8 +380,44 @@ var btnBriefingPreLoader = function( message ){
     $btnBriefingModal = $doc.querySelector('#btn_briefing_preloader_wrap');
 };
 
+var btnBriefingSuccessModal = function( message, onClose ){
+    var modalId = 'btn_briefing_success_modal';
+    var existing = $doc.getElementById(modalId);
+    if( existing ){
+        existing.remove();
+    }
+    var html = '<div class="modal micromodal-slide btn-briefing-success-modal" id="'+modalId+'" aria-hidden="true">'
+        + '<div class="modal__overlay" tabindex="-1" data-micromodal-close>'
+        +   '<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="btn-briefing-success-title">'
+        +     '<header class="modal__header">'
+        +       '<button aria-label="Close modal" class="modal__close" data-micromodal-close></button>'
+        +     '</header>'
+        +     '<div class="modal__icon">&#10003;</div>'
+        +     '<h2 class="modal__title" id="btn-briefing-success-title">Success</h2>'
+        +     '<div class="modal__content">'+message+'</div>'
+        +     '<footer class="modal__footer">'
+        +       '<button class="modal__btn modal__btn-primary" data-micromodal-close>OK</button>'
+        +     '</footer>'
+        +   '</div>'
+        + '</div>'
+        + '</div>';
+    $doc.body.insertAdjacentHTML('beforeend', html);
+    MicroModal.show(modalId, {
+        onClose: function(){
+            var el = $doc.getElementById(modalId);
+            if( el ){
+                el.remove();
+            }
+            if( typeof onClose === 'function' ){
+                onClose();
+            }
+        }
+    });
+};
+
 
 var btnBriefingPost = function( postData, callback ){
+    postData.nonce = (typeof btn_briefing_data !== 'undefined') ? btn_briefing_data.nonce : '';
     var request = new XMLHttpRequest();
     var encodedData = Object.keys(postData).map(function(key) {
         return key + '=' + encodeURIComponent(postData[key])
@@ -406,7 +509,6 @@ var btnBriefingPost = function( postData, callback ){
 							$block.prop('disabled', false).trigger('change');
 						}
 					});
-				
 			}
 		});
 
@@ -442,13 +544,14 @@ var btnBriefingPost = function( postData, callback ){
                 }, function(response){
                   if(response.success){
                       $btnBriefingModal.remove();
-                      alert("Added Successfully");
-                      window.location.reload();
+                      btnBriefingSuccessModal('Training assigned successfully.', function(){
+                          window.location.reload();
+                      });
                   }
                 });
               }, 300);
          });
-		
+
 		 $('.btn-delete-entry-form').on('click', function(e) {
            e.preventDefault();
 		   var id = $(this).data('id'),

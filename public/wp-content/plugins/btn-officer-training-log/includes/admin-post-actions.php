@@ -238,6 +238,7 @@ add_action('admin_post_log_training', function() {
 
     }
 
+    // Ensure students is an array
     if (!is_array($_REQUEST['students'])) {
         wp_die('No Students Selected');
     }
@@ -246,18 +247,25 @@ add_action('admin_post_log_training', function() {
         return absint($userId);
     }, $_REQUEST['students']);
 
-    $session = BTN\BriefingRoom\TrainingSession::create([
-        'trainingId' => $trainingId,
-        'userId' => get_current_user_id(),
-        'duration' => $duration,
-        'completedAt' => current_time('mysql'),
-    ]);
+    $today = current_time('Y-m-d');
+    $studentUserIds = array_filter($studentUserIds, function($studentUserId) use ($trainingId, $today) {
+        return !BTN\BriefingRoom\TrainingRecord::existsForTrainingOnDate($trainingId, $studentUserId, $today);
+    });
 
-    foreach ($studentUserIds as $studentUserId) {
-        BTN\BriefingRoom\TrainingRecord::create([
-            'sessionId' => $session->id,
-            'userId' => $studentUserId,
+    if (!empty($studentUserIds)) {
+        $session = BTN\BriefingRoom\TrainingSession::create([
+            'trainingId' => $trainingId,
+            'userId' => get_current_user_id(),
+            'duration' => $duration,
+            'completedAt' => current_time('mysql'),
         ]);
+
+        foreach ($studentUserIds as $studentUserId) {
+            BTN\BriefingRoom\TrainingRecord::create([
+                'sessionId' => $session->id,
+                'userId' => $studentUserId,
+            ]);
+        }
     }
 
     wp_redirect( add_query_arg('success', 1, $_REQUEST['redirect']) );
@@ -294,18 +302,25 @@ add_action('admin_post_log_training_manager', function() {
         return absint($userId);
     }, $_REQUEST['students']);
 
-    $session = BTN\BriefingRoom\TrainingSession::create([
-        'trainingId' => $trainingId,
-        'userId' => get_current_user_id(),
-        'duration' => $duration,
-        'completedAt' => current_time('mysql'),
-    ]);
+    $today = current_time('Y-m-d');
+    $studentUserIds = array_filter($studentUserIds, function($studentUserId) use ($trainingId, $today) {
+        return !BTN\BriefingRoom\TrainingRecord::existsForTrainingOnDate($trainingId, $studentUserId, $today);
+    });
 
-    foreach ($studentUserIds as $studentUserId) {
-        BTN\BriefingRoom\TrainingRecord::create([
-            'sessionId' => $session->id,
-            'userId' => $studentUserId,
+    if (!empty($studentUserIds)) {
+        $session = BTN\BriefingRoom\TrainingSession::create([
+            'trainingId' => $trainingId,
+            'userId' => get_current_user_id(),
+            'duration' => $duration,
+            'completedAt' => current_time('mysql'),
         ]);
+
+        foreach ($studentUserIds as $studentUserId) {
+            BTN\BriefingRoom\TrainingRecord::create([
+                'sessionId' => $session->id,
+                'userId' => $studentUserId,
+            ]);
+        }
     }
 
     wp_redirect( add_query_arg('success', 1, $_REQUEST['redirect']) );
@@ -313,15 +328,20 @@ add_action('admin_post_log_training_manager', function() {
 
 add_action('admin_post_log_training_officer', function() {
 
+    $userId = get_current_user_id();
+    $session = null;
+
     if(isset($_REQUEST['trainingId'])) {
         $training = new \BTN\BriefingRoom\Training(absint($_REQUEST['trainingId']));
 
-        $session = BTN\BriefingRoom\TrainingSession::create([
-            'trainingId' => $training->id,
-            'userId' => get_current_user_id(),
-            'duration' => $training->getDurationInMinutes(),
-            'completedAt' => current_time('mysql'),
-        ]);
+        if (!BTN\BriefingRoom\TrainingRecord::existsForTrainingOnDate($training->id, $userId, current_time('Y-m-d'))) {
+            $session = BTN\BriefingRoom\TrainingSession::create([
+                'trainingId' => $training->id,
+                'userId' => $userId,
+                'duration' => $training->getDurationInMinutes(),
+                'completedAt' => current_time('mysql'),
+            ]);
+        }
 
     } else {
         // 3rd party training
@@ -345,17 +365,18 @@ add_action('admin_post_log_training_officer', function() {
 
         $session = BTN\BriefingRoom\TrainingSession::create([
             'trainingId' => $trainingId,
-            'userId' => get_current_user_id(),
+            'userId' => $userId,
             'duration' => $duration,
             'completedAt' => current_time('mysql'),
         ]);
     }
 
-
-    BTN\BriefingRoom\TrainingRecord::create([
-        'sessionId' => $session->id,
-        'userId' => get_current_user_id(),
-    ]);
+    if ($session) {
+        BTN\BriefingRoom\TrainingRecord::create([
+            'sessionId' => $session->id,
+            'userId' => $userId,
+        ]);
+    }
 
     wp_redirect( add_query_arg('success', 1, $_REQUEST['redirect']) );
 });
