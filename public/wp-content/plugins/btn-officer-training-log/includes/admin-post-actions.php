@@ -247,18 +247,25 @@ add_action('admin_post_log_training', function() {
         return absint($userId);
     }, $_REQUEST['students']);
 
-    $session = BTN\BriefingRoom\TrainingSession::create([
-        'trainingId' => $trainingId,
-        'userId' => get_current_user_id(),
-        'duration' => $duration,
-        'completedAt' => current_time('mysql'),
-    ]);
+    $today = current_time('Y-m-d');
+    $studentUserIds = array_filter($studentUserIds, function($studentUserId) use ($trainingId, $today) {
+        return !BTN\BriefingRoom\TrainingRecord::existsForTrainingOnDate($trainingId, $studentUserId, $today);
+    });
 
-    foreach ($studentUserIds as $studentUserId) {
-        BTN\BriefingRoom\TrainingRecord::create([
-            'sessionId' => $session->id,
-            'userId' => $studentUserId,
+    if (!empty($studentUserIds)) {
+        $session = BTN\BriefingRoom\TrainingSession::create([
+            'trainingId' => $trainingId,
+            'userId' => get_current_user_id(),
+            'duration' => $duration,
+            'completedAt' => current_time('mysql'),
         ]);
+
+        foreach ($studentUserIds as $studentUserId) {
+            BTN\BriefingRoom\TrainingRecord::create([
+                'sessionId' => $session->id,
+                'userId' => $studentUserId,
+            ]);
+        }
     }
 
     wp_redirect( add_query_arg('success', 1, $_REQUEST['redirect']) );
@@ -295,18 +302,25 @@ add_action('admin_post_log_training_manager', function() {
         return absint($userId);
     }, $_REQUEST['students']);
 
-    $session = BTN\BriefingRoom\TrainingSession::create([
-        'trainingId' => $trainingId,
-        'userId' => get_current_user_id(),
-        'duration' => $duration,
-        'completedAt' => current_time('mysql'),
-    ]);
+    $today = current_time('Y-m-d');
+    $studentUserIds = array_filter($studentUserIds, function($studentUserId) use ($trainingId, $today) {
+        return !BTN\BriefingRoom\TrainingRecord::existsForTrainingOnDate($trainingId, $studentUserId, $today);
+    });
 
-    foreach ($studentUserIds as $studentUserId) {
-        BTN\BriefingRoom\TrainingRecord::create([
-            'sessionId' => $session->id,
-            'userId' => $studentUserId,
+    if (!empty($studentUserIds)) {
+        $session = BTN\BriefingRoom\TrainingSession::create([
+            'trainingId' => $trainingId,
+            'userId' => get_current_user_id(),
+            'duration' => $duration,
+            'completedAt' => current_time('mysql'),
         ]);
+
+        foreach ($studentUserIds as $studentUserId) {
+            BTN\BriefingRoom\TrainingRecord::create([
+                'sessionId' => $session->id,
+                'userId' => $studentUserId,
+            ]);
+        }
     }
 
     wp_redirect( add_query_arg('success', 1, $_REQUEST['redirect']) );
@@ -314,15 +328,20 @@ add_action('admin_post_log_training_manager', function() {
 
 add_action('admin_post_log_training_officer', function() {
 
+    $userId = get_current_user_id();
+    $session = null;
+
     if(isset($_REQUEST['trainingId'])) {
         $training = new \BTN\BriefingRoom\Training(absint($_REQUEST['trainingId']));
 
-        $session = BTN\BriefingRoom\TrainingSession::create([
-            'trainingId' => $training->id,
-            'userId' => get_current_user_id(),
-            'duration' => $training->getDurationInMinutes(),
-            'completedAt' => current_time('mysql'),
-        ]);
+        if (!BTN\BriefingRoom\TrainingRecord::existsForTrainingOnDate($training->id, $userId, current_time('Y-m-d'))) {
+            $session = BTN\BriefingRoom\TrainingSession::create([
+                'trainingId' => $training->id,
+                'userId' => $userId,
+                'duration' => $training->getDurationInMinutes(),
+                'completedAt' => current_time('mysql'),
+            ]);
+        }
 
     } else {
         // 3rd party training
@@ -346,17 +365,18 @@ add_action('admin_post_log_training_officer', function() {
 
         $session = BTN\BriefingRoom\TrainingSession::create([
             'trainingId' => $trainingId,
-            'userId' => get_current_user_id(),
+            'userId' => $userId,
             'duration' => $duration,
             'completedAt' => current_time('mysql'),
         ]);
     }
 
-
-    BTN\BriefingRoom\TrainingRecord::create([
-        'sessionId' => $session->id,
-        'userId' => get_current_user_id(),
-    ]);
+    if ($session) {
+        BTN\BriefingRoom\TrainingRecord::create([
+            'sessionId' => $session->id,
+            'userId' => $userId,
+        ]);
+    }
 
     wp_redirect( add_query_arg('success', 1, $_REQUEST['redirect']) );
 });
@@ -843,15 +863,66 @@ add_action('wp_ajax_generate_station_csv_report',function(){
 
 add_action('admin_post_delete_station', function() {
 
+    if (!current_user_can('manage_options')) { wp_die('Unauthorized', 403); }
+
     $stationId = absint( $_REQUEST['station_id'] );
 
     check_admin_referer("delete_station-$stationId");
 
     $station = Station::find($stationId);
 
+    if ($station->officers()->count() || $station->sergeants()->count()) {
+        wp_die('Cannot delete a station with students or facilitators assigned. Use the merge tool to move them to another station first.');
+    }
+
+    global $wpdb;
+    $assignedTrainingCount = (int) $wpdb->get_var($wpdb->prepare(
+        "SELECT COUNT(*) FROM {$wpdb->prefix}assigned_training_items WHERE assigned_type = 'station' AND assigned_to = %d",
+        $stationId
+    ));
+
+    if ($assignedTrainingCount) {
+        wp_die('Cannot delete a station with training assignments. Use the merge tool to move them to another station first.');
+    }
+
     if(!$station->delete()) {
         wp_die('Unable to delete station ID ' . $stationId);
     }
+
+    wp_redirect($_REQUEST['redirect']) && exit;
+});
+
+add_action('admin_post_merge_station', function() {
+
+    if (!current_user_can('manage_options')) { wp_die('Unauthorized', 403); }
+
+    $stationId = absint( $_REQUEST['station_id'] );
+    $targetId = absint( $_REQUEST['target_station_id'] );
+
+    check_admin_referer("merge_station-$stationId");
+
+    if ($stationId === $targetId) {
+        wp_die('Cannot merge a station into itself.');
+    }
+
+    $source = Station::find($stationId);
+    $target = Station::find($targetId);
+
+    if ($source->agencyId != $target->agencyId) {
+        wp_die('Target station must belong to the same agency.');
+    }
+
+    global $wpdb;
+
+    \StellarWP\DB\DB::beginTransaction();
+
+    $wpdb->update($wpdb->prefix.'btn_officers', ['stationId' => $targetId], ['stationId' => $stationId]);
+    $wpdb->update($wpdb->prefix.'btn_sergeants', ['stationId' => $targetId], ['stationId' => $stationId]);
+    $wpdb->update($wpdb->prefix.'assigned_training_items', ['assigned_to' => $targetId], ['assigned_type' => 'station', 'assigned_to' => $stationId]);
+
+    $source->delete();
+
+    \StellarWP\DB\DB::commit();
 
     wp_redirect($_REQUEST['redirect']) && exit;
 });

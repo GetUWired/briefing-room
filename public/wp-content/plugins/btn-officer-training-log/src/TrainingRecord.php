@@ -38,4 +38,16 @@ class TrainingRecord extends Framework\Model
                 ->on('trainingsession.id', 'trainingrecord.sessionId');
         };
     }
+
+    /**
+     * Whether $userId already has a record for $trainingId on the given calendar day.
+     */
+    public static function existsForTrainingOnDate($trainingId, $userId, $date) {
+        return self::query()
+            ->leftJoin(TrainingSession::getTable(), 'trainingsession.id', 'trainingrecord.sessionId', 'trainingsession')
+            ->where('trainingsession.trainingId', $trainingId)
+            ->where('trainingrecord.userId', $userId)
+            ->whereBetween('trainingsession.completedAt', $date . ' 00:00:00', $date . ' 23:59:59')
+            ->count() > 0;
+    }
 }

@@ -86,7 +86,7 @@ $stationData = array_map(function($data) {
     if(!$data->sergeantCount && !$data->officerCount) {
         $deleteNonce = wp_create_nonce('delete_station-' . $data->id);
         $actions[] = <<<HTML
-<form method="post" action="/wp-admin/admin-post.php" style="display: inline;">
+<form method="post" action="/wp-admin/admin-post.php" style="display: inline;" onsubmit="return confirm('Delete this station? This cannot be undone.');">
     <input type="hidden" name="action" value="delete_station">
     <input type="hidden" name="_wpnonce" value="{$deleteNonce}">
     <input type="hidden" name="station_id" value="{$data->id}">
@@ -94,6 +94,10 @@ $stationData = array_map(function($data) {
     <button class='button' style='color: #b32d2e; border-color: #b32d2e'>Delete</button>
 </form>
 HTML;
+    } else {
+        // Station has students/facilitators attached — route through the guarded
+        // merge flow on the station details page instead of a raw delete.
+        $actions[] = "<a href='/wp-admin/admin.php?page=briefing-room-stations.php&station_id={$data->id}' class='button' style='color: #b32d2e; border-color: #b32d2e' onclick=\"return confirm('This station has students or facilitators assigned. You\\'ll be taken to its details page to merge them into another station before it can be removed. Continue?');\">Remove</a>";
     }
 
     return [

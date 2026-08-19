@@ -456,10 +456,20 @@ final class btn_briefing_ajax  {
 			$hours = (int) get_field('video_duration_hours', $post_id);
 			$minutes = (int) get_field('video_duration_mins', $post_id);
 
-			if($hours || $minutes ){
+			global $wpdb;
+			$records_table = $wpdb->prefix . 'btn_training_records';
+			$sessions_table_check = $wpdb->prefix . 'btn_training_sessions';
+			$already_logged_today = $wpdb->get_var($wpdb->prepare(
+				"SELECT tr.id FROM {$records_table} tr
+				 INNER JOIN {$sessions_table_check} ts ON ts.id = tr.sessionId
+				 WHERE ts.trainingId = %d AND tr.userId = %d AND DATE(ts.completedAt) = %s
+				 LIMIT 1",
+				$post_id, $user_id, current_time('Y-m-d')
+			));
+
+			if( ($hours || $minutes) && !$already_logged_today ){
 				$duration = ($hours * 60) + $minutes;
 
-				global $wpdb;
 				$table = $wpdb->prefix . 'btn_training_sessions';
 				$officers_table = $wpdb->prefix . 'btn_officers';
 

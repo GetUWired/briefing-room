@@ -1,7 +1,10 @@
 <?php
 
 use BTN\BriefingRoom\Agency;
+use BTN\BriefingRoom\Officer;
+use BTN\BriefingRoom\Sergeant;
 use BTN\BriefingRoom\Station;
+use StellarWP\DB\QueryBuilder\JoinQueryBuilder;
 
 include 'components/list-table.html';
 include 'components/add-new-dialog.html';
@@ -10,6 +13,36 @@ include 'components/add-new-dialog.html';
 
 $filter = false;
 $query = Station::query();
+
+// FLAG POSSIBLE DUPLICATE STATIONS (same agency, same name ignoring case/whitespace)
+$query->select('id', 'name', 'agencyId', 'dupeCount', 'sergeantCount', 'officerCount');
+$query->join(function(JoinQueryBuilder $builder) {
+    $duplicates = Station::query()
+        ->selectRaw('SELECT agencyId as dupAgencyId, LOWER(TRIM(name)) as normalizedName, COUNT(id) as dupeCount')
+        ->groupBy('agencyId')
+        ->groupBy('normalizedName')
+        ->having('dupeCount', '>', 1);
+
+    $builder->joinRaw("LEFT JOIN ({$duplicates->getSQL()}) dup ON station.agencyId = dup.dupAgencyId AND LOWER(TRIM(station.name)) = dup.normalizedName");
+});
+
+// JOIN STATION SERGEANT COUNT
+$query->join(function(JoinQueryBuilder $builder) {
+    $sub = Sergeant::query()
+        ->selectRaw('SELECT stationId, COUNT(id) as sergeantCount')
+        ->groupBy('stationId');
+
+    $builder->joinRaw("LEFT JOIN ({$sub->getSQL()}) sergeant ON station.id = sergeant.stationId");
+});
+
+// JOIN STATION OFFICER COUNT
+$query->join(function(JoinQueryBuilder $builder) {
+    $sub = Officer::query()
+        ->selectRaw('SELECT stationId, COUNT(id) as officerCount')
+        ->groupBy('stationId');
+
+    $builder->joinRaw("LEFT JOIN ({$sub->getSQL()}) officer ON station.id = officer.stationId");
+});
 
 // Apply filters based on request parameters
 if (!empty($_REQUEST['agency_id'])) {
@@ -43,7 +76,11 @@ if ($filter) {
 }
 
 $rows = array_map(function($station) {
-	
+
+    $isDuplicate = !empty($station->dupeCount) && $station->dupeCount > 1;
+    $sergeantCount = (int) ($station->sergeantCount ?? 0);
+    $officerCount = (int) ($station->officerCount ?? 0);
+
 	if (!$station instanceof Station) {
         $station = new Station((array) $station); // Ensure Officer instance
     }
@@ -52,10 +89,32 @@ $rows = array_map(function($station) {
         "<a href='/wp-admin/admin.php?page=briefing-room-stations.php&station_id={$station->id}' class='button'>Details</a>",
     ];
 
+    if (!$sergeantCount && !$officerCount) {
+        $deleteNonce = wp_create_nonce('delete_station-' . $station->id);
+        $actions[] = <<<HTML
+<form method="post" action="/wp-admin/admin-post.php" style="display: inline;" onsubmit="return confirm('Delete this station? This cannot be undone.');">
+    <input type="hidden" name="action" value="delete_station">
+    <input type="hidden" name="_wpnonce" value="{$deleteNonce}">
+    <input type="hidden" name="station_id" value="{$station->id}">
+    <input type="hidden" name="redirect" value="/wp-admin/admin.php?page=briefing-room-stations.php">
+    <button class='button' style='color: #b32d2e; border-color: #b32d2e'>Delete</button>
+</form>
+HTML;
+    } else {
+        // Station has students/facilitators attached — route through the guarded
+        // merge flow on the station details page instead of a raw delete.
+        $actions[] = "<a href='/wp-admin/admin.php?page=briefing-room-stations.php&station_id={$station->id}' class='button' style='color: #b32d2e; border-color: #b32d2e' onclick=\"return confirm('This station has students or facilitators assigned. You\\'ll be taken to its details page to merge them into another station before it can be removed. Continue?');\">Remove</a>";
+    }
+
+    $name = $station->name;
+    if ($isDuplicate) {
+        $name .= " <span style='background:#f0b849;color:#1d2327;border-radius:3px;padding:2px 6px;font-size:11px;'>Possible duplicate</span>";
+    }
+
     return [
 		'checkbox' => "<input type='checkbox' class='db_ids' value='".$station->id."' style='margin-left:8px' >",
         'id' => $station->id,
-        'name' => $station->name,
+        'name' => $name,
         'agency' => $station->agencyName(),
         'actions' => implode(" ", $actions),
     ];
