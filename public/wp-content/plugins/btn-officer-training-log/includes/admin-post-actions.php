@@ -248,19 +248,39 @@ add_action('admin_post_log_training', function() {
     }, $_REQUEST['students']);
 
     $today = current_time('Y-m-d');
-    $studentUserIds = array_filter($studentUserIds, function($studentUserId) use ($trainingId, $today) {
-        return !BTN\BriefingRoom\TrainingRecord::existsForTrainingOnDate($trainingId, $studentUserId, $today);
-    });
+    $newStudentUserIds = [];
 
-    if (!empty($studentUserIds)) {
+    foreach ($studentUserIds as $studentUserId) {
+        $existing = BTN\BriefingRoom\TrainingRecord::findSessionForTrainingOnDate($trainingId, $studentUserId, $today);
+
+        if ($existing) {
+            // Only update in place if this session belongs solely to this student -
+            // never mutate a shared/group session's duration on behalf of one attendee.
+            if (BTN\BriefingRoom\TrainingRecord::countForSession($existing->sessionId) <= 1) {
+                $existingSession = BTN\BriefingRoom\TrainingSession::find($existing->sessionId);
+                $existingSession->duration = $duration;
+                $existingSession->completedAt = current_time('mysql');
+                $existingSession->stationId = resolve_station_id_for_user($existingSession->userId);
+                $existingSession->save();
+            }
+            continue;
+        }
+
+        $newStudentUserIds[] = $studentUserId;
+    }
+
+    if (!empty($newStudentUserIds)) {
+        $currentUserId = get_current_user_id();
+
         $session = BTN\BriefingRoom\TrainingSession::create([
             'trainingId' => $trainingId,
-            'userId' => get_current_user_id(),
+            'userId' => $currentUserId,
+            'stationId' => resolve_station_id_for_user($currentUserId),
             'duration' => $duration,
             'completedAt' => current_time('mysql'),
         ]);
 
-        foreach ($studentUserIds as $studentUserId) {
+        foreach ($newStudentUserIds as $studentUserId) {
             BTN\BriefingRoom\TrainingRecord::create([
                 'sessionId' => $session->id,
                 'userId' => $studentUserId,
@@ -303,19 +323,39 @@ add_action('admin_post_log_training_manager', function() {
     }, $_REQUEST['students']);
 
     $today = current_time('Y-m-d');
-    $studentUserIds = array_filter($studentUserIds, function($studentUserId) use ($trainingId, $today) {
-        return !BTN\BriefingRoom\TrainingRecord::existsForTrainingOnDate($trainingId, $studentUserId, $today);
-    });
+    $newStudentUserIds = [];
 
-    if (!empty($studentUserIds)) {
+    foreach ($studentUserIds as $studentUserId) {
+        $existing = BTN\BriefingRoom\TrainingRecord::findSessionForTrainingOnDate($trainingId, $studentUserId, $today);
+
+        if ($existing) {
+            // Only update in place if this session belongs solely to this student -
+            // never mutate a shared/group session's duration on behalf of one attendee.
+            if (BTN\BriefingRoom\TrainingRecord::countForSession($existing->sessionId) <= 1) {
+                $existingSession = BTN\BriefingRoom\TrainingSession::find($existing->sessionId);
+                $existingSession->duration = $duration;
+                $existingSession->completedAt = current_time('mysql');
+                $existingSession->stationId = resolve_station_id_for_user($existingSession->userId);
+                $existingSession->save();
+            }
+            continue;
+        }
+
+        $newStudentUserIds[] = $studentUserId;
+    }
+
+    if (!empty($newStudentUserIds)) {
+        $currentUserId = get_current_user_id();
+
         $session = BTN\BriefingRoom\TrainingSession::create([
             'trainingId' => $trainingId,
-            'userId' => get_current_user_id(),
+            'userId' => $currentUserId,
+            'stationId' => resolve_station_id_for_user($currentUserId),
             'duration' => $duration,
             'completedAt' => current_time('mysql'),
         ]);
 
-        foreach ($studentUserIds as $studentUserId) {
+        foreach ($newStudentUserIds as $studentUserId) {
             BTN\BriefingRoom\TrainingRecord::create([
                 'sessionId' => $session->id,
                 'userId' => $studentUserId,
@@ -329,15 +369,29 @@ add_action('admin_post_log_training_manager', function() {
 add_action('admin_post_log_training_officer', function() {
 
     $userId = get_current_user_id();
+    $stationId = resolve_station_id_for_user($userId);
     $session = null;
 
     if(isset($_REQUEST['trainingId'])) {
         $training = new \BTN\BriefingRoom\Training(absint($_REQUEST['trainingId']));
+        $today = current_time('Y-m-d');
+        $existing = BTN\BriefingRoom\TrainingRecord::findSessionForTrainingOnDate($training->id, $userId, $today);
 
-        if (!BTN\BriefingRoom\TrainingRecord::existsForTrainingOnDate($training->id, $userId, current_time('Y-m-d'))) {
+        if ($existing) {
+            // Only update in place if this session belongs solely to this user -
+            // never mutate a shared/group session's duration on their behalf.
+            if (BTN\BriefingRoom\TrainingRecord::countForSession($existing->sessionId) <= 1) {
+                $existingSession = BTN\BriefingRoom\TrainingSession::find($existing->sessionId);
+                $existingSession->duration = $training->getDurationInMinutes();
+                $existingSession->completedAt = current_time('mysql');
+                $existingSession->stationId = $stationId;
+                $existingSession->save();
+            }
+        } else {
             $session = BTN\BriefingRoom\TrainingSession::create([
                 'trainingId' => $training->id,
                 'userId' => $userId,
+                'stationId' => $stationId,
                 'duration' => $training->getDurationInMinutes(),
                 'completedAt' => current_time('mysql'),
             ]);
@@ -366,6 +420,7 @@ add_action('admin_post_log_training_officer', function() {
         $session = BTN\BriefingRoom\TrainingSession::create([
             'trainingId' => $trainingId,
             'userId' => $userId,
+            'stationId' => $stationId,
             'duration' => $duration,
             'completedAt' => current_time('mysql'),
         ]);

@@ -23,7 +23,30 @@ use StellarWP\DB\QueryBuilder\QueryBuilder;
 use StellarWP\DB\QueryBuilder\JoinQueryBuilder;
 use StellarWP\DB\QueryBuilder\WhereQueryBuilder;
 use BTN\BriefingRoom\UserLogin;
+use BTN\BriefingRoom\Framework\Exceptions\NotFound;
 
+/**
+ * Resolves the station a training session should be credited to, based on
+ * whichever role record (Officer, then Sergeant) the given user currently
+ * belongs to. Managers have no station (agency-level only), so they resolve
+ * to null.
+ */
+function resolve_station_id_for_user($userId)
+{
+    try {
+        return Officer::findByUserId($userId)->stationId;
+    } catch (NotFound $e) {
+        // Not an officer, fall through
+    }
+
+    try {
+        return Sergeant::findByUserId($userId)->stationId;
+    } catch (NotFound $e) {
+        // Not a sergeant, fall through
+    }
+
+    return null;
+}
 
 add_action('wp_enqueue_scripts', function () {
 
@@ -115,18 +138,15 @@ function get_session_report_data($agency_id = null, $startDate = null, $endDate 
     $nextPage = $currentPage + 1;
     $perPage = 25;
 
-    // Subquery for user IDs
-    $query->joinRaw( "INNER JOIN (SELECT userId FROM wp_btn_managers WHERE organizationId = {$agency_id}
-    UNION
-    SELECT facilitator.userId 
-    FROM wp_btn_sergeants facilitator
-    JOIN wp_btn_stations station ON facilitator.stationId = station.id
-    WHERE station.agencyId =  {$agency_id}
-    UNION
-    SELECT student.userId 
-    FROM wp_btn_officers student
-    JOIN wp_btn_stations station ON student.stationId = station.id
-    WHERE station.agencyId = {$agency_id}) as user_ids ON user_ids.userId=trainingsession.userId" );
+    // Scope to the agency via the session's own stationId (Officer/Sergeant-recorded
+    // sessions), falling back to the recording user's Manager record for sessions with
+    // no station (Managers are agency-level only, not tied to a single station).
+    $query->leftJoin(Station::getTable(), 'trainingsession.stationId', 'station.id', 'station');
+    $query->joinRaw( "LEFT JOIN wp_btn_managers report_manager ON report_manager.userId = trainingsession.userId AND report_manager.organizationId = {$agency_id}" );
+    $query->where(function($q) use ($agency_id) {
+        $q->where('station.agencyId', $agency_id)
+            ->orWhereIsNotNull('report_manager.id');
+    });
 
     $query->leftJoin('posts', 'trainingsession.trainingId', 'training.ID', 'training')
         ->leftJoin(Sergeant::getTable(), 'facilitator.userId', 'trainingsession.userId', 'facilitator')
@@ -348,10 +368,14 @@ function get_officer_data($agency_id = null, $stationId = null, $startDate = nul
     });
 
     // JOIN TRAINING SESSIONS
-    $officerQuery->join(function (JoinQueryBuilder $builder) use ($startDate, $endDate) {
+    // Sums each session's OWN stationId (captured when it was recorded), not the
+    // officer's current stationId, so hours stay credited to the station the officer
+    // belonged to at the time even after a later reassignment.
+    $officerQuery->join(function (JoinQueryBuilder $builder) use ($startDate, $endDate, $stationId) {
         $whereClauses = [];
         if ($startDate) $whereClauses[] = "trainingsession.completedAt >= '" . esc_sql($startDate) . "'";
         if ($endDate) $whereClauses[] = "trainingsession.completedAt <= '" . esc_sql($endDate) . "'";
+        if (!empty($stationId)) $whereClauses[] = "trainingsession.stationId = " . absint($stationId);
         $whereSql = $whereClauses ? 'WHERE ' . implode(' AND ', $whereClauses) : '';
 
         $subquery = "
@@ -436,10 +460,14 @@ function get_sergeant_data($agency_id = null, $stationId = null, $startDate = nu
     });
 
     // JOIN TRAINING SESSIONS
-    $sergeantQuery->join(function (JoinQueryBuilder $builder) use ($startDate, $endDate) {
+    // Sums each session's OWN stationId (captured when it was recorded), not the
+    // sergeant's current stationId, so hours stay credited to the station the sergeant
+    // belonged to at the time even after a later reassignment.
+    $sergeantQuery->join(function (JoinQueryBuilder $builder) use ($startDate, $endDate, $stationId) {
         $whereClauses = [];
         if ($startDate) $whereClauses[] = "trainingsession.completedAt >= '" . esc_sql($startDate) . "'";
         if ($endDate) $whereClauses[] = "trainingsession.completedAt <= '" . esc_sql($endDate) . "'";
+        if (!empty($stationId)) $whereClauses[] = "trainingsession.stationId = " . absint($stationId);
         $whereSql = $whereClauses ? 'WHERE ' . implode(' AND ', $whereClauses) : '';
 
         $subquery = "
@@ -636,13 +664,19 @@ function get_facilitator_report_data($agency_id = null, $stationId = null, $star
     });
 
     $sQuery = Sergeant::withLastLogin($sQuery);
-    $sQuery = Sergeant::withTrainingTime($sQuery, function(QueryBuilder $q) use ($startDate, $endDate) {
+    // Scope by each session's own stationId (captured when it was recorded), not the
+    // sergeant's current stationId, so hours stay credited to the station the sergeant
+    // belonged to at the time even after a later reassignment.
+    $sQuery = Sergeant::withTrainingTime($sQuery, function(QueryBuilder $q) use ($startDate, $endDate, $stationId) {
         if ($startDate && $endDate) {
             $q->whereBetween('completedAt', $startDate, $endDate);
         } elseif ($startDate) {
             $q->where('completedAt', $startDate, '>=');
         } elseif ($endDate) {
             $q->where('completedAt', $endDate, '<');
+        }
+        if (!empty($stationId)) {
+            $q->where('stationId', $stationId);
         }
     });
 

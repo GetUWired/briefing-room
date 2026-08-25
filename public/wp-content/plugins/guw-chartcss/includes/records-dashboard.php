@@ -176,7 +176,8 @@ function records_dashboard_rest_callback(WP_REST_Request $request) {
         }));
     }
 
-    $session_total = count($session_rows);
+    $session_total = array_sum(array_map(fn ($row) => (int) ($row['officer_count'] ?? 0), $session_rows));
+    $session_count = count($session_rows);
 
     $sessions_by_user = [];
     foreach ($session_rows as $row) {
@@ -190,18 +191,47 @@ function records_dashboard_rest_callback(WP_REST_Request $request) {
         return $count >= 1;
     });
 
-    // ── Training time ───────────────────────────────────────────────────────
+    // ── Training time (one attendance record per officer per session) ───────
+    $sessions_by_id = [];
+    foreach ($session_rows as $row) {
+        $sessions_by_id[(int) ($row['id'] ?? 0)] = $row;
+    }
+    $session_ids = array_values(array_filter(array_keys($sessions_by_id)));
+
+    $attendee_rows = [];
+    if (!empty($session_ids)) {
+        global $wpdb;
+        $placeholders  = implode(',', array_fill(0, count($session_ids), '%d'));
+        $attendee_rows = $wpdb->get_results(
+            $wpdb->prepare(
+                "SELECT sessionId, userId FROM wp_btn_training_records WHERE sessionId IN ($placeholders)",
+                $session_ids
+            ),
+            ARRAY_A
+        );
+    }
+
+    // Most recently completed session's attendees first, matching the session query's own ordering.
+    usort($attendee_rows, function ($a, $b) use ($sessions_by_id) {
+        $ta = strtotime($sessions_by_id[(int) ($a['sessionId'] ?? 0)]['completedAt'] ?? '') ?: 0;
+        $tb = strtotime($sessions_by_id[(int) ($b['sessionId'] ?? 0)]['completedAt'] ?? '') ?: 0;
+        return $tb <=> $ta;
+    });
+
     $total_mins       = 0;
     $training_by_week = [];
-    foreach ($session_rows as $row) {
-        $mins        = (int) ($row['duration'] ?? 0);
-        $officer_count = (int) ($row['officer_count'] ?? 0);
-        $total_mins += $mins * $officer_count;
-        if (!empty($row['completedAt'])) {
-            $ts  = strtotime($row['completedAt']);
+    foreach ($attendee_rows as $attendee) {
+        $session = $sessions_by_id[(int) ($attendee['sessionId'] ?? 0)] ?? null;
+        if (!$session) continue;
+
+        $mins        = (int) ($session['duration'] ?? 0);
+        $total_mins += $mins;
+
+        if (!empty($session['completedAt'])) {
+            $ts  = strtotime($session['completedAt']);
             $dow = (int) date('N', $ts);
             $wk  = date('Y-m-d', $ts - (($dow - 1) * 86400));
-            $training_by_week[$wk] = round(($training_by_week[$wk] ?? 0) + ($mins * $officer_count) / 60, 2);
+            $training_by_week[$wk] = round(($training_by_week[$wk] ?? 0) + $mins / 60, 2);
         }
     }
     ksort($training_by_week);
@@ -223,29 +253,28 @@ function records_dashboard_rest_callback(WP_REST_Request $request) {
         $user_meta = $user_lookup[(string) ($row['userId'] ?? '')] ?? [];
 
         return [
-            'completed_at'  => !empty($row['completedAt']) ? date('M j, Y g:i A', strtotime($row['completedAt'])) : '',
+            'completed_at'  => !empty($row['completedAt']) ? date('m/d/Y', strtotime($row['completedAt'])) : '',
             'training'      => (string) ($row['post_title'] ?? ''),
-            'first_name'    => (string) ($user_meta['first_name'] ?? ''),
-            'last_name'     => (string) ($user_meta['last_name'] ?? ''),
-            'email'         => (string) ($user_meta['email'] ?? ''),
+            'name'          => trim((string) ($user_meta['first_name'] ?? '') . ' ' . (string) ($user_meta['last_name'] ?? '')),
+            'station'       => (string) ($user_meta['station'] ?? ''),
             'duration_min'  => (int) ($row['duration'] ?? 0),
             'officer_count' => (int) ($row['officer_count'] ?? 0),
         ];
     }, $session_rows);
 
-    $training_table_rows = array_map(function ($row) use ($user_lookup) {
-        $user_meta = $user_lookup[(string) ($row['userId'] ?? '')] ?? [];
-        $minutes   = (int) ($row['duration'] ?? 0);
+    $training_table_rows = array_map(function ($attendee) use ($sessions_by_id, $user_lookup) {
+        $session   = $sessions_by_id[(int) ($attendee['sessionId'] ?? 0)] ?? [];
+        $user_meta = $user_lookup[(string) ($attendee['userId'] ?? '')] ?? [];
+        $minutes   = (int) ($session['duration'] ?? 0);
 
         return [
-            'completed_at' => !empty($row['completedAt']) ? date('M j, Y g:i A', strtotime($row['completedAt'])) : '',
-            'training'     => (string) ($row['post_title'] ?? ''),
-            'first_name'   => (string) ($user_meta['first_name'] ?? ''),
-            'last_name'    => (string) ($user_meta['last_name'] ?? ''),
+            'completed_at' => !empty($session['completedAt']) ? date('m/d/Y', strtotime($session['completedAt'])) : '',
+            'training'     => (string) ($session['post_title'] ?? ''),
+            'name'         => trim((string) ($user_meta['first_name'] ?? '') . ' ' . (string) ($user_meta['last_name'] ?? '')),
             'email'        => (string) ($user_meta['email'] ?? ''),
             'hours'        => round($minutes / 60, 2),
         ];
-    }, $session_rows);
+    }, $attendee_rows);
 
     return rest_ensure_response([
         'stats' => [
@@ -257,6 +286,7 @@ function records_dashboard_rest_callback(WP_REST_Request $request) {
             ],
             'logins'        => $login_total,
             'sessions'      => $session_total,
+            'sessions_count' => $session_count,
             'training_time' => $total_hrs,
             'avg_logins'    => ($s_count) > 0 ? round($login_total / $s_count, 1) : 0,
             // 'avg_logins' => ($s_count) > 0 ? round($login_total / $s_count * 100, 1) : 0,
@@ -321,17 +351,15 @@ function records_dashboard_rest_callback(WP_REST_Request $request) {
             'sessions' => records_dashboard_build_table([
                 ['key' => 'completed_at', 'label' => 'Completed At'],
                 ['key' => 'training', 'label' => 'Training'],
-                ['key' => 'first_name', 'label' => 'First Name'],
-                ['key' => 'last_name', 'label' => 'Last Name'],
-                ['key' => 'email', 'label' => 'Email Address'],
+                ['key' => 'name', 'label' => 'Name'],
+                ['key' => 'station', 'label' => 'Station'],
                 ['key' => 'officer_count', 'label' => 'Officers'],
                 ['key' => 'duration_min', 'label' => 'Duration (Min)'],
             ], $session_table_rows),
             'training' => records_dashboard_build_table([
                 ['key' => 'completed_at', 'label' => 'Completed At'],
                 ['key' => 'training', 'label' => 'Training'],
-                ['key' => 'first_name', 'label' => 'First Name'],
-                ['key' => 'last_name', 'label' => 'Last Name'],
+                ['key' => 'name', 'label' => 'Name'],
                 ['key' => 'email', 'label' => 'Email Address'],
                 ['key' => 'hours', 'label' => 'Hours'],
             ], $training_table_rows),
@@ -390,8 +418,9 @@ add_shortcode('records_dashboard', function () {
     $logins_data = btn_get_user_logins(['start_date' => '1970-01-01', 'end_date' => date('Y-m-d')], true);
     $total_logins = is_array($logins_data) ? count($logins_data) : 0;
 
-    $all_sessions   = btn_get_training_sessions([]);
-    $total_sessions = count($all_sessions);
+    $all_sessions      = btn_get_training_sessions([]);
+    $total_sessions    = array_sum(array_map(fn ($row) => (int) ($row['officer_count'] ?? 0), $all_sessions));
+    $total_session_count = count($all_sessions);
 
     $earliest_session_ts = null;
     foreach ($all_sessions as $session) {
@@ -840,10 +869,10 @@ section.brd-agency-wide {
                 <!-- <div class="brd-breakdown-row"><span>Avg <strong><?php echo esc_html(number_format($avg_logins_all_time, 1)); ?></strong> logins/facilitator</span></div> -->
             </div>
             <div class="brd-card">
-                <div class="brd-card-label">Sessions Recorded</div>
+                <div class="brd-card-label">Officers In Attendance</div>
                 <div class="brd-card-value"><?php echo esc_html(number_format($total_sessions)); ?></div>
                 <div class="brd-card-note">*As reported by your facilitators</div>
-                <!-- <div class="brd-breakdown-row"><span>Avg <strong><?php echo esc_html(number_format($avg_sessions_all_time, 1)); ?></strong> /week</span></div> -->
+                <div class="brd-breakdown-row"><span>Sessions Recorded</span><strong><?php echo esc_html(number_format($total_session_count)); ?></strong></div>
             </div>
             <div class="brd-card">
                 <div class="brd-card-label">Total Training Time</div>
@@ -921,10 +950,10 @@ section.brd-agency-wide {
             </div>
 
             <div id="brd-w-sessions" class="brd-card brd-widget" data-chart="sessions">
-                <div class="brd-card-label">Sessions Recorded</div>
+                <div class="brd-card-label">Officers In Attendance</div>
                 <div class="brd-card-value brd-stat-sessions">–</div>
                 <div class="brd-card-note">*As reported by your facilitators</div>
-                <!-- <div class="brd-breakdown-row"><span>Avg <strong class="brd-stat-sessions-avg">–</strong> /week</span></div> -->
+                <div class="brd-breakdown-row"><span>Sessions Recorded</span><strong class="brd-stat-sessions-count">–</strong></div>
             </div>
 
             <div id="brd-w-training" class="brd-card brd-widget" data-chart="training">
@@ -1159,8 +1188,8 @@ section.brd-agency-wide {
     var _searchCols = {
         users:    ['first_name', 'last_name', 'email', 'role', 'station'],
         logins:   ['first_name', 'last_name', 'email', 'role'],
-        sessions: ['training', 'first_name', 'last_name'],
-        training: ['training', 'first_name', 'last_name'],
+        sessions: ['training', 'name', 'station'],
+        training: ['training', 'name', 'email'],
     };
 
     var _searchPlaceholders = {
@@ -1407,6 +1436,7 @@ section.brd-agency-wide {
         document.querySelector('.brd-stat-officers').textContent  = stats.users.officers.toLocaleString();
         document.querySelector('.brd-stat-logins').textContent    = stats.logins.toLocaleString();
         document.querySelector('.brd-stat-sessions').textContent  = stats.sessions.toLocaleString();
+        document.querySelector('.brd-stat-sessions-count').textContent = stats.sessions_count.toLocaleString();
 
         var trainingEl = document.querySelector('.brd-stat-training');
         trainingEl.innerHTML = stats.training_time + ' <sup>hrs</sup>';

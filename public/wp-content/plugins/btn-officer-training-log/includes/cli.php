@@ -91,6 +91,34 @@ WP_CLI::add_command( 'btn:migrate-user-relational-ids', function() {
     WP_CLI::success('Done');
 });
 
+WP_CLI::add_command( 'btn:backfill-session-stations', function() {
+    WP_CLI::line("Backfilling stationId on existing Training Sessions");
+
+    $sessions = \BTN\BriefingRoom\TrainingSession::all()->models;
+    $pending = array_filter($sessions, fn($session) => $session->stationId === null);
+
+    $progress = \WP_CLI\Utils\make_progress_bar("Backfilling session stations", count($pending));
+    $unresolved = 0;
+
+    foreach ($pending as $session) {
+        $session->stationId = resolve_station_id_for_user($session->userId);
+
+        if ($session->stationId === null) {
+            $unresolved++;
+        }
+
+        $session->save();
+        $progress->tick();
+    }
+    $progress->finish();
+
+    if ($unresolved > 0) {
+        WP_CLI::warning("$unresolved session(s) could not be resolved to a station (no matching Officer/Sergeant record for the recording user) and were left as NULL.");
+    }
+
+    WP_CLI::success('Done');
+});
+
 WP_CLI::add_command( 'btn:seed', function() {
 
     AgencyFactory::create([

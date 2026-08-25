@@ -95,6 +95,7 @@ dbDelta("CREATE TABLE {$wpdb->prefix}btn_training_sessions (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
         trainingId mediumint(9) NOT NULL,
         userId mediumint(9) NOT NULL,
+        stationId mediumint(9) NULL,
         managerId mediumint(9) NULL COMMENT 'DEPRECATED',
         sergeantId mediumint(9) NULL COMMENT 'DEPRECATED',
         officerId mediumint(9) NULL COMMENT 'DEPRECATED',
@@ -105,6 +106,7 @@ dbDelta("CREATE TABLE {$wpdb->prefix}btn_training_sessions (
         PRIMARY KEY (id)
     ) {$wpdb->get_charset_collate()};");
 
+$wpdb->query("ALTER TABLE {$wpdb->prefix}btn_training_sessions MODIFY stationId mediumint(9) NULL;");
 $wpdb->query("ALTER TABLE {$wpdb->prefix}btn_training_sessions MODIFY managerId mediumint(9) NULL;");
 $wpdb->query("ALTER TABLE {$wpdb->prefix}btn_training_sessions MODIFY sergeantId mediumint(9) NULL;");
 $wpdb->query("ALTER TABLE {$wpdb->prefix}btn_training_sessions MODIFY officerId mediumint(9) NULL;");

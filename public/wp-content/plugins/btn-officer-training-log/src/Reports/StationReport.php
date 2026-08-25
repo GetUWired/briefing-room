@@ -3,10 +3,8 @@
 namespace BTN\BriefingRoom\Reports;
 
 use BTN\BriefingRoom\Helpers\TimeFormatter;
-use BTN\BriefingRoom\Sergeant;
 use BTN\BriefingRoom\Station;
 use BTN\BriefingRoom\TrainingSession;
-use StellarWP\DB\QueryBuilder\JoinQueryBuilder;
 
 class StationReport
 {
@@ -27,11 +25,7 @@ class StationReport
     public function getSessionsCount($station_id)
     {
         $query = TrainingSession::query()
-            ->join(function (JoinQueryBuilder $builder) {
-                $builder->leftJoin(Sergeant::getTable(), 'sergeant')
-                    ->on('trainingsession.userId', 'sergeant.userId');
-            })
-            ->where('sergeant.stationId', $station_id);
+            ->where('trainingsession.stationId', $station_id);
 
         if($this->hasDateRange()) {
             $this->filterQueryByDateRange($query, 'trainingsession.completedAt');
@@ -43,13 +37,9 @@ class StationReport
     public function getSessionsDuration($station_id)
     {
         $query = TrainingSession::query()
-            ->select('sergeant.stationId')
+            ->select('trainingsession.stationId')
             ->selectRaw('SUM(duration) as totalDuration')
-            ->join(function (JoinQueryBuilder $builder) {
-                $builder->leftJoin(Sergeant::getTable(), 'sergeant')
-                    ->on('trainingsession.userId', 'sergeant.userId');
-            })
-            ->where('sergeant.stationId', $station_id);
+            ->where('trainingsession.stationId', $station_id);
 
         if($this->hasDateRange()) {
             $this->filterQueryByDateRange($query, 'trainingsession.completedAt');

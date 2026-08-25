@@ -62,10 +62,16 @@ final class btn_briefing_ajax  {
 			
 			
 	    }
-		
+
+		function is_agency_admin() {
+			$user = wp_get_current_user();
+			$allowed = ['administrator', 'memberium_agencymanager', 'memberium_stationadmin'];
+			return !empty(array_intersect($user->roles, $allowed));
+		}
+
 		function btn_briefing_assigned_training_admin_action(){
 			check_ajax_referer('btn-briefing-ajax', 'nonce');
-			if (!current_user_can('manage_options')) { wp_send_json_error(['message' => 'Unauthorized'], 403); }
+			if (!$this->is_agency_admin()) { wp_send_json_error(['message' => 'Unauthorized'], 403); }
 			$ns = "btn-briefing";
 			$training_id = (!empty($_POST['training_id'])) ? $_POST['training_id'] : false;
 			$status = (!empty($_POST['status'])) ? $_POST['status'] : false;
@@ -314,7 +320,7 @@ final class btn_briefing_ajax  {
 
 		function btn_briefing_assigned_training_delete_action(){
 			check_ajax_referer('btn-briefing-ajax', 'nonce');
-			if (!current_user_can('manage_options')) { wp_send_json_error(['message' => 'Unauthorized'], 403); }
+			if (!$this->is_agency_admin()) { wp_send_json_error(['message' => 'Unauthorized'], 403); }
 			$id = ( !empty($_POST['id']) ) ? $_POST['id'] : false;
 			if($id){
 				btn_briefing()->assigned_training()->delete_training_assignment($id);
@@ -324,7 +330,7 @@ final class btn_briefing_ajax  {
 
 		function btn_briefing_assigned_training_active_action(){
 			check_ajax_referer('btn-briefing-ajax', 'nonce');
-			if (!current_user_can('manage_options')) { wp_send_json_error(['message' => 'Unauthorized'], 403); }
+			if (!$this->is_agency_admin()) { wp_send_json_error(['message' => 'Unauthorized'], 403); }
 			$id = ( !empty($_POST['id']) ) ? $_POST['id'] : false;
 			if($id){
 				btn_briefing()->assigned_training()->active_training_assignment($id);
@@ -334,7 +340,7 @@ final class btn_briefing_ajax  {
 
 		function btn_get_briefing_assigned_options_action() {
 			check_ajax_referer('btn-briefing-ajax', 'nonce');
-			if (!current_user_can('manage_options')) { wp_send_json_error(['message' => 'Unauthorized'], 403); }
+			if (!$this->is_agency_admin()) { wp_send_json_error(['message' => 'Unauthorized'], 403); }
 			$category_id = sanitize_text_field($_POST['category_id']);
 			$results = [];
 			  // Group 1: Select All
@@ -385,7 +391,7 @@ final class btn_briefing_ajax  {
 	}
 		function btn_briefing_assigned_training_action(){
 			check_ajax_referer('btn-briefing-ajax', 'nonce');
-			if (!current_user_can('manage_options')) { wp_send_json_error(['message' => 'Unauthorized'], 403); }
+			if (!$this->is_agency_admin()) { wp_send_json_error(['message' => 'Unauthorized'], 403); }
 
 			$category_id   = ( !empty($_POST['category_id']) )  ? $_POST['category_id']  : false;
 			$block_id      = ( !empty($_POST['block_id']) )      ? $_POST['block_id']      : false;
@@ -483,6 +489,7 @@ final class btn_briefing_ajax  {
 				);
 				// Access individual values like this:
 				 $officer_id = $officer['officer_id'] ? $officer['officer_id']: '';
+				 $station_id = function_exists('resolve_station_id_for_user') ? resolve_station_id_for_user($user_id) : null;
 
 				 $wpdb->insert(
 					 $table,
@@ -491,9 +498,10 @@ final class btn_briefing_ajax  {
 						 'duration' => $duration,
 						 'completedAt' => $current_date,
 						 'userId'   => $user_id,
+						 'stationId'   => $station_id,
 						 'officerId'   => $officer_id
 					 ],
-					  ['%d', '%s', '%s', '%d', '%s']
+					  ['%d', '%s', '%s', '%d', '%d', '%s']
 				 );
 				// Get the inserted row ID
 				$inserted_id = $wpdb->insert_id;
