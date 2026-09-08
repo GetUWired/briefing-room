@@ -49,7 +49,7 @@ jQuery( document ).ready( function () {
     jQuery( '#page' ).on( 'submit', '#officerForm', function(e) {
         e.preventDefault();
 
-        renderSkeletonTable('#students_report_container', 5, 6);
+        renderSkeletonTable('#students_report_container', 6, 6);
 
 
         if(_doing_report_ajax){
@@ -92,7 +92,7 @@ jQuery( document ).ready( function () {
     jQuery('#page').on('submit', '#facilitatorForm', function(e) {
         e.preventDefault();
 
-        renderSkeletonTable('#facilitators_report_container', 6, 8);
+        renderSkeletonTable('#facilitators_report_container', 7, 8);
 
         if(_doing_report_ajax){
             return false;
@@ -137,11 +137,11 @@ jQuery( document ).ready( function () {
         let action = jQuery(this).data('action');
 
         if(action == 'get_students_report'){
-            renderSkeletonTable('#students_report_container', 5, 6);
+            renderSkeletonTable('#students_report_container', 6, 6);
         } else if(action === 'get_sessions_report'){
             renderSkeletonTable('#session_report_container', 8, 6);
         } else if(action === 'get_facilitators_report'){
-            renderSkeletonTable('#facilitators_report_container', 6, 8);
+            renderSkeletonTable('#facilitators_report_container', 7, 8);
         }
 
         if(_doing_report_ajax){
@@ -196,11 +196,11 @@ jQuery( document ).ready( function () {
         let action = jQuery(this).data('action');
 
         if(action == 'get_students_report'){
-            renderSkeletonTable('#students_report_container', 5, 6);
+            renderSkeletonTable('#students_report_container', 6, 6);
         } else if(action === 'get_sessions_report'){
             renderSkeletonTable('#session_report_container', 8, 6);
         } else if(action === 'get_facilitators_report'){
-            renderSkeletonTable('#facilitators_report_container', 6, 8);
+            renderSkeletonTable('#facilitators_report_container', 7, 8);
         }
 
         let sortStmnt = sortby+','+sort;
@@ -286,7 +286,7 @@ jQuery( document ).ready( function () {
     }
     
     function loadStudentReportTable(){
-        renderSkeletonTable('#students_report_container', 5, 6);
+        renderSkeletonTable('#students_report_container', 6, 6);
 
         _doing_report_ajax = true;
         jQuery.ajax({
@@ -315,7 +315,7 @@ jQuery( document ).ready( function () {
     }
 
     function loadFacilitatorReportTable(){
-        renderSkeletonTable('#facilitators_report_container', 6, 8);
+        renderSkeletonTable('#facilitators_report_container', 7, 8);
 
         _doing_report_ajax = true;
         jQuery.ajax({
@@ -525,6 +525,7 @@ jQuery( document ).ready( function () {
         //Table Headers
 
         const tableHeaders = [
+            {id: "select_all_item_student", label: ""},
             {id: "id",label: "ID"},
             {id: "officerName",label: "Student Name"},
             {id: "totalDuration",label: "Training Time"},
@@ -532,12 +533,13 @@ jQuery( document ).ready( function () {
             { id: "action", label: "Downloads" }
         ];
 
-        const tableRows = 
+        const tableRows =
             students.length > 0
                 ? students
                     .map(
                         s => `
                     <tr>
+                        <td><input type="checkbox" class="select_item_student" name="select_item_student[]" value="${s.userId ?? ""}" /></td>
                         <td>${s.id ?? ""}</td>
                         <td>${s.officerName ?? ""}</td>
                         <td>${s.totalDuration ?? ""}</td>
@@ -553,6 +555,9 @@ jQuery( document ).ready( function () {
                     <tr>
                         ${tableHeaders
                             .map(h => {
+                                if(h.id === "select_all_item_student"){
+                                    return `<th><input type="checkbox" class="select_all_item_student" /></th>`;
+                                }
                                 if(h.id === "action"){
                                     return `<th>${h.label}</th>`;
                                 }
@@ -565,7 +570,20 @@ jQuery( document ).ready( function () {
             </table>`;
 
         // Replace container content
-        container.innerHTML = paginationHTML + tableHTML + paginationHTML;    
+        container.innerHTML = paginationHTML + tableHTML + paginationHTML;
+
+        // Bind "select all" checkbox to the row checkboxes; dispatch change so the
+        // template's export-button handler stays in sync.
+        const selectAllStudents = container.querySelector('th input.select_all_item_student');
+        if (selectAllStudents) {
+            selectAllStudents.addEventListener("change", () => {
+                const checked = selectAllStudents.checked;
+                container.querySelectorAll('input[name="select_item_student[]"]').forEach(cb => {
+                    cb.checked = checked;
+                    cb.dispatchEvent(new Event('change', { bubbles: true }));
+                });
+            });
+        }
     }
 
     function renderFacilitatorsReportTable(response, containerSelector) {
@@ -608,6 +626,7 @@ jQuery( document ).ready( function () {
         `;
 
         const tableHeaders = [
+            { id: "select_all_item_facilitator", label: "" },
             { id: "id", label: "ID" },
             { id: "name", label: "Facilitator Name" },
             { id: "sessionCount", label: "Sessions" },
@@ -622,6 +641,7 @@ jQuery( document ).ready( function () {
                     .map(
                         f => `
                     <tr>
+                        <td><input type="checkbox" class="select_item_facilitator" name="select_item_facilitator[]" value="${f.userId ?? ""}" /></td>
                         <td>${f.id ?? ""}</td>
                         <td>${f.name ?? ""}</td>
                         <td>${f.sessionCount ?? 0}</td>
@@ -639,7 +659,9 @@ jQuery( document ).ready( function () {
                     <tr>
                         ${tableHeaders
                             .map(h =>
-                                h.id === "action"
+                                h.id === "select_all_item_facilitator"
+                                    ? `<th><input type="checkbox" class="select_all_item_facilitator" /></th>`
+                                    : h.id === "action"
                                     ? `<th>${h.label}</th>`
                                     : `<th>${h.label}<span class="tableSort" data-action="get_facilitators_report" data-form="facilitatorForm" data-sortby="${h.id}" data-sort="${newState}"></span></th>`
                             )
@@ -651,6 +673,19 @@ jQuery( document ).ready( function () {
         `;
 
         container.innerHTML = paginationHTML + tableHTML + paginationHTML;
+
+        // Bind "select all" checkbox to the row checkboxes; dispatch change so the
+        // template's export-button handler stays in sync.
+        const selectAllFacilitators = container.querySelector('th input.select_all_item_facilitator');
+        if (selectAllFacilitators) {
+            selectAllFacilitators.addEventListener("change", () => {
+                const checked = selectAllFacilitators.checked;
+                container.querySelectorAll('input[name="select_item_facilitator[]"]').forEach(cb => {
+                    cb.checked = checked;
+                    cb.dispatchEvent(new Event('change', { bubbles: true }));
+                });
+            });
+        }
     }
 
     function renderSkeletonTable(containerSelector, numCols = 5, numRows = 5) {

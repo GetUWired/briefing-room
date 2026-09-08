@@ -157,8 +157,14 @@ add_action('init', function() {
             $report = new \BTN\BriefingRoom\Reports\StudentReport($officer);
             break;
         case 'session' && !empty($_REQUEST['session_id']):
-          
+
             $report = new \BTN\BriefingRoom\Reports\SessionReport();
+            break;
+        case 'students' && !empty($_REQUEST['student_ids']):
+            $report = new \BTN\BriefingRoom\Reports\StudentsReport();
+            break;
+        case 'facilitators' && !empty($_REQUEST['facilitator_ids']):
+            $report = new \BTN\BriefingRoom\Reports\FacilitatorsReport();
             break;
         default:
             return; // No matching report found.
