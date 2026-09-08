@@ -9,7 +9,16 @@ use BTN\BriefingRoom\Factories\StationFactory;
 use BTN\BriefingRoom\Station;
 
 WP_CLI::add_command( 'btn:migrate', function() {
+    global $wpdb;
+
+    WP_CLI::line('Running Briefing Room migrations...');
     include plugin_dir_path(__FILE__) . '/migrations.php';
+
+    if ($wpdb->last_error) {
+        WP_CLI::error("Migration finished with a database error: {$wpdb->last_error}");
+    }
+
+    WP_CLI::success('Migrations complete.');
 });
 
 WP_CLI::add_command( 'btn:fresh', function() {

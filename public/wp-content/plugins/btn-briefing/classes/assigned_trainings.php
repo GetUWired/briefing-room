@@ -321,6 +321,50 @@ if (! defined('ABSPATH')) {
 	      return array_unique($block_ids);
 	  }
 
+	function get_new_assignment_count($user_id) {
+		global $wpdb;
+
+		$items_table    = $wpdb->prefix . $this->items_table;
+		$officers_table = $wpdb->prefix . 'btn_officers';
+
+		$officer = $wpdb->get_row(
+			$wpdb->prepare("SELECT stationId, agencyId FROM {$officers_table} WHERE userId = %d", $user_id),
+			ARRAY_A
+		);
+
+		if ($officer) {
+			$station_id = $officer['stationId'];
+			$agency_id  = $officer['agencyId'];
+		} else {
+			$station_id = 0;
+			$sergeants_table = $wpdb->prefix . 'btn_sergeants';
+			$agency_id = $wpdb->get_var(
+				$wpdb->prepare("SELECT organizationId FROM {$sergeants_table} WHERE userId = %d", $user_id)
+			);
+			if (!$agency_id) return 0;
+		}
+
+		$dismissed_at = get_user_meta($user_id, 'btn_briefing_notice_dismissed_at', true);
+		if (!$dismissed_at) {
+			$dismissed_at = '1970-01-01 00:00:00';
+		}
+
+		return (int) $wpdb->get_var($wpdb->prepare(
+			"SELECT COUNT(DISTINCT i.id)
+			 FROM {$items_table} i
+			 WHERE i.training_type = 'block'
+			   AND (i.status != 'inactive' OR i.status IS NULL OR i.status = '')
+			   AND i.assigned_at > %s
+			   AND (
+			       (i.assigned_type = 'station' AND i.assigned_to = %s)
+			       OR (i.assigned_type = 'agency'  AND i.assigned_to = %s)
+			       OR (i.assigned_type = 'user'    AND i.assigned_to = %s)
+			   )",
+			$dismissed_at, $station_id, $agency_id, $user_id
+		));
+	}
+
+
  	/**
  	 * Assign a training block/category to a group or user
  	 */

@@ -861,6 +861,16 @@ document.addEventListener('click', function(event) {
     }
 });
 
+// Dismiss new-training notice
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('btn-briefing-notice-dismiss')) {
+        var notice = document.getElementById('btn-briefing-new-training-notice');
+        btnBriefingPost({ action: 'btn_briefing_dismiss_training_notice' }, function() {
+            if (notice) notice.remove();
+        });
+    }
+});
+
 // Modal submit
 document.addEventListener('submit', function(event) {
     if (event.target.id === 'btn-briefing-hide-form') {

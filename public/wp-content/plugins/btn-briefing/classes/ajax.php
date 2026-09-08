@@ -59,14 +59,23 @@ final class btn_briefing_ajax  {
 			add_action('wp_ajax_btn_briefing_assigned_training_active_action', [$this, 'btn_briefing_assigned_training_active_action']);
 
 			add_action('wp_ajax_btn_briefing_assigned_training_admin_action', [$this, 'btn_briefing_assigned_training_admin_action']);
-			
-			
+
+			add_action('wp_ajax_btn_briefing_dismiss_training_notice', [$this, 'btn_briefing_dismiss_training_notice']);
+
 	    }
 
 		function is_agency_admin() {
 			$user = wp_get_current_user();
 			$allowed = ['administrator', 'memberium_agencymanager', 'memberium_stationadmin'];
 			return !empty(array_intersect($user->roles, $allowed));
+		}
+
+		function btn_briefing_dismiss_training_notice() {
+			check_ajax_referer('btn-briefing-ajax', 'nonce');
+			$user_id = get_current_user_id();
+			if (!$user_id) { wp_send_json_error(['message' => 'Not logged in'], 401); }
+			update_user_meta($user_id, 'btn_briefing_notice_dismissed_at', current_time('mysql'));
+			wp_send_json_success();
 		}
 
 		function btn_briefing_assigned_training_admin_action(){

@@ -242,6 +242,7 @@ final class btn_briefing_frontend {
 			"{$prefix}assigned_training_category_selector"	=> "{$prefix}shortcodes",
 			"{$prefix}assigned_training_assigned_end_user"	=> "{$prefix}shortcodes",
 			"{$prefix}assigned_training_carousel"	=> "{$prefix}shortcodes",
+			"{$prefix}new_training_notice"			=> "{$prefix}shortcodes",
 			"{$prefix}get_progress"	=> "{$prefix}shortcodes",
 			"{$prefix}assigned_training_assigned_admin"	=> "{$prefix}shortcodes",
 			"{$prefix}agency_policy_form"	=> "{$prefix}shortcodes",
