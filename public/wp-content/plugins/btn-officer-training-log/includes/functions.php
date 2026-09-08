@@ -539,6 +539,7 @@ function generate_officer_rows($officers){
         });
         return [
             'id' => $officer->id,
+            'userId' => $officer->userId,
             'sortId' => $officer->userId,
             'sortName' => $officer->lastName . ', ' . $officer->firstName,
             'officerName' => $officer->firstName . ' ' . $officer->lastName . '<br><span class="wrapper-station-row">'.$officer->stationName.'</span>',
@@ -564,6 +565,7 @@ function generate_sergeant_rows($sergeants){
         });
         return [
             'id' => $sergeant->id,
+            'userId' => $sergeant->userId,
             'sortId' => $sergeant->userId,
             'sortName' => $sergeant->lastName . ', ' . $sergeant->firstName,
             'officerName' => $sergeant->firstName . ' ' . $sergeant->lastName . '<br><span class="wrapper-station-row">'.$sergeant->stationName.'</span>',
@@ -858,7 +860,8 @@ function generate_facilitator_rows($rows)
 
         $output[] = [
             'id' => $person->id,
-            'name' => '<b class="name-wrapper">' . $person->name() . '</b>' . 
+            'userId' => $data->userId,
+            'name' => '<b class="name-wrapper">' . $person->name() . '</b>' .
                       ($station ? "<br><span class='wrapper-station-row'>{$station->name}</span>" : ''),
             'sessionCount' => $data->sessionCount ?? 0,
             'trainingTime' => TimeFormatter::minutesToHours($data->trainingTime),

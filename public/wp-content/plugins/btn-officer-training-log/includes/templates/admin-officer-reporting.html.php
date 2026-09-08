@@ -83,6 +83,11 @@ $stations = Station::query()->where('agencyId', $memb_agency_id)->getAll();
         </div>
     </form>
 
+    <div class="generate_all">
+        <a class="all-student-csv" href="/?btn_download_report=students&format=csv">Download Selected Students (CSV)</a>
+        <a class="all-student-pdf" href="/?btn_download_report=students&format=html" target="_blank" rel="noopener noreferrer">Download Selected Students (PDF)</a>
+    </div>
+
     <div id="students_report_container"></div>
 
 </div>
@@ -236,9 +241,18 @@ $stations = Station::query()->where('agencyId', $memb_agency_id)->getAll();
 		display:none;
 	}
     .generate_all {
+        margin-top: 20px;
         display: flex;
         justify-content: center;
-        display: none;
+    }
+    .generate_all a {
+        background: #004da9;
+        color: #fff;
+        padding: 10px 25px;
+        margin: 5px;
+    }
+    .generate_all a:hover {
+        background: #091e4b;
     }
 
     .tablenav.top {
@@ -262,6 +276,72 @@ $stations = Station::query()->where('agencyId', $memb_agency_id)->getAll();
 		$(document).ready(function() {
 			$("table").tablesorter();
 		});
+
+		/*======================================================
+		 * Download Selected Students (CSV / PDF)
+		 *====================================================*/
+
+		// Hidden until at least one row (or "select all") is checked.
+		$('.all-student-csv, .all-student-pdf').hide();
+
+		function toggleStudentExportButtons(show) {
+			$('.all-student-csv, .all-student-pdf').toggle(show);
+		}
+
+		// "Select all" header checkbox: mirror state onto every row checkbox and
+		// flag the export links to pull the whole agency roster.
+		$(document).on('change', '.select_all_item_student', function() {
+			const isChecked = $(this).is(':checked');
+			$('input[name="select_item_student[]"]').prop('checked', isChecked);
+
+			$('.all-student-csv, .all-student-pdf').each(function() {
+				const linkUrl = new URL($(this).attr('href'), window.location.origin);
+				if (isChecked) {
+					linkUrl.searchParams.set('student_ids', 'all');
+				} else {
+					linkUrl.searchParams.delete('student_ids');
+				}
+				$(this).attr('href', linkUrl.toString());
+			});
+
+			toggleStudentExportButtons(isChecked || $('input[name="select_item_student[]"]:checked').length > 0);
+		});
+
+		// Individual row checkbox.
+		$(document).on('change', 'input[name="select_item_student[]"]', function() {
+			toggleStudentExportButtons($('input[name="select_item_student[]"]:checked').length > 0);
+		});
+
+		$('.all-student-csv, .all-student-pdf').on('click', function(e) {
+			e.preventDefault();
+
+			const linkUrl = new URL($(this).attr('href'), window.location.origin);
+			const params = linkUrl.searchParams;
+
+			// student_ids=all is set by the select-all handler; don't overwrite it.
+			if (params.get('student_ids') !== 'all') {
+				const selectedIds = $('input[name="select_item_student[]"]:checked')
+					.map(function() { return $(this).val(); })
+					.get()
+					.filter(Boolean)
+					.join(',');
+
+				if (!selectedIds) {
+					return;
+				}
+
+				params.set('student_ids', selectedIds);
+			}
+
+			const startDate = $('#startDate').val();
+			const endDate = $('#endDate').val();
+
+			if (startDate) { params.set('startDate', startDate); } else { params.delete('startDate'); }
+			if (endDate) { params.set('endDate', endDate); } else { params.delete('endDate'); }
+
+			window.open(linkUrl.toString(), '_blank');
+		});
+
 		jQuery(document).on('click','.download-report', function(e) {
 
 			var link = $(this).attr('href');

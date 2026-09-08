@@ -106,9 +106,18 @@ $stations = Station::query()->where('agencyId',$agencyId)->getAll();
 		color:#000;
 	}
     .generate_all {
+        margin-top: 20px;
         display: flex;
         justify-content: center;
-        display: none;
+    }
+    .generate_all a {
+        background: #004da9;
+        color: #fff;
+        padding: 10px 25px;
+        margin: 5px;
+    }
+    .generate_all a:hover {
+        background: #091e4b;
     }
 
     .tablenav.top {
@@ -172,6 +181,11 @@ $stations = Station::query()->where('agencyId',$agencyId)->getAll();
         </div>
     </form>
 
+    <div class="generate_all">
+        <a class="all-facilitator-csv" href="/?btn_download_report=facilitators&format=csv">Download Selected Facilitators (CSV)</a>
+        <a class="all-facilitator-pdf" href="/?btn_download_report=facilitators&format=html" target="_blank" rel="noopener noreferrer">Download Selected Facilitators (PDF)</a>
+    </div>
+
     <div id="facilitators_report_container"></div>
 
 
@@ -190,6 +204,71 @@ $stations = Station::query()->where('agencyId',$agencyId)->getAll();
 	 *====================================================*/
 
 	jQuery(document).ready(function($){
+
+		/*======================================================
+		 * Download Selected Facilitators (CSV / PDF)
+		 *====================================================*/
+
+		// Hidden until at least one row (or "select all") is checked.
+		$('.all-facilitator-csv, .all-facilitator-pdf').hide();
+
+		function toggleFacilitatorExportButtons(show) {
+			$('.all-facilitator-csv, .all-facilitator-pdf').toggle(show);
+		}
+
+		// "Select all" header checkbox: mirror state onto every row checkbox and
+		// flag the export links to pull the whole agency roster.
+		$(document).on('change', '.select_all_item_facilitator', function() {
+			const isChecked = $(this).is(':checked');
+			$('input[name="select_item_facilitator[]"]').prop('checked', isChecked);
+
+			$('.all-facilitator-csv, .all-facilitator-pdf').each(function() {
+				const linkUrl = new URL($(this).attr('href'), window.location.origin);
+				if (isChecked) {
+					linkUrl.searchParams.set('facilitator_ids', 'all');
+				} else {
+					linkUrl.searchParams.delete('facilitator_ids');
+				}
+				$(this).attr('href', linkUrl.toString());
+			});
+
+			toggleFacilitatorExportButtons(isChecked || $('input[name="select_item_facilitator[]"]:checked').length > 0);
+		});
+
+		// Individual row checkbox.
+		$(document).on('change', 'input[name="select_item_facilitator[]"]', function() {
+			toggleFacilitatorExportButtons($('input[name="select_item_facilitator[]"]:checked').length > 0);
+		});
+
+		$('.all-facilitator-csv, .all-facilitator-pdf').on('click', function(e) {
+			e.preventDefault();
+
+			const linkUrl = new URL($(this).attr('href'), window.location.origin);
+			const params = linkUrl.searchParams;
+
+			// facilitator_ids=all is set by the select-all handler; don't overwrite it.
+			if (params.get('facilitator_ids') !== 'all') {
+				const selectedIds = $('input[name="select_item_facilitator[]"]:checked')
+					.map(function() { return $(this).val(); })
+					.get()
+					.filter(Boolean)
+					.join(',');
+
+				if (!selectedIds) {
+					return;
+				}
+
+				params.set('facilitator_ids', selectedIds);
+			}
+
+			const startDate = $('#startDate').val();
+			const endDate = $('#endDate').val();
+
+			if (startDate) { params.set('startDate', startDate); } else { params.delete('startDate'); }
+			if (endDate) { params.set('endDate', endDate); } else { params.delete('endDate'); }
+
+			window.open(linkUrl.toString(), '_blank');
+		});
 
 		jQuery(document).on('click','.download-serg-report', function(e) {
 
