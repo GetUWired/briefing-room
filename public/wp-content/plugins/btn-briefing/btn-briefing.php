@@ -16,7 +16,7 @@ if (! defined('ABSPATH')) {
 	die();
 }
 
-define('BTN_BRIEFING_VERSION', '1.95.1');
+define('BTN_BRIEFING_VERSION', '1.95.2');
 define('BTN_BRIEFING_PLUGIN', __FILE__);
 define('BTN_BRIEFING_DIR', __DIR__ . '/');
 define('BTN_BRIEFING_CLASS_DIR', BTN_BRIEFING_DIR . 'classes/');

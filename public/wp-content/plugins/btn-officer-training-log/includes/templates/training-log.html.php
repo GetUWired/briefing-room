@@ -73,8 +73,8 @@ $redirect = home_url( $wp->request );
         </fieldset>
 
         <fieldset id="training-log-officer-search" style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
-            <legend style="margin-bottom: 0;">Search Students</legend>
-            <input type="search" placeholder="Begin typing last name to see a list of students" />
+            <legend style="margin-bottom: 0;">Search Students &amp; Managers</legend>
+            <input type="search" placeholder="Begin typing last name to see a list of students or managers" />
             <ul style="list-style-type: none; margin: 0;">
                 <li><small>(Search results will show here)</small></li>
             </ul>
@@ -210,43 +210,79 @@ $redirect = home_url( $wp->request );
             }
 
             debounce = setTimeout(function(){
-                $.ajax({
-                url: '<?php echo esc_url_raw(rest_url('btn/briefing-room/students')); ?>',
-                method: 'GET',
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader('X-WP-Nonce', '<?php echo wp_create_nonce('wp_rest'); ?>');
-                },
-                data: {
-                    'search': search,
-                    'agency': '<?php echo $agencyId; ?>',
-                }
-            }).done(function (response) {
-                officerSearch.find('ul').empty();
-
-                if (0 === response.length) {
-                    officerSearch.find('ul').append(`<li><small>(No results found for "${search}")</small></li>`);
-                    return;
-                }
-
-
-                response.forEach(student => {
-                    officerSearch.find('ul').append(`
-                        <li>
-                            <label
-                                style="cursor: pointer;"
-                                data-student
-                                data-student-id="${student.id}"
-                                data-student-user-id="${student.userId}"
-                                data-student-first-name="${student.firstName}"
-                                data-student-last-name="${student.lastName}"
-                                data-student-reference-id="${student.referenceId ?? ''}"
-                            >
-                                ${student.lastName}, ${student.firstName} <small>${student.referenceId ?? ''}</small>
-                            </label>
-                        </li>
-                    `);
+                const studentsRequest = $.ajax({
+                    url: '<?php echo esc_url_raw(rest_url('btn/briefing-room/students')); ?>',
+                    method: 'GET',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('X-WP-Nonce', '<?php echo wp_create_nonce('wp_rest'); ?>');
+                    },
+                    data: {
+                        'search': search,
+                        'agency': '<?php echo $agencyId; ?>',
+                    }
                 });
-            });
+
+                const managersRequest = $.ajax({
+                    url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                    method: 'GET',
+                    data: {
+                        action: 'btn_search_managers',
+                        _ajax_nonce: '<?php echo wp_create_nonce('btn_search_managers'); ?>',
+                        search: search,
+                        agency: '<?php echo $agencyId; ?>',
+                    }
+                });
+
+                $.when(studentsRequest, managersRequest).done(function (studentsRes, managersRes) {
+                    const students = studentsRes[0] || [];
+                    const managers = managersRes[0] || [];
+
+                    officerSearch.find('ul').empty();
+
+                    if (0 === students.length && 0 === managers.length) {
+                        officerSearch.find('ul').append(`<li><small>(No results found for "${search}")</small></li>`);
+                        return;
+                    }
+
+                    students.forEach(student => {
+                        officerSearch.find('ul').append(`
+                            <li>
+                                <label
+                                    style="cursor: pointer;"
+                                    data-student
+                                    data-student-id="${student.id}"
+                                    data-student-user-id="${student.userId}"
+                                    data-student-first-name="${student.firstName}"
+                                    data-student-last-name="${student.lastName}"
+                                    data-student-reference-id="${student.referenceId ?? ''}"
+                                >
+                                    ${student.lastName}, ${student.firstName} <small>${student.referenceId ?? ''}</small>
+                                </label>
+                            </li>
+                        `);
+                    });
+
+                    managers.forEach(manager => {
+                        officerSearch.find('ul').append(`
+                            <li>
+                                <label
+                                    style="cursor: pointer;"
+                                    data-student
+                                    data-student-id="${manager.id}"
+                                    data-student-user-id="${manager.userId}"
+                                    data-student-first-name="${manager.firstName}"
+                                    data-student-last-name="${manager.lastName}"
+                                    data-student-reference-id="Manager"
+                                >
+                                    ${manager.lastName}, ${manager.firstName} <small>(Manager)</small>
+                                </label>
+                            </li>
+                        `);
+                    });
+                }).fail(function () {
+                    officerSearch.find('ul').empty();
+                    officerSearch.find('ul').append(`<li><small>(No results found for "${search}")</small></li>`);
+                });
             }, 250);
         })
 

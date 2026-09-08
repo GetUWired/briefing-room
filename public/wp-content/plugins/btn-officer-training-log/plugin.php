@@ -55,6 +55,34 @@ add_action( 'wp_ajax_btn_search_officers', function() {
     );
 });
 
+add_action( 'wp_ajax_btn_search_managers', function() {
+    check_ajax_referer('btn_search_managers');
+
+    $search = wp_unslash( $_REQUEST['search'] ?? '' );
+    $agencyId = absint( $_REQUEST['agency'] ?? 0 );
+
+    if (!$search || !$agencyId) {
+        wp_send_json([]);
+    }
+
+    $managers = \BTN\BriefingRoom\Manager::query()
+        ->where('organizationId', $agencyId)
+        ->where(function($q) use ($search) {
+            $q->whereLike('firstName', $search)
+                ->orWhereLike('lastName', $search);
+        })
+        ->getAll();
+
+    wp_send_json(array_map(function($manager) {
+        return [
+            'id' => $manager->id,
+            'userId' => $manager->userId,
+            'firstName' => $manager->firstName,
+            'lastName' => $manager->lastName,
+        ];
+    }, $managers));
+});
+
 add_action( 'wp_login', function( $user_login, \WP_User $user ) {
 
     if ( ! empty($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], 'wp-login.php') === false ) {
