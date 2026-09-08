@@ -201,6 +201,7 @@ add_shortcode('briefing_room_csv_add_sergeants', function() {
 
 add_shortcode('btn_sso_login_form', [\BTN\BriefingRoom\Helpers\MiniOrangeSAML::class, 'loginForm']);
 
+
 add_shortcode( 'briefing_room_weekly_report_form', function(){
     ob_start();
     ?>

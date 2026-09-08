@@ -427,6 +427,71 @@ final class btn_briefing_shortcodes {
 			return $html;
 	}
 
+	static function second_look($atts, $content, $tag) {
+				$args = shortcode_atts( [
+					'posts_per_page' => 12,
+					'category_id'    => '',
+				], $atts );
+
+				$ns             = "btn-briefing";
+				$posts_per_page = (int) $args['posts_per_page'];
+				$category_id    = $args['category_id'];
+				$post_type      = btn_briefing()->post()->get_post_slug();
+				$term_taxonomy  = btn_briefing()->post()->get_taxonomy_slug();
+				$page_url       = get_permalink();
+				$pagination     = false; // fixed daily set, no pagination
+				$paged          = 1;
+				$template_file  = 'posts.php';
+				$template       = btn_briefing()->template_part_path($template_file);
+
+				$cache_key = 'btn_briefing_second_look_' . date('Y-m-d') . '_' . ($category_id ?: 'all');
+				$post_ids  = get_transient($cache_key);
+
+				if ($post_ids === false) {
+					$pool_args = [
+						'post_type'      => $post_type,
+						'post_status'    => 'publish',
+						'posts_per_page' => 200, // capped random pool, not unbounded
+						'orderby'        => 'rand',
+						'fields'         => 'ids',
+					];
+					if ($category_id) {
+						$pool_args['tax_query'] = [
+							[
+								'taxonomy' => $term_taxonomy,
+								'field'    => 'term_id',
+								'terms'    => $category_id,
+							]
+						];
+					}
+					$post_ids = get_posts($pool_args);
+					set_transient($cache_key, $post_ids, DAY_IN_SECONDS);
+				}
+
+				$args_post = [
+					'post_type'      => $post_type,
+					'post__in'       => !empty($post_ids) ? $post_ids : [0],
+					'orderby'        => 'post__in',
+					'posts_per_page' => $posts_per_page,
+					'page_url'       => $page_url,
+					'post_status'    => 'publish',
+				];
+
+				$agency_id    = btn_briefing()->hidebriefing()->get_agency_id_by_user_id();
+				$excluded_ids = btn_briefing()->hidebriefing()->get_records_by_agency_and_term($agency_id, 'post');
+				if (!empty($excluded_ids)) {
+					$args_post['post__not_in'] = $excluded_ids;
+				}
+
+				$loop = new WP_Query( $args_post );
+				$html = "<div class=\"{$ns}-container-second-look\">";
+					include $template;
+				$html .= "</div>";
+
+				btn_briefing()->frontend()->set_json('btn_briefing_shortcode', $args_post);
+				return $html;
+	}
+
 	static function assigned_training_category_selector($atts, $content, $tag) {
 				$args = shortcode_atts( [
 					'category_id' => '',
@@ -537,6 +602,44 @@ final class btn_briefing_shortcodes {
 			return $html;
 	}
 
+	static function assigned_training_carousel($atts, $content, $tag) {
+				$args = shortcode_atts( [
+					'posts_per_page' => 30,
+				], $atts );
+				$ns             = "btn-briefing";
+				$posts_per_page = (int) $args['posts_per_page'];
+				$post_type      = btn_briefing()->post()->get_post_slug();
+				$template_file  = 'assigned-training-carousel.php';
+				$template       = btn_briefing()->template_part_path($template_file);
+
+				$user_id       = get_current_user_id();
+				$assigned_ids  = btn_briefing()->assigned_training()->get_user_assignments($user_id, 'block');
+				$complete_data = get_user_meta($user_id, 'btn-briefing-completed', true);
+				$pending_ids   = is_array($complete_data) ? array_values(array_diff($assigned_ids, $complete_data)) : $assigned_ids;
+
+				$args_post = [
+					'post_type'      => $post_type,
+					'post__in'       => !empty($pending_ids) ? $pending_ids : [0],
+					'orderby'        => 'post__in',
+					'posts_per_page' => $posts_per_page,
+					'post_status'    => 'publish',
+				];
+
+				$agency_id    = btn_briefing()->hidebriefing()->get_agency_id_by_user_id();
+				$excluded_ids = btn_briefing()->hidebriefing()->get_records_by_agency_and_term($agency_id, 'post');
+				if (!empty($excluded_ids)) {
+					$args_post['post__not_in'] = $excluded_ids;
+				}
+
+				$loop = new WP_Query( $args_post );
+				$html = "<div class=\"{$ns}-container-carousel\">";
+					include $template;
+				$html .= "</div>";
+
+				// Required so frontend.js:31 initializes on pages where this is the only btn_briefing shortcode.
+				btn_briefing()->frontend()->set_json('btn_briefing_shortcode', $args_post);
+				return $html;
+	}
 
 		static function assigned_training_assigned_admin($atts, $content, $tag) {
 				$args = shortcode_atts( [
@@ -801,6 +904,7 @@ final class btn_briefing_shortcodes {
 					<p>
 						Warning: This feature is intended only for agencies whose internal policies are more restrictive than current law, who reside outside of the jurisdiction of a court ruling, or as a temporary measure while the agency evaluates how a new legal development may affect existing policy. Please understand that published court decisions become effective law immediately upon issuance by the court, regardless of whether your officers have been trained on that decision. Permanently hiding or restricting access to legal training may create significant civil liability, administrative liability, and potential constitutional compliance issues for you, your officers, and your agency. By proceeding, you acknowledge that you have consulted with your agency's administration and legal counsel, understand the potential risks and consequences of limiting access to this training, and still choose to hide this video."
 					</p>
+
 					<form id="btn-briefing-hide-form">
 						<div class="field">
 							<label>

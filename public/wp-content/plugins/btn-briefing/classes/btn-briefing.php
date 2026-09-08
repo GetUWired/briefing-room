@@ -19,8 +19,16 @@ final class btn_briefing {
 			$this->load_text_domain();
 			// Init Hooks
 			add_action('init',[$this,'init_hooks']);
-
+			// Keep DB schema in sync with the plugin version
+			$this->maybe_update_db();
     }
+
+	function maybe_update_db() {
+		if ( get_option('btn_briefing_db_version') !== BTN_BRIEFING_VERSION ) {
+			self::create_database_tables();
+			update_option('btn_briefing_db_version', BTN_BRIEFING_VERSION);
+		}
+	}
 
     // Init
     function init_hooks(){
@@ -37,6 +45,8 @@ final class btn_briefing {
 			if (!is_admin()) {
 				$this->frontend()->add_wp_hooks();
 			}
+
+			$this->notifications()->add_wp_hooks();
 
 
 			//ACF
@@ -106,6 +116,15 @@ final class btn_briefing {
 				$assigned_training = new btn_briefing_assigned_trainings;
 			}
 			return $assigned_training;
+	}
+
+	// Get Notifications Class
+	function notifications(){
+	static $notifications = null;
+			if( is_null($notifications) ){
+				$notifications = new btn_briefing_notifications;
+			}
+			return $notifications;
 	}
 
 
@@ -257,7 +276,7 @@ final class btn_briefing {
 		    assigned_type VARCHAR(20) NOT NULL,            -- 'station', 'agency', or 'user'
 		    assigned_by INT(11) NOT NULL,
 		    assigned_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-			status VARCHAR(20) NOT NULL,
+			status VARCHAR(20) NOT NULL DEFAULT '',
 		    PRIMARY KEY (id),
 		    KEY training_id (training_id),
 		    KEY assigned_to (assigned_to),

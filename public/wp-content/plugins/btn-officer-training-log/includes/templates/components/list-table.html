@@ -1,0 +1,111 @@
+<script>
+    class ListTable extends HTMLElement {
+        constructor() {
+            super()
+
+            this.template = document.getElementById('list-table');
+            this.columns = JSON.parse(this.getAttribute('data-columns'))
+            this.rows = JSON.parse(this.getAttribute('data-rows'))
+        }
+
+        connectedCallback() {
+            const node = document.importNode(this.template.content, true);
+            this.appendChild(node);
+
+            this.columns = JSON.parse(this.getAttribute('data-columns'))
+            Object.values(this.columns).forEach(this.appendColumnCallback())
+
+            if(this.rows.length) {
+                this.rows.forEach(this.appendRowCallback())
+            } else {
+                const emptyRow = document.createElement('tr')
+                const emptyCell = document.createElement('td')
+                emptyCell.colSpan = columns.length
+                emptyCell.textContent = 'No records found'
+                emptyRow.appendChild(emptyCell)
+                this.querySelector('tbody').appendChild(emptyRow)
+            }
+        }
+
+        appendColumnCallback() {
+            return ({id, label}) => {
+                const node = document.createElement('th')
+                node.id = id
+                node.textContent = label
+                node.scope = 'col'
+                node.className = 'manage-column column-columnname'
+                this.querySelector('thead tr').appendChild(node.cloneNode(true));
+                this.querySelector('tfoot tr').appendChild(node.cloneNode(true));
+            }
+        }
+
+        appendRowCallback() {
+            return (data, index) => {
+
+                const node = document.createElement('tr')
+                node.className = index % 2 ? '' : 'alternate'
+                node.valign = 'top'
+                this.querySelector('tbody').appendChild(node);
+
+                const sortedData = {}
+                this.columns.forEach(({id}) => {
+                    sortedData[id] = data[id]
+                })
+
+                Object.values(sortedData).forEach(this.appendRowColumnCallback(node))
+            }
+        }
+
+        appendRowColumnCallback(rowColumnNode) {
+            return (content, index) => {
+                const node = document.createElement('td')
+                node.className = 'column-columnname'
+                node.innerHTML = content
+                const actions = JSON.parse(this.getAttribute('data-actions'))
+                index === 0 && actions?.forEach(this.appendRowColumnAction(node, content))
+
+                rowColumnNode.appendChild(node);
+            }
+        }
+
+        appendRowColumnAction(rowColumnNode, content) {
+            const rowActionsNode = document.createElement('div')
+            rowActionsNode.className = 'row-actions'
+            rowColumnNode.appendChild(rowActionsNode)
+            return (action) => {
+                const anchor = document.createElement('a')
+                const slug = action.toLowerCase().replace(' ', '-')
+                anchor.id = `${slug}-${content}`
+                anchor.textContent = action
+                anchor.href = '#'
+                const actionNode = document.createElement('span')
+                actionNode.appendChild(anchor)
+                rowActionsNode.appendChild(actionNode)
+                return anchor
+            }
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        customElements.define('list-table', ListTable)
+    });
+</script>
+
+<template id="list-table">
+    <table class="widefat fixed" cellspacing="0">
+        <thead>
+        <tr>
+            <!--            <th id="cb" class="manage-column column-cb check-column" scope="col"></th>-->
+        </tr>
+        </thead>
+
+        <tfoot>
+        <tr>
+            <!--            <th class="manage-column column-cb check-column" scope="col"></th>-->
+        </tr>
+        </tfoot>
+
+        <tbody>
+        </tbody>
+    </table>
+</template>

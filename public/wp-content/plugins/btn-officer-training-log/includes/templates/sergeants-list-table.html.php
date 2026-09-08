@@ -179,10 +179,11 @@ HTML;
             {"id": "trainingTime","label": "Training Time"},
             {"id": "lastLogin","label": "Last Login"},
             {"id": "actions","label": "Actions"}
-        ]'
-        data-rows='<?php
-        echo json_encode($rows, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP); ?>'
-    ></list-table>
+        ]'>
+    <script type="application/json" class="data-rows">
+        <?php echo json_encode($rows) ?>
+    </script>
+    </list-table>
 
 </div>
 

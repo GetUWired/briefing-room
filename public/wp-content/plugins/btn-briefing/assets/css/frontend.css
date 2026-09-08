@@ -818,6 +818,41 @@ button.modal__close {
   outline: 1px solid slategrey;
 }
 
+/* Success Modal */
+.btn-briefing-success-modal .modal__container {
+    max-width: 420px;
+    height: auto;
+    border-radius: 8px;
+    padding: 32px 24px 24px;
+    text-align: center;
+}
+.btn-briefing-success-modal .modal__icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: #e6f4ea;
+    color: #1e7e34;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+.btn-briefing-success-modal .modal__title {
+    text-align: center;
+    color: rgba(0,0,0,.85);
+}
+.btn-briefing-success-modal .modal__content {
+    overflow: visible;
+    height: auto;
+    font-size: 1rem;
+    margin: 12px 0 20px;
+}
+.btn-briefing-success-modal .modal__footer {
+    display: flex;
+    justify-content: center;
+}
+
 /**************************\
 Demo Animation Style
 \**************************/
@@ -908,7 +943,7 @@ button.modal__close {
     margin-top: 20px;
 }
 .completed-video {
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
 }
 .btn-briefing-assigned-training-wrapper {
     display: flex;
@@ -1438,4 +1473,48 @@ button.btn-submit-assigned-admin {
 @keyframes slideUp {
     from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+}
+
+/* === Assigned Training Carousel === */
+.btn-briefing-carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 0 45px;
+}
+.btn-briefing-carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+.btn-briefing-carousel-slide {
+    flex: 0 0 calc(100% / 3);
+    box-sizing: border-box;
+    padding: 0 8px;
+}
+.btn-briefing-carousel-next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: #004DA9;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+.btn-briefing-carousel-next:hover {
+    background: #003b80;
+}
+@media screen and (max-width:991px) {
+    .btn-briefing-carousel-slide {
+        flex-basis: calc(100% / 2);
+    }
+}
+@media screen and (max-width:767px) {
+    .btn-briefing-carousel-slide {
+        flex-basis: 100%;
+    }
 }

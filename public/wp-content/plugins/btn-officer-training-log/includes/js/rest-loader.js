@@ -1,6 +1,5 @@
 jQuery( document ).ready( function () {
 
-
     //report filter submission handler
     var _doing_report_ajax = false;
     jQuery( '#page' ).on( 'submit', '#session_report_form', function(e) {
@@ -133,7 +132,6 @@ jQuery( document ).ready( function () {
         e.preventDefault();
 
         
-
         let formName = jQuery(this).data('form');
         let pageNumber = jQuery(this).data('page');
         let action = jQuery(this).data('action');
@@ -349,6 +347,13 @@ jQuery( document ).ready( function () {
             return;
         }
 
+        // Capture filter state at render time — inputs match what the table will display.
+        window.sessionExportFilters = {
+            search:    (document.getElementById('search')    || {}).value || '',
+            startDate: (document.getElementById('startDate') || {}).value || '',
+            endDate:   (document.getElementById('endDate')   || {}).value || '',
+        };
+
         const { currentPage = 1, numPages = 1, total = 0, perPage = 25, sort = 'DESC' } = response.data;
         const sessions = response.sessions || [];
         const container = document.querySelector(containerSelector);
@@ -445,7 +450,7 @@ jQuery( document ).ready( function () {
         container.innerHTML = paginationHTML + tableHTML + paginationHTML;
 
         // Bind "select all" checkbox if present
-       const selectAll = container.querySelector('th input.select_all_item_session');
+        const selectAll = container.querySelector('th input.select_all_item_session');
         if (selectAll) {
             selectAll.addEventListener("change", () => {
                 const checked = selectAll.checked;
@@ -454,6 +459,18 @@ jQuery( document ).ready( function () {
                     cb.dispatchEvent(new Event('change', { bubbles: true }));
                 });
             });
+
+            // Restore "export all" state after re-render (page navigation)
+            if (window.sessionExportAllFiltered) {
+                selectAll.checked = true;
+                container.querySelectorAll('input[name="select_all_item_session[]"]').forEach(cb => {
+                    cb.checked = true;
+                });
+                if (typeof window.updateSessionDownloadHrefs === 'function') {
+                    window.updateSessionDownloadHrefs();
+                }
+                jQuery('.all-session-csv, .all-session-pdf').show();
+            }
         }
     }
 

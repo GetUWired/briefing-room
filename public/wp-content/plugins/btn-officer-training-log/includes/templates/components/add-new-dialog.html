@@ -1,0 +1,109 @@
+<script>
+    class AddNewDialog extends HTMLDialogElement {
+
+        connectedCallback() {
+
+            const template = document.getElementById('add-new');
+            this.innerHTML = template.innerHTML + this.innerHTML
+
+            JSON.parse(this.getAttribute('data-fields'))
+                .forEach(this.appendFieldCallback())
+
+            document.getElementById(this.getAttribute('target'))
+                .addEventListener('click', this.showModal.bind(this))
+
+            this.querySelector('h2').innerHTML = this.getAttribute('data-title') ?? 'Add New'
+
+            this.querySelector('input[name="action"]').value = this.getAttribute('data-action')
+
+            this.querySelector('input[name="_wpnonce"]').value = this.getAttribute('data-nonce')
+
+            this.querySelector('input[name="redirect"]').value = this.getAttribute('data-redirect')
+        }
+
+        appendFieldCallback() {
+            return ({id, label, options = null, value = '', disabled = false, required = false}) => {
+                const node = document.createElement('tr')
+                const header = document.createElement('th')
+                header.setAttribute('scope', 'row')
+                const data = document.createElement('td')
+
+                const labelNode = document.createElement('label')
+                labelNode.setAttribute('for', id)
+                labelNode.innerText = label
+                header.appendChild(labelNode)
+
+                let field;
+                if(options) {
+                    field = document.createElement('select')
+                    field.appendChild(document.createElement('option'))
+                    const parsedOptions = Array.isArray(options) ? options : JSON.parse(options)
+                    parsedOptions.forEach(({id: optionId, name}) => {
+                        const option = document.createElement('option')
+                        option.value = optionId
+                        option.innerText = name
+                        if(value === optionId) option.selected = 'selected'
+                        field.appendChild(option)
+                    })
+                } else {
+                    field = document.createElement('input')
+                    field.type = 'text'
+                    field.value = value
+                }
+
+                if(disabled) {
+                    field.type = 'hidden'
+                    const placeholder = document.createElement('span');
+                    placeholder.innerHTML = value
+                    data.appendChild(
+                        placeholder
+                    )
+                }
+
+                if(required) {
+                    field.required = true
+                }
+
+                field.name = id
+                field.id = id
+                field.classList.add('regular-text')
+
+                data.appendChild(field)
+                node.appendChild(header)
+                node.appendChild(data)
+                this.querySelector('.form-table tbody').appendChild(node);
+            }
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        customElements.define('add-new', AddNewDialog, {extends: 'dialog'})
+    });
+</script>
+
+<template id="add-new">
+
+    <h2>Add New</h2>
+
+    <form method="dialog" style="position: absolute; top: 15px; right: 15px;">
+        <button style="cursor: pointer; border: 0; background: 0 0;">Close</button>
+    </form>
+
+    <form id="add-new-form" action="admin-post.php" method="post">
+
+        <input type="hidden" name="action" value="">
+        <input type="hidden" name="redirect" value="">
+        <input type="hidden" name="_wpnonce" value="">
+
+        <table class="form-table" role="presentation">
+            <tbody>
+            </tbody>
+        </table>
+
+        <div class="submit" style="display: flex; justify-content: space-between;">
+            <button type="submit" class="button button-primary">Save</button>
+        </div>
+
+    </form>
+
+</template>

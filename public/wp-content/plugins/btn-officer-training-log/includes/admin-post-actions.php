@@ -863,15 +863,66 @@ add_action('wp_ajax_generate_station_csv_report',function(){
 
 add_action('admin_post_delete_station', function() {
 
+    if (!current_user_can('manage_options')) { wp_die('Unauthorized', 403); }
+
     $stationId = absint( $_REQUEST['station_id'] );
 
     check_admin_referer("delete_station-$stationId");
 
     $station = Station::find($stationId);
 
+    if ($station->officers()->count() || $station->sergeants()->count()) {
+        wp_die('Cannot delete a station with students or facilitators assigned. Use the merge tool to move them to another station first.');
+    }
+
+    global $wpdb;
+    $assignedTrainingCount = (int) $wpdb->get_var($wpdb->prepare(
+        "SELECT COUNT(*) FROM {$wpdb->prefix}assigned_training_items WHERE assigned_type = 'station' AND assigned_to = %d",
+        $stationId
+    ));
+
+    if ($assignedTrainingCount) {
+        wp_die('Cannot delete a station with training assignments. Use the merge tool to move them to another station first.');
+    }
+
     if(!$station->delete()) {
         wp_die('Unable to delete station ID ' . $stationId);
     }
+
+    wp_redirect($_REQUEST['redirect']) && exit;
+});
+
+add_action('admin_post_merge_station', function() {
+
+    if (!current_user_can('manage_options')) { wp_die('Unauthorized', 403); }
+
+    $stationId = absint( $_REQUEST['station_id'] );
+    $targetId = absint( $_REQUEST['target_station_id'] );
+
+    check_admin_referer("merge_station-$stationId");
+
+    if ($stationId === $targetId) {
+        wp_die('Cannot merge a station into itself.');
+    }
+
+    $source = Station::find($stationId);
+    $target = Station::find($targetId);
+
+    if ($source->agencyId != $target->agencyId) {
+        wp_die('Target station must belong to the same agency.');
+    }
+
+    global $wpdb;
+
+    \StellarWP\DB\DB::beginTransaction();
+
+    $wpdb->update($wpdb->prefix.'btn_officers', ['stationId' => $targetId], ['stationId' => $stationId]);
+    $wpdb->update($wpdb->prefix.'btn_sergeants', ['stationId' => $targetId], ['stationId' => $stationId]);
+    $wpdb->update($wpdb->prefix.'assigned_training_items', ['assigned_to' => $targetId], ['assigned_type' => 'station', 'assigned_to' => $stationId]);
+
+    $source->delete();
+
+    \StellarWP\DB\DB::commit();
 
     wp_redirect($_REQUEST['redirect']) && exit;
 });
