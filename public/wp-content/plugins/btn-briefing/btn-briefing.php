@@ -3,7 +3,7 @@
 Plugin Name: BTN Briefing
 Plugin URI: https://businesstechninjas.com/
 Description: Custom Post type For Briefing
-Version: 1.0.3
+Version: 1.96
 Author: Business Tech Ninjas
 Author URI: https://businesstechninjas.com/
 License: Copyright (c) Business Tech Ninjas
@@ -16,7 +16,7 @@ if (! defined('ABSPATH')) {
 	die();
 }
 
-define('BTN_BRIEFING_VERSION', '1.95.2');
+define('BTN_BRIEFING_VERSION', '1.96.2');
 define('BTN_BRIEFING_PLUGIN', __FILE__);
 define('BTN_BRIEFING_DIR', __DIR__ . '/');
 define('BTN_BRIEFING_CLASS_DIR', BTN_BRIEFING_DIR . 'classes/');
