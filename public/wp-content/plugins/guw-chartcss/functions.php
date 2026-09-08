@@ -183,35 +183,24 @@ function get_login_counts($agency_id, $start_date = null, $end_date = null) {
 function get_total_training_time($agency_id){
     global $wpdb;
 
+    // Scoped via the session's own stationId (captured when it was recorded), not the
+    // recording user's current station, so a later reassignment doesn't move a
+    // session's training time between agencies. Note: sessions with no stationId
+    // (recorded by a Manager, who has no station) are excluded here, matching this
+    // function's pre-existing behavior.
     $sql = "
         SELECT SUM(ts.duration * COALESCE(record_counts.officer_count, 0)) AS total_minutes
         FROM {$wpdb->prefix}btn_training_sessions ts
-        INNER JOIN (
-            -- Officers in this agency
-            SELECT o.userId, o.stationId
-            FROM {$wpdb->prefix}btn_officers o
-            INNER JOIN {$wpdb->prefix}btn_stations s
-                ON s.id = o.stationId
-            WHERE s.agencyId = %d
-
-            UNION ALL
-
-            -- Sergeants in this agency
-            SELECT sg.userId, sg.stationId
-            FROM {$wpdb->prefix}btn_sergeants sg
-            INNER JOIN {$wpdb->prefix}btn_stations s2
-                ON s2.id = sg.stationId
-            WHERE s2.agencyId = %d
-        ) AS users
-            ON users.userId = ts.userId
+        INNER JOIN {$wpdb->prefix}btn_stations s ON s.id = ts.stationId
         LEFT JOIN (
             SELECT sessionId, COUNT(*) AS officer_count
             FROM {$wpdb->prefix}btn_training_records
             GROUP BY sessionId
         ) AS record_counts ON record_counts.sessionId = ts.id
+        WHERE s.agencyId = %d
     ";
 
-    $query = $wpdb->prepare($sql, $agency_id, $agency_id);
+    $query = $wpdb->prepare($sql, $agency_id);
     $total_minutes = (int) $wpdb->get_var($query);
 
     return $total_minutes ?: 0;

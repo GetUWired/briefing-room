@@ -611,6 +611,34 @@ final class btn_briefing_shortcodes {
 			return $html;
 	}
 
+	static function new_training_notice($atts, $content, $tag) {
+			$user_id = get_current_user_id();
+			if (!$user_id) return '';
+
+			$count = btn_briefing()->assigned_training()->get_new_assignment_count($user_id);
+			if ($count === 0) return '';
+
+			$args    = shortcode_atts(['page_id' => ''], $atts);
+			$page_id = (int) $args['page_id'];
+
+			$training_count = $count === 1 ? '1 new assigned training' : "{$count} new assigned trainings";
+
+			if ($page_id) {
+				$url    = get_permalink($page_id);
+				$link   = "<a href=\"{$url}\" style=\"color:#fff;text-decoration:underline;\">Click here</a>";
+				$label  = "You have {$training_count}. {$link} to view.";
+			} else {
+				$label = "You have {$training_count}.";
+			}
+
+			$ns   = 'btn-briefing';
+			$html  = "<div class=\"{$ns}-notice\" id=\"{$ns}-new-training-notice\" role=\"alert\" style=\"display:flex;align-items:center;justify-content:space-between;padding:12px 16px;margin-bottom:16px;background:#1e3a5f;color:#fff;border-radius:6px;font-size:15px;\">";
+			$html .= "<span>{$label}</span>";
+			$html .= "<button class=\"{$ns}-notice-dismiss\" aria-label=\"Dismiss\" style=\"background:none;border:none;color:#fff;font-size:20px;cursor:pointer;line-height:1;padding:0 4px;\">&times;</button>";
+			$html .= "</div>";
+			return $html;
+	}
+
 	static function assigned_training_carousel($atts, $content, $tag) {
 				$args = shortcode_atts( [
 					'posts_per_page' => 30,

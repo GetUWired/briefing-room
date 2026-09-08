@@ -1429,3 +1429,47 @@ button.btn-submit-assigned-admin {
     from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+
+/* === Assigned Training Carousel === */
+.btn-briefing-carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 0 45px;
+}
+.btn-briefing-carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+.btn-briefing-carousel-slide {
+    flex: 0 0 calc(100% / 3);
+    box-sizing: border-box;
+    padding: 0 8px;
+}
+.btn-briefing-carousel-next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    border: none;
+    border-radius: 50%;
+    background: #004DA9;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+.btn-briefing-carousel-next:hover {
+    background: #003b80;
+}
+@media screen and (max-width:991px) {
+    .btn-briefing-carousel-slide {
+        flex-basis: calc(100% / 2);
+    }
+}
+@media screen and (max-width:767px) {
+    .btn-briefing-carousel-slide {
+        flex-basis: 100%;
+    }
+}

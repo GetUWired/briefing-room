@@ -11,6 +11,7 @@ class TrainingSession extends Framework\Model
     public $id;
     public $trainingId;
     public $userId;
+    public $stationId;
     public $duration;
     public $completedAt;
 

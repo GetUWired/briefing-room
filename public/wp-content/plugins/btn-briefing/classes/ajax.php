@@ -57,10 +57,26 @@ final class btn_briefing_ajax
 
         add_action('wp_ajax_btn_briefing_assigned_training_admin_action', [$this, 'btn_briefing_assigned_training_admin_action']);
 
+        add_action('wp_ajax_btn_briefing_dismiss_training_notice', [$this, 'btn_briefing_dismiss_training_notice']);
+
         // === ADDED FOR tbr-sso-manager INTEGRATION ===
         add_action('wp_ajax_btn_briefing_agency_extension', [$this, 'btn_briefing_agency_extension_action']);
         // === END ADDITION ===
 
+    }
+
+    public function is_agency_admin() {
+        $user = wp_get_current_user();
+        $allowed = ['administrator', 'memberium_agencymanager', 'memberium_stationadmin'];
+        return !empty(array_intersect($user->roles, $allowed));
+    }
+
+    public function btn_briefing_dismiss_training_notice() {
+        check_ajax_referer('btn-briefing-ajax', 'nonce');
+        $user_id = get_current_user_id();
+        if (!$user_id) { wp_send_json_error(['message' => 'Not logged in'], 401); }
+        update_user_meta($user_id, 'btn_briefing_notice_dismissed_at', current_time('mysql'));
+        wp_send_json_success();
     }
 
     // === ADDED FOR tbr-sso-manager INTEGRATION ===
@@ -115,7 +131,7 @@ final class btn_briefing_ajax
     public function btn_briefing_assigned_training_admin_action()
     {
         check_ajax_referer('btn-briefing-ajax', 'nonce');
-        if (!current_user_can('manage_options')) {
+        if (!$this->is_agency_admin()) {
             wp_send_json_error(['message' => 'Unauthorized'], 403);
         }
         $ns = 'btn-briefing';
@@ -363,7 +379,7 @@ final class btn_briefing_ajax
     public function btn_briefing_assigned_training_delete_action()
     {
         check_ajax_referer('btn-briefing-ajax', 'nonce');
-        if (!current_user_can('manage_options')) {
+        if (!$this->is_agency_admin()) {
             wp_send_json_error(['message' => 'Unauthorized'], 403);
         }
         $id = (!empty($_POST['id'])) ? $_POST['id'] : false;
@@ -376,7 +392,7 @@ final class btn_briefing_ajax
     public function btn_briefing_assigned_training_active_action()
     {
         check_ajax_referer('btn-briefing-ajax', 'nonce');
-        if (!current_user_can('manage_options')) {
+        if (!$this->is_agency_admin()) {
             wp_send_json_error(['message' => 'Unauthorized'], 403);
         }
         $id = (!empty($_POST['id'])) ? $_POST['id'] : false;
@@ -389,7 +405,7 @@ final class btn_briefing_ajax
     public function btn_get_briefing_assigned_options_action()
     {
         check_ajax_referer('btn-briefing-ajax', 'nonce');
-        if (!current_user_can('manage_options')) {
+        if (!$this->is_agency_admin()) {
             wp_send_json_error(['message' => 'Unauthorized'], 403);
         }
         $category_id = sanitize_text_field($_POST['category_id']);
@@ -445,7 +461,7 @@ final class btn_briefing_ajax
     public function btn_briefing_assigned_training_action()
     {
         check_ajax_referer('btn-briefing-ajax', 'nonce');
-        if (!current_user_can('manage_options')) {
+        if (!$this->is_agency_admin()) {
             wp_send_json_error(['message' => 'Unauthorized'], 403);
         }
 
@@ -542,6 +558,7 @@ final class btn_briefing_ajax
             );
             // Access individual values like this:
             $officer_id = $officer['officer_id'] ? $officer['officer_id'] : '';
+            $station_id = function_exists('resolve_station_id_for_user') ? resolve_station_id_for_user($user_id) : null;
 
             $wpdb->insert(
                 $table,
@@ -550,9 +567,10 @@ final class btn_briefing_ajax
                     'duration' => $duration,
                     'completedAt' => $current_date,
                     'userId' => $user_id,
+                    'stationId' => $station_id,
                     'officerId' => $officer_id,
                 ],
-                ['%d', '%s', '%s', '%d', '%s']
+                ['%d', '%s', '%s', '%d', '%d', '%s']
             );
             // Get the inserted row ID
             $inserted_id = $wpdb->insert_id;

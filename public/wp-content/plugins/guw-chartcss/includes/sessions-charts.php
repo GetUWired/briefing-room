@@ -65,31 +65,27 @@ function btn_get_training_sessions($filters = []) {
         LEFT JOIN wp_btn_sergeants facilitator ON facilitator.userId = ts.userId
         LEFT JOIN wp_btn_managers manager ON manager.userId = ts.userId
         LEFT JOIN wp_btn_officers student ON student.userId = ts.userId
+        LEFT JOIN wp_btn_stations session_station ON session_station.id = ts.stationId
     ";
 
-    $params = [$agency_id, $agency_id, $agency_id];
+    $params = [$agency_id, $agency_id];
     $where  = [];
 
+    // Scope to the agency via the session's own stationId (captured when it was
+    // recorded), not the recording user's current station, so a later reassignment
+    // doesn't move a session's credit between agencies/stations. Managers have no
+    // station (agency-level only), so their sessions (stationId IS NULL) fall back
+    // to their current agency membership.
     $where[] = "(
-        EXISTS (
-            SELECT 1
-            FROM wp_btn_managers m
-            WHERE m.userId = ts.userId
-              AND m.organizationId = %d
-        )
-        OR EXISTS (
-            SELECT 1
-            FROM wp_btn_sergeants s
-            JOIN wp_btn_stations st ON s.stationId = st.id
-            WHERE s.userId = ts.userId
-              AND st.agencyId = %d
-        )
-        OR EXISTS (
-            SELECT 1
-            FROM wp_btn_officers o
-            JOIN wp_btn_stations st2 ON o.stationId = st2.id
-            WHERE o.userId = ts.userId
-              AND st2.agencyId = %d
+        session_station.agencyId = %d
+        OR (
+            ts.stationId IS NULL
+            AND EXISTS (
+                SELECT 1
+                FROM wp_btn_managers m
+                WHERE m.userId = ts.userId
+                  AND m.organizationId = %d
+            )
         )
     )";
 
@@ -116,16 +112,8 @@ function btn_get_training_sessions($filters = []) {
      * -------------------------
      */
     if (!empty($filters['station_id'])) {
-
-        $where[] = "(
-            facilitator.stationId = %d
-            OR student.stationId = %d
-        )";
-
-        $station_id = (int) $filters['station_id'];
-
-        $params[] = $station_id;
-        $params[] = $station_id;
+        $where[]  = "ts.stationId = %d";
+        $params[] = (int) $filters['station_id'];
     }
 
     /*
