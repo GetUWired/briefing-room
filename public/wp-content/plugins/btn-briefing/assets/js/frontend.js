@@ -72,7 +72,7 @@ var btnBriefing = function(data) {
 				hasAutoCompleted = true;
 				var id = btn_briefing_data.post_id;
 				if(id > 0){
-					btnBriefingPreLoader('Loading...');
+					//btnBriefingPreLoader('Loading...');
 					setTimeout(function(){
 						var $this = document.querySelector(".btn-briefing-add-to-complete");
 						btnBriefingPost( {
@@ -81,22 +81,22 @@ var btnBriefing = function(data) {
 							start_date   : startdate
 						}, function(response){
 							if(response.success){
-								$btnBriefingModal.remove();
+								//$btnBriefingModal.remove();
 								if ($this) {
 									$this.classList.remove("btn-briefing-add-to-complete");
 									$this.classList.add("btn-briefing-completed");
 									$this.textContent = "You have completed this training block";
 								}
-								videoElement.classList.add('completed-video');
+								//videoElement.classList.add('completed-video');
 							}
 						});
 					}, 300);
 				}
 			});
 
-			player.on('play', () => {
+			/*player.on('play', () => {
 				videoElement.classList.remove('completed-video');
-			});
+			});*/
 		}
 
 	 //var player = videojs('my-video');

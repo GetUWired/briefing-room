@@ -74,6 +74,7 @@ final class btn_briefing_shortcodes {
 		$agency_id = btn_briefing()->frontend()->get_agency_id_by_user_id_manager($user_id);
 
 		global $wpdb;
+        $html = ''; // Initialize $html
 		$popular = btn_briefing()->frontend()->get_popular_training($agency_id);
 		$login= btn_briefing()->frontend()->get_login_count($agency_id);
 		$top_users= btn_briefing()->frontend()->get_top_user($agency_id);
@@ -82,6 +83,14 @@ final class btn_briefing_shortcodes {
 		$total_students = btn_briefing()->frontend()->get_total_students($agency_id);
 		$total_facilitator = btn_briefing()->frontend()->total_facilitator($agency_id);
 		
+        // === ADDED FOR tbr-sso-manager INTEGRATION ===
+        // Hook for additional dashboard widgets (only when agency_id is valid)
+        if ($agency_id) {
+            ob_start();
+            do_action('btn_briefing_agency_dashboard_widgets', $agency_id, $user_id);
+            $html .= ob_get_clean();
+        }
+        // === END ADDITION ===
 		if($popular){
 			$html .= $popular;
 		}

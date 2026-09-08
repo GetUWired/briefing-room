@@ -20,7 +20,7 @@ trait HasAgency
     public function agencyName(): string
     {
         try {
-            return $this->agency()->name;
+            return $this->agency()->name ?? '';
         } catch (\Exception $e) {
             return '';
         }

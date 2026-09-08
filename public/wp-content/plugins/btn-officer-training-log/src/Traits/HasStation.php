@@ -18,7 +18,7 @@ trait HasStation
     public function stationName(): string
     {
         try {
-            return $this->station()->name;
+            return $this->station()->name ?? '';
         } catch (\Exception $e) {
             return '';
         }

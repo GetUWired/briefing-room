@@ -34,13 +34,23 @@ use BTN\BriefingRoom\Framework\Exceptions\NotFound;
 function resolve_station_id_for_user($userId)
 {
     try {
-        return Officer::findByUserId($userId)->stationId;
+        $officer = Officer::findByUserId($userId);
+        // stationId is a NOT NULL tinytext on the role tables, so a blank/unset
+        // station comes through as '' rather than null - treat that the same as
+        // "no station on record" instead of letting it coerce to 0 (an id that
+        // will never correspond to a real station) once stored on the session.
+        if (!empty($officer->stationId)) {
+            return $officer->stationId;
+        }
     } catch (NotFound $e) {
         // Not an officer, fall through
     }
 
     try {
-        return Sergeant::findByUserId($userId)->stationId;
+        $sergeant = Sergeant::findByUserId($userId);
+        if (!empty($sergeant->stationId)) {
+            return $sergeant->stationId;
+        }
     } catch (NotFound $e) {
         // Not a sergeant, fall through
     }

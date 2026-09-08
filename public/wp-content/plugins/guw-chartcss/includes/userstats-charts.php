@@ -21,7 +21,7 @@ function btn_get_user_logins($filters = []) {
         : date('Y-m-d', strtotime('-1 year'));
     $end_date = !empty($filters['end_date'])
         ? $filters['end_date']
-        : date('Y-m-d 23:59:59');
+        : date('Y-m-d');
 
     // wp_btn_user_login only stores userId/loginAt - agency/station/role aren't
     // recorded on the login itself, so derive them here from the user's current
@@ -52,7 +52,7 @@ function btn_get_user_logins($filters = []) {
     ";
 
     $where  = ['ul.loginAt BETWEEN %s AND %s'];
-    $params = [$agency_id, $agency_id, $agency_id, $start_date, $end_date];
+    $params = [$agency_id, $agency_id, $agency_id, $start_date . ' 00:00:00', $end_date . ' 23:59:59'];
 
     if (!empty($filters['user_role'])) {
         $where[]  = 'membership.role = %s';

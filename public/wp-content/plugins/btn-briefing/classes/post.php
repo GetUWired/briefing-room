@@ -149,7 +149,6 @@ final class btn_briefing_post {
 }
 
 
-
 function memb_get_restricted_term_ids_for_user() {
     static $cache;
     
