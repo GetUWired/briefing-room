@@ -21,50 +21,81 @@ function btn_get_user_logins($filters = []) {
         : date('Y-m-d', strtotime('-1 year'));
     $end_date = !empty($filters['end_date'])
         ? $filters['end_date']
-        : date('Y-m-d');
+        : date('Y-m-d 23:59:59');
 
-    // wp_btn_user_login only stores userId/loginAt - agency/station/role aren't
-    // recorded on the login itself, so derive them here from the user's current
-    // Manager/Sergeant/Officer membership (a login isn't a historical event tied to
-    // where the user was at the time, unlike a training session).
-    $sql = "
-        SELECT ul.*, membership.role AS role, membership.stationId AS stationId
-        FROM {$wpdb->prefix}btn_user_login ul
-        INNER JOIN (
-            SELECT userId, NULL AS stationId, 'manager' AS role
-            FROM {$wpdb->prefix}btn_managers
+    // Build the agency-scoped user subquery based on current roster, not the
+    // stale agencyId snapshot stored on the login record itself. Filtering by
+    // ul.agencyId caused blank names when users changed roles or were removed
+    // from their role table after their login records were created.
+    $role_filter = !empty($filters['user_role']) ? $filters['user_role'] : null;
+
+    if ($role_filter === 'manager') {
+        $agency_users_sql = "
+            SELECT userId FROM {$wpdb->prefix}btn_managers
             WHERE organizationId = %d
-
-            UNION ALL
-
-            SELECT s.userId, s.stationId, 'facilitator' AS role
-            FROM {$wpdb->prefix}btn_sergeants s
-            JOIN {$wpdb->prefix}btn_stations st ON s.stationId = st.id
+        ";
+        $agency_params = [$agency_id];
+    } elseif ($role_filter === 'facilitator') {
+        $agency_users_sql = "
+            SELECT sg.userId
+            FROM {$wpdb->prefix}btn_sergeants sg
+            JOIN {$wpdb->prefix}btn_stations st ON sg.stationId = st.id
             WHERE st.agencyId = %d
-
-            UNION ALL
-
-            SELECT o.userId, o.stationId, 'student' AS role
+        ";
+        $agency_params = [$agency_id];
+    } elseif ($role_filter === 'student') {
+        $agency_users_sql = "
+            SELECT o.userId
             FROM {$wpdb->prefix}btn_officers o
-            JOIN {$wpdb->prefix}btn_stations st2 ON o.stationId = st2.id
-            WHERE st2.agencyId = %d
-        ) membership ON membership.userId = ul.userId
-    ";
+            JOIN {$wpdb->prefix}btn_stations st ON o.stationId = st.id
+            WHERE st.agencyId = %d
+        ";
+        $agency_params = [$agency_id];
+    } else {
+        $agency_users_sql = "
+            SELECT userId FROM {$wpdb->prefix}btn_managers WHERE organizationId = %d
+            UNION
+            SELECT sg.userId
+            FROM {$wpdb->prefix}btn_sergeants sg
+            JOIN {$wpdb->prefix}btn_stations st ON sg.stationId = st.id
+            WHERE st.agencyId = %d
+            UNION
+            SELECT o.userId
+            FROM {$wpdb->prefix}btn_officers o
+            JOIN {$wpdb->prefix}btn_stations st ON o.stationId = st.id
+            WHERE st.agencyId = %d
+        ";
+        $agency_params = [$agency_id, $agency_id, $agency_id];
+    }
 
-    $where  = ['ul.loginAt BETWEEN %s AND %s'];
-    $params = [$agency_id, $agency_id, $agency_id, $start_date . ' 00:00:00', $end_date . ' 23:59:59'];
+    $where  = ["ul.userId IN ($agency_users_sql)", 'ul.loginAt BETWEEN %s AND %s'];
+    $params = array_merge($agency_params, [$start_date, $end_date]);
 
-    if (!empty($filters['user_role'])) {
-        $where[]  = 'membership.role = %s';
-        $params[] = $filters['user_role'];
+    // Normalise a bare 'Y-m-d' end date to end-of-day. Without this, BETWEEN
+    // stops at 00:00:00 and silently drops the final day of the range.
+    if (strlen(trim($end_date)) === 10) {
+        $end_date = trim($end_date) . ' 23:59:59';
+        $params[count($agency_params) + 1] = $end_date;
     }
 
     if (!empty($filters['station_id'])) {
-        $where[]  = 'membership.stationId = %d';
+        // Resolve station from the CURRENT roster, the same way the session
+        // widget does. EXISTS avoids row multiplication: ~192 users hold both a
+        // sergeant and an officer record, so a JOIN would double-count them.
+        $where[] = "(
+            EXISTS (SELECT 1 FROM {$wpdb->prefix}btn_sergeants sg
+                     WHERE sg.userId = ul.userId AND sg.stationId = %d)
+            OR EXISTS (SELECT 1 FROM {$wpdb->prefix}btn_officers o
+                     WHERE o.userId = ul.userId AND o.stationId = %d)
+        )";
+        $params[] = (int) $filters['station_id'];
         $params[] = (int) $filters['station_id'];
     }
 
-    $sql .= " WHERE " . implode(' AND ', $where) . " ORDER BY ul.loginAt DESC";
+    $sql = "SELECT ul.*
+              FROM {$wpdb->prefix}btn_user_login ul
+             WHERE " . implode(' AND ', $where);
+    $sql .= " ORDER BY ul.loginAt DESC";
 
     return $wpdb->get_results($wpdb->prepare($sql, $params), ARRAY_A);
 }
